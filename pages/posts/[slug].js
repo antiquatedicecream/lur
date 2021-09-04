@@ -29,7 +29,7 @@ export default function Post({ post, posts, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article>
+              <article className="bg-gray-50 w-4/5 mx-auto pb-12">
               <Head>
                 <title>
                   {post.title} | London Ukrainian Review
