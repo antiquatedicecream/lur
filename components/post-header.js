@@ -13,7 +13,7 @@ export default function PostHeader({
 }) {
   return (
     <>
-        <div className="mb-8 md:mb-8 mx-auto w-full relative">
+        <div className="mb-8 md:mb-8 mx-auto w-4/5 relative">
           <CoverImage title={title} coverImage={coverImage} />
         <div className="absolute bottom-0 left-0 md:mx-4 md:my-4 space-y-3 bg-white p-4">
             <PostTitle>{title}</PostTitle>
