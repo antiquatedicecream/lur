@@ -13,13 +13,16 @@ export default function PostHeader({
 }) {
   return (
     <>
-      <PostTitle>{title}</PostTitle>
-      <div className="hidden md:block md:mb-12">
-        <Avatar author={author} />
+        <div className="mb-8 md:mb-8 mx-auto w-full relative">
+          <CoverImage title={title} coverImage={coverImage} />
+        <div className="absolute bottom-0 left-0 md:mx-4 md:my-4 space-y-3 bg-white p-4">
+            <PostTitle>{title}</PostTitle>
+            <div className="hidden md:block">
+              <Avatar author={author} />
+            </div>
+          </div>  
       </div>
-      <div className="mb-8 md:mb-16 mx-auto w-1/2">
-        <CoverImage title={title} coverImage={coverImage} />
-      </div>
+
       <div className="max-w-2xl mx-auto">
         <div className="block md:hidden mb-6">
           <Avatar author={author} />

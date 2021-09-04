@@ -9,14 +9,14 @@ export default function Avatar({ author }) {
 
   return (
     <div className="flex items-center">
-      <div className="w-12 h-12 relative mr-4">
+      {/* <div className="w-12 h-12 relative mr-4">
         <Image
           src={author.avatar.url}
           layout="fill"
           className="rounded-full"
           alt={name}
         />
-      </div>
+      </div> */}
       <div className="text-lg font-adriane-text-italic font-bold">{name}</div>
     </div>
   )

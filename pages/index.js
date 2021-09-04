@@ -18,7 +18,9 @@ export default function Index({ allPosts: { edges }, preview }) {
         <Head>
           <title>Ukrainian Institute London</title>
         </Head>
+        <div className="mb-16 md:mb-12">
         <Navbar />
+        </div>
         <Container>
           
           {/* {heroPost && (
