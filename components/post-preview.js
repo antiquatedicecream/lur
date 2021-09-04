@@ -27,7 +27,7 @@ export default function PostPreview({
             ></a>
           </Link>
         </h3>
-        <div className="xl:text-lg mb-4">
+        <div className="xl:text-lg mb-4 font-adriane-text-italic">
           <Date dateString={date} />
         </div>
         <div
