@@ -36,9 +36,10 @@ export default function Post({ post, posts, preview }) {
                 </title>
                 <meta
                   property="og:image"
+                  // content={post.featuredImage?.node?.sourceUrl}
                   content={post.featuredImage?.node?.sourceUrl}
                 />
-                <meta name="twitter:card" content="summary" />
+                  <meta name="twitter:card" content="summary_large_image" />
                   <meta name="twitter:site" content="@londonukrainianreview" />
                   <meta name="twitter:creator" content="@londonukrainianreview" />
                   <meta property="og:title" content={post.title} />
