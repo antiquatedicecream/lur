@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
+// import HeroPost from '../components/hero-post'
 import Navbar from '../components/navbar'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
@@ -16,7 +16,7 @@ export default function Index({ allPosts: { edges }, preview }) {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Ukrainian Institute London</title>
         </Head>
         <Navbar />
         <Container>

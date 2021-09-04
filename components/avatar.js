@@ -17,7 +17,7 @@ export default function Avatar({ author }) {
           alt={name}
         />
       </div>
-      <div className="text-xl font-bold">{name}</div>
+      <div className="text-lg font-adriane-text-italic font-bold">{name}</div>
     </div>
   )
 }
