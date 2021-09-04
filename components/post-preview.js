@@ -13,12 +13,12 @@ export default function PostPreview({
 }) {
   return (
     <div className="bg-gray-100">
-      <div className="mb-5">
+      <div className="mb-2 xl:mg-5">
         {coverImage && (
           <CoverImage title={title} coverImage={coverImage} slug={slug} />
         )}
       </div>
-      <div className="mb-3 ml-3">
+      <div className="mb-3 mx-3">
         <h3 className="text-4xl font-adriane-text-bold mb-0 leading-snug">
           <Link href={`/posts/${slug}`}>
             <a
@@ -27,7 +27,7 @@ export default function PostPreview({
             ></a>
           </Link>
         </h3>
-        <div className="text-lg mb-4">
+        <div className="xl:text-lg mb-4">
           <Date dateString={date} />
         </div>
         <div
