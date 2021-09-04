@@ -14,6 +14,16 @@
 
 /* Your own custom utilities */
 
+
+  .current-menu-item {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #990500;
+  text-decoration-thickness: 0.4em;
+  text-underline-offset: 0.4em;
+  }
+
+
 @font-face {
     font-family: 'adriane-text';
     font-style: normal;

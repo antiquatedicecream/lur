@@ -10,11 +10,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
+        'uil-black': '#000000',
+        'uil-grey': '#E4E4E4',
+        'uil-key': '#990500',
+        'uil-accent-one': '#EF4543',
+        'uil-accent-two': '#FFE2D8',
       },
       spacing: {
         28: '7rem',

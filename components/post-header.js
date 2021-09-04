@@ -13,21 +13,21 @@ export default function PostHeader({
 }) {
   return (
     <>
-        <div className="mt-4 mb-4 md:mb-4 mx-auto w-full relative">
+        <div className="mt-4 mb-4 md:mb-4 mx-auto w-full sm:relative">
           <CoverImage title={title} coverImage={coverImage} />
-        <div className="absolute bottom-0 left-0 md:mx-4 md:my-4 space-y-3 bg-white p-4">
+        <div className="sm:absolute bottom-0 left-0 md:mx-4 md:my-4 space-y-3 bg-white p-4 text-uil-key">
             <PostTitle>{title}</PostTitle>
-            <div className="hidden md:block">
+            <div className="hidden md:block text-black">
               <Avatar author={author} />
             </div>
           </div>  
       </div>
 
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-2xl mx-auto px-2">
         <div className="block md:hidden mb-4">
           <Avatar author={author} />
         </div>
-        <div className="mb-4 text-lg font-adriane-text-italic">
+        <div className="mb-4 text-lg font-adriane-text-italic bg-uil-key text-white px-2 mx-0 w-1/4">
           <Date dateString={date} />
           {/* <Categories categories={categories} /> */}
         </div>
