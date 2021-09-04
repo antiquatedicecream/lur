@@ -27,7 +27,7 @@ export default function PostHeader({
         <div className="block md:hidden mb-4">
           <Avatar author={author} />
         </div>
-        <div className="mb-4 text-lg font-adriane-text-italic bg-uil-key text-white px-2 mx-0 w-1/4">
+        <div className="mb-4 text-lg font-adriane-text-italic text-uil-key px-0 mx-0 w-1/4">
           <Date dateString={date} />
           {/* <Categories categories={categories} /> */}
         </div>
