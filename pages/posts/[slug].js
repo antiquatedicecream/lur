@@ -42,7 +42,7 @@ export default function Post({ post, posts, preview }) {
                   <meta name="twitter:site" content="@londonukrainianreview" />
                   <meta name="twitter:creator" content="@londonukrainianreview" />
                   <meta property="og:title" content={post.title} />
-                  {/* <meta property="og:description" content={post.excerpt} /> */}
+                  <meta property="og:description" content={post.excerpt.replace(/<[^>]+>/g, '')} />
               </Head>
               <PostHeader
                 title={post.title}
