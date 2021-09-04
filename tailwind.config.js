@@ -3,6 +3,11 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      'adriane-text': ['adriane-text'],
+      'adriane-text-bold': ['adriane-text-bold'],
+      'adriane-text-italic': ['adriane-text-italic']
+    },
     extend: {
       colors: {
         'accent-1': '#FAFAFA',

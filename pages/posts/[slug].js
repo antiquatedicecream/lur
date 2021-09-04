@@ -23,8 +23,8 @@ export default function Post({ post, posts, preview }) {
 
   return (
     <Layout preview={preview}>
+      <Header />
       <Container>
-        <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -32,12 +32,17 @@ export default function Post({ post, posts, preview }) {
             <article>
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {post.title} | London Ukrainian Review
                 </title>
                 <meta
                   property="og:image"
                   content={post.featuredImage?.node?.sourceUrl}
                 />
+                <meta name="twitter:card" content="summary" />
+                  <meta name="twitter:site" content="@londonukrainianreview" />
+                  <meta name="twitter:creator" content="@londonukrainianreview" />
+                  <meta property="og:title" content={post.title} />
+                  {/* <meta property="og:description" content={post.excerpt} /> */}
               </Head>
               <PostHeader
                 title={post.title}

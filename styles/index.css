@@ -14,6 +14,29 @@
 
 /* Your own custom utilities */
 
+@font-face {
+    font-family: 'adriane-text';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Adriane Text'), url('../public/fonts/Adriane Text Regular.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'adriane-text-italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Adriane Text Italic'), url('../public/fonts/Adriane Text Italic.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'adriane-text-bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Adriane Text Bold'), url('../public/fonts/Adriane Text Bold.woff') format('woff');
+    }
+
 .has-text-align-left {
   @apply text-left;
 }
@@ -95,9 +118,9 @@
   min-height: 430px;
 }
 
-.wp-block-verse {
+/* .wp-block-verse {
   @apply font-sans;
-}
+} */
 
 .wp-block-media-text {
   @apply grid grid-cols-2 gap-4;
