@@ -13,13 +13,15 @@ export default function HeroPost({
 }) {
   return (
     <section>
-      <div className="mb-8 md:mb-16">
-        {coverImage && (
-          <CoverImage title={title} coverImage={coverImage} slug={slug} />
-        )}
-      </div>
-      <div className="md:grid md:grid-cols-2 md:col-gap-16 lg:col-gap-8 mb-20 md:mb-28">
-        <div>
+
+      <div className="md:grid md:grid-cols-3 md:col-gap-16 lg:col-gap-8 sm:space-x-4">
+        <div className="col-span-2">
+          {coverImage && (
+            <CoverImage title={title} coverImage={coverImage} slug={slug} />
+          )}
+        </div>
+        <div className="col-span-1">
+            <div>
           <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
             <Link href={`/posts/${slug}`}>
               <a
@@ -38,6 +40,7 @@ export default function HeroPost({
             dangerouslySetInnerHTML={{ __html: excerpt }}
           />
           <Avatar author={author} />
+        </div>
         </div>
       </div>
     </section>

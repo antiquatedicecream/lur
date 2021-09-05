@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
-// import HeroPost from '../components/hero-post'
+import HeroPost from '../components/hero-post'
 import Navbar from '../components/navbar'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
@@ -9,8 +9,8 @@ import { CMS_NAME } from '../lib/constants'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
-  // const morePosts = edges.slice(1)
-  const morePosts = edges
+  const morePosts = edges.slice(1)
+  // const morePosts = edges
 
   return (
     <>
@@ -18,21 +18,23 @@ export default function Index({ allPosts: { edges }, preview }) {
         <Head>
           <title>Ukrainian Institute London</title>
         </Head>
-        <div className="mb-16 md:mb-12">
-        <Navbar />
+        <div className="mb-4">
+          <Navbar />
         </div>
         <Container>
-          
-          {/* {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.featuredImage?.node}
-              date={heroPost.date}
-              author={heroPost.author?.node}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )} */}
+
+          <div className="mb-6">
+            {heroPost && (
+              <HeroPost
+                title={heroPost.title}
+                coverImage={heroPost.featuredImage?.node}
+                date={heroPost.date}
+                author={heroPost.author?.node}
+                slug={heroPost.slug}
+                excerpt={heroPost.excerpt}
+              />
+            )}
+          </div>
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>
