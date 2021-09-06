@@ -14,15 +14,15 @@ export default function HeroPost({
   return (
     <section>
 
-      <div className="md:grid md:grid-cols-3 md:col-gap-16 lg:col-gap-8 sm:space-x-4">
+      <div className="md:grid md:grid-cols-3 md:gap-x-2 lg:col-gap-8 sm:space-x-4 bg-[#FFF5F2]">
         <div className="col-span-2">
           {coverImage && (
             <CoverImage title={title} coverImage={coverImage} slug={slug} />
           )}
         </div>
-        <div className="col-span-1">
+        <div className="col-span-1 p-2">
             <div>
-          <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
+          <h3 className="mb-4 text-4xl font-adriane-text-bold lg:text-6xl leading-tight text-uil-key">
             <Link href={`/posts/${slug}`}>
               <a
                 className="hover:underline"
@@ -30,7 +30,7 @@ export default function HeroPost({
               />
             </Link>
           </h3>
-          <div className="mb-4 md:mb-0 text-lg">
+          <div className="mb-4 md:mb-0 text-lg font-adriane-text-italic">
             <Date dateString={date} />
           </div>
         </div>
