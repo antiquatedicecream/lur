@@ -29,6 +29,7 @@
     font-style: normal;
     font-weight: normal;
     src: local('Adriane Text'), url('../public/fonts/Adriane Text Regular.woff') format('woff');
+    font-display: swap;
     }
     
 
@@ -37,6 +38,7 @@
     font-style: normal;
     font-weight: normal;
     src: local('Adriane Text Italic'), url('../public/fonts/Adriane Text Italic.woff') format('woff');
+    font-display: swap;
     }
     
 
@@ -45,6 +47,7 @@
     font-style: normal;
     font-weight: normal;
     src: local('Adriane Text Bold'), url('../public/fonts/Adriane Text Bold.woff') format('woff');
+    font-display: swap;
     }
 
 .has-text-align-left {
