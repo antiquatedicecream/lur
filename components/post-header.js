@@ -21,7 +21,7 @@ export default function PostHeader({
     <>
       <div className="mt-4 mb-4 md:mb-4 mx-auto w-full sm:relative">
         <CoverImage title={title} coverImage={coverImage} />
-        <div className="sm:absolute bottom-0 left-0 md:mx-4 md:my-4 space-y-3 bg-white p-4 text-uil-key">
+        <div className="sm:absolute bottom-0 left-0 md:mx-4 md:my-4 space-y-3 sm:bg-white p-4 text-uil-key">
           <PostTitle>{title}</PostTitle>
           {isPage == 'true' ? ('') : (
             <div className="hidden md:block text-black">
@@ -36,7 +36,7 @@ export default function PostHeader({
           <div className="block md:hidden mb-4">
             <Avatar author={author} />
           </div>
-          <div className="mb-4 text-lg font-adriane-text-italic text-uil-key px-0 mx-0 w-1/4">
+          <div className="mb-4 text-lg font-adriane-text-italic text-uil-key px-0 mx-0">
             <Date dateString={date} />
             {/* <Categories categories={categories} /> */}
           </div>
