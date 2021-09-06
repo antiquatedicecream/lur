@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
+import Reprints from '../components/reprints'
 import HeroPost from '../components/hero-post'
 import Navbar from '../components/navbar'
 import Layout from '../components/layout'
@@ -9,7 +10,9 @@ import { CMS_NAME } from '../lib/constants'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
-  const morePosts = edges.slice(1)
+  const firstSixPosts = edges.slice(1, 7)
+  const reprintPosts = edges
+  console.log(firstSixPosts.length)
   // const morePosts = edges
 
   return (
@@ -35,7 +38,12 @@ export default function Index({ allPosts: { edges }, preview }) {
               />
             )}
           </div>
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          <div className="mb-6">
+              {firstSixPosts.length > 0 && <MoreStories posts={firstSixPosts} />}
+          </div>
+          <div className="mb-32">
+            {reprintPosts.length > 0 && <Reprints posts={reprintPosts} />}
+          </div>
         </Container>
       </Layout>
     </>

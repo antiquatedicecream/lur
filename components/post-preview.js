@@ -16,11 +16,17 @@ export default function PostPreview({
   let isPage = categories.edges.map((category, index) => (
     category.node.name === 'pages' ? 'true' : 'false'
   ))
-  console.log(isPage)
+  .includes('true')
+
+  let isReprint = categories.edges.map((category, index) => (
+    category.node.name === 'reprint' ? 'true' : 'false'
+  ))
+  .includes('true')
+  // console.log(isPage)
   
   return (
     <>
-      {isPage == 'false' ? (
+      {!isPage && !isReprint ? (
         <div className="bg-[#FFF5F2]">
           <div className="mb-2 xl:mg-5">
             {coverImage && (

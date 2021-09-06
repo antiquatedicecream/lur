@@ -15,7 +15,7 @@ export default function PostHeader({
   let isPage = categories.edges.map((category, index) => (
     category.node.name === 'pages' ? 'true' : 'false'
   ))
-  console.log(isPage)
+  // console.log(isPage)
 
   return (
     <>
