@@ -15,7 +15,7 @@ export default function Navbar() {
                     <a href="/posts/support-us-post"><li>Support Us</li></a>
                 </ul>
                 <div className="flex-1 flex justify-end">
-                    <a href="https://ukrainianinstitute.org.uk/" target="_blank" className=" flex flex-col w-18 h-12 font-adriane-text-bold text-2xl text-white"><img className="w-full h-full p-1" alt="Ukrainian Institute London Logo" src="/images/uil-logo.svg" /> </a>
+                    <a href="https://ukrainianinstitute.org.uk/" target="_blank" className=" flex flex-col w-18 h-12 font-adriane-text-bold text-2xl text-white"><img className="w-full h-full p-1" alt="Ukrainian Institute London Logo" width="1887px" height="698px" src="/images/uil-logo.svg" /> </a>
                 </div>
             </div>
         </nav>
