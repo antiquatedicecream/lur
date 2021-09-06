@@ -23,7 +23,7 @@ export default function PostHeader({
         <CoverImage title={title} coverImage={coverImage} />
         <div className="sm:absolute bottom-0 left-0 md:mx-4 md:my-4 space-y-3 bg-white p-4 text-uil-key">
           <PostTitle>{title}</PostTitle>
-          {isPage ? ('') : (
+          {isPage == 'true' ? ('') : (
             <div className="hidden md:block text-black">
               <Avatar author={author} />
             </div>
@@ -31,7 +31,7 @@ export default function PostHeader({
         </div>
       </div>
 
-      { isPage ? ('') : (
+      { isPage == 'true' ? ('') : (
         <div className="max-w-2xl mx-auto px-2">
           <div className="block md:hidden mb-4">
             <Avatar author={author} />
