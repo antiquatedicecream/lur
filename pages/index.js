@@ -10,9 +10,9 @@ import { CMS_NAME } from '../lib/constants'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
-  const firstSixPosts = edges.slice(1, 7)
+  const firstPosts = edges.slice(1, 9)
   const reprintPosts = edges
-  console.log(firstSixPosts.length)
+  console.log(firstPosts.length)
   // const morePosts = edges
 
   return (
@@ -39,7 +39,7 @@ export default function Index({ allPosts: { edges }, preview }) {
             )}
           </div>
           <div className="mb-6">
-              {firstSixPosts.length > 0 && <MoreStories posts={firstSixPosts} />}
+            {firstPosts.length > 0 && <MoreStories posts={firstPosts} />}
           </div>
           <div className="mb-32">
             {reprintPosts.length > 0 && <Reprints posts={reprintPosts} />}

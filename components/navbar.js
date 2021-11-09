@@ -4,7 +4,10 @@ import Image from 'next/image'
 export default function Navbar() {
     return (
         <nav className="min-w-full bg-[#FFF5F2]">
-            <div className="container mx-auto px-5 pt-1 pb-2 md:flex md:flex-row space-y-2 md:space-y-0 whitespace-nowrap md:align-middle items-center">
+            <div className='container mx-auto px-5 pt-1 pb-0'>
+                <span className='font-adriane-text-bold text-white px-2 bg-uil-key text-xs tracking-widest mx-2'>Special Publication of the Ukrainian Institute London</span>
+            </div>
+            <div className="container mx-auto px-5 pt-0 pb-2 md:flex md:flex-row space-y-2 md:space-y-0 whitespace-nowrap md:align-middle items-center">
                 <div className="flex-1 flex justify-start">
                     <a href="/" className="font-adriane-text-bold text-2xl text-white bg-uil-key px-2 mx-2">London Ukrainian Review</a>
                 </div>
