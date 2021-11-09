@@ -12,7 +12,7 @@ export default function Navbar( {slug} ) {
                 <div className="flex-1 flex justify-start">
                     <a href="/" className="font-adriane-text-bold text-2xl text-white bg-uil-key px-2 mx-2">London Ukrainian Review</a>
                 </div>
-                <ul className="flex-initial flex-col sm:flex-row sm:align-middle sm:content-center flex space-y-2 sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-center mx-auto text-lg text-uil-key px-2">
+                <ul className="flex-initial flex-col sm:flex-row sm:align-middle sm:content-center flex space-y-2 sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto text-lg text-uil-key px-14">
                     <a href="/"><li className={cn({
                         'current-menu-item': slug !== 'about-us' && slug !== 'archive-post' && slug !== 'support-us-post'
                     })}>Current Issue</li></a>
@@ -26,7 +26,7 @@ export default function Navbar( {slug} ) {
                         'current-menu-item': slug === 'support-us-post'
                     })}><li>Support Us</li></a>
                 </ul>
-                <div className="flex-1 flex justify-end">
+                <div className="flex-initial flex justify-end">
                     <a href="https://ukrainianinstitute.org.uk/" target="_blank" className=" flex flex-col w-18 h-12 font-adriane-text-bold text-2xl text-white">
                         <img className="w-full h-full p-1" alt="Ukrainian Institute London Logo" width="1887px" height="698px" src="/images/uil-logo.svg" />
                     </a>
