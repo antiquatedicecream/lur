@@ -14,7 +14,7 @@ export default function HeroPost({
   return (
     <section>
 
-      <div className="md:grid md:grid-cols-3 md:gap-x-2 lg:col-gap-8 sm:space-x-4 bg-[#FFF5F2]">
+      <div className="lg:grid lg:grid-cols-3 lg:gap-x-2 lg:col-gap-8 sm:space-x-4 bg-[#FFF5F2]">
         <div className="col-span-2">
           {coverImage && (
             <CoverImage title={title} coverImage={coverImage} slug={slug} />
