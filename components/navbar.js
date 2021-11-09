@@ -5,8 +5,8 @@ import cn from 'classnames'
 export default function Navbar( {slug} ) {
     return (
         <nav className="min-w-full bg-[#FFF5F2]">
-            <div className='container mx-auto px-5 pt-1 pb-0'>
-                <span className='font-adriane-text-bold text-white px-2 bg-uil-key text-xs tracking-widest mx-2'>Special Publication of the Ukrainian Institute London</span>
+            <div className='container mx-auto px-5 pt-3 pb-2'>
+                <span className='font-adriane-text-bold text-white px-2 bg-uil-key text-base tracking-widest mx-2'>Special Publication of the Ukrainian Institute London</span>
             </div>
             <div className="container mx-auto px-5 pt-0 pb-2 md:flex md:flex-row space-y-2 md:space-y-0 whitespace-nowrap md:align-middle items-center">
                 <div className="flex-1 flex justify-start">
