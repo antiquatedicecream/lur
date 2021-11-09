@@ -19,7 +19,7 @@ export default function ReprintPreview({
     .includes('true')
     // console.log(isPage)
     // console.log(categories.edges)
-    console.log(isReprint)
+    // console.log(isReprint)
 
     return (
         <>

@@ -11,6 +11,7 @@ export default function PostPreview({
   author,
   slug,
   categories,
+  postCount
 }) {
 
   let isPage = categories.edges.map((category, index) => (

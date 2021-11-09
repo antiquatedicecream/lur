@@ -18,10 +18,10 @@ export default function MoreStories({ posts }) {
             slug={node.slug}
             excerpt={node.excerpt}
             categories={node.categories}
+            postCount={posts.length}
           />
         )
         )}
-        
       </div>
     </section>
   )

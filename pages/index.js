@@ -10,9 +10,11 @@ import { CMS_NAME } from '../lib/constants'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
-  const firstPosts = edges.slice(1, 9)
+  // console.log(edges.length)
+  const firstPosts = edges.slice(1, 7)
+  const heroPost2 = edges[7]?.node
   const reprintPosts = edges
-  console.log(firstPosts.length)
+  // console.log(firstPosts.length)
   // const morePosts = edges
 
   return (
@@ -41,9 +43,22 @@ export default function Index({ allPosts: { edges }, preview }) {
           <div className="mb-6">
             {firstPosts.length > 0 && <MoreStories posts={firstPosts} />}
           </div>
+          <div className="mb-6">
+            {heroPost2 && (
+              <HeroPost
+                title={heroPost2.title}
+                coverImage={heroPost2.featuredImage?.node}
+                date={heroPost2.date}
+                author={heroPost2.author?.node}
+                slug={heroPost2.slug}
+                excerpt={heroPost2.excerpt}
+              />
+            )}
+          </div>
           <div className="mb-32">
             {reprintPosts.length > 0 && <Reprints posts={reprintPosts} />}
           </div>
+          
         </Container>
       </Layout>
     </>
