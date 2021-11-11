@@ -15,13 +15,13 @@ export default function Navbar( {slug} ) {
                 <ul className="flex-initial flex-col sm:flex-row sm:align-middle sm:content-center flex space-y-2 sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto text-lg text-uil-key px-14">
                     <a href="/"><li className={cn({
                         'current-menu-item': slug !== 'about-us' && slug !== 'archive-post' && slug !== 'support-us-post'
-                    })}>Current Issue</li></a>
+                    })}>Home</li></a>
                     <a href="/posts/about-us" className={cn({
                         'current-menu-item': slug === 'about-us'
                     })}><li>About</li></a>
-                    <a href="/posts/archive-post" className={cn({
+                    {/* <a href="/posts/archive-post" className={cn({
                         'current-menu-item': slug === 'archive-post'
-                    })}><li>Archive</li></a>
+                    })}><li>Archive</li></a> */}
                     <a href="/posts/support-us-post" className={cn({
                         'current-menu-item': slug === 'support-us-post'
                     })}><li>Support Us</li></a>
