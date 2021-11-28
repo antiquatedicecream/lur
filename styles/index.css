@@ -146,3 +146,7 @@ iframe {
 figure {
   @apply mx-auto max-w-full
 }
+
+td {
+  @apply pr-6 pb-2
+}
