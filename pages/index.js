@@ -12,7 +12,7 @@ export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
   // console.log(edges.length)
   const firstPosts = edges.slice(1, 7)
-  const heroPost2 = edges[7]?.node
+  // const heroPost2 = edges[7]?.node
   const reprintPosts = edges
   // console.log(firstPosts.length)
   // const morePosts = edges
@@ -43,7 +43,7 @@ export default function Index({ allPosts: { edges }, preview }) {
           <div className="mb-6">
             {firstPosts.length > 0 && <MoreStories posts={firstPosts} />}
           </div>
-          <div className="mb-6">
+          {/* <div className="mb-6">
             {heroPost2 && (
               <HeroPost
                 title={heroPost2.title}
@@ -54,7 +54,7 @@ export default function Index({ allPosts: { edges }, preview }) {
                 excerpt={heroPost2.excerpt}
               />
             )}
-          </div>
+          </div> */}
           <div className="mb-32">
             {reprintPosts.length > 0 && <Reprints posts={reprintPosts} />}
           </div>
