@@ -1,4 +1,5 @@
 .content {
+  /* @apply text-lg leading-relaxed; */
   @apply text-lg leading-relaxed;
 }
 
