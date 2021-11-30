@@ -30,13 +30,13 @@ export default function HeroPost({
               />
             </Link>
           </h3>
-          <div className="mb-4 md:mb-0 text-lg font-adriane-text-italic">
+            <div className="mb-4 md:mb-0 text-lg lg:text-sm xl:text-lg font-adriane-text-italic">
             <Date dateString={date} />
           </div>
         </div>
         <div>
           <div
-            className="text-lg leading-relaxed mb-4 overflow-ellipsis"
+            className="text-lg lg:text-sm xl:text-lg leading-relaxed mb-4 overflow-ellipsis"
             dangerouslySetInnerHTML={{ __html: excerpt }}
           />
           <Avatar author={author} />
