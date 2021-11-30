@@ -55,7 +55,7 @@ export default function Index({ allPosts: { edges }, preview }) {
               />
             )}
           </div> */}
-          <div className="mb-32">
+          <div className="">
             {reprintPosts.length > 0 && <Reprints posts={reprintPosts} />}
           </div>
           

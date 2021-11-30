@@ -5,7 +5,7 @@ export default function PostBody({ content }) {
     <div className="max-w-3xl mx-auto px-2">
       <div
         // className={styles.content}
-        className={`${styles.content} max-w-full break-words`}
+        className={`${styles.content} max-w-full`}
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </div>

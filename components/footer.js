@@ -3,8 +3,22 @@ import { EXAMPLE_PATH } from '../lib/constants'
 
 export default function Footer() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
+    <footer className="flex text-center bg-[#FFF5F2] py-12 font-adriane-text mt-32">
       <Container>
+        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div>
+            <a href="https://ukrainianinstitute.org.uk/" target="_blank" className="underline">©2021 Ukrainian Institute London</a>
+          </div>
+          <div>
+            Twitter: <a href="https://twitter.com/Ukr_Institute" target="_blank" className="underline">@Ukr_Institute</a>
+          </div>
+          <div>
+            Facebook: <a href="https://www.facebook.com/UkrainianInstitute.London" target="_blank" className="underline">@UkrainianInstitute.London</a>
+          </div>
+          <div>
+            Instagram: <a href="https://www.instagram.com/ukr_institute/" target="_blank" className="underline">@ukr_institute</a>
+          </div>
+        </div>
         {/* <div className="py-28 flex flex-col lg:flex-row items-center">
           <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
             Statically Generated with Next.js.
