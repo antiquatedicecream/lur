@@ -21,13 +21,22 @@ export default function Index({ allPosts: { edges }, preview }) {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Ukrainian Institute London</title>
+          <title>London Ukrainian Review</title>
+          <meta
+            property="og:image"
+            // content={post.featuredImage?.node?.sourceUrl}
+            content={heroPost.featuredImage?.node?.sourceUrl}
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@londonukrainianreview" />
+          <meta name="twitter:creator" content="@londonukrainianreview" />
+          <meta property="og:title" content="London Ukrainian Review" />
+          <meta property="og:description" content="London Ukrainian Review is a special publication of the Ukrainian Institute London. Dedicated to the three decades of Ukraine’s independence, it discusses the challenges of climate and sustainability, achievements in cinema, literature, and academia, while looking ahead to what Ukraine has to offer to the world." />
         </Head>
         <div className="mb-4">
           <Navbar />
         </div>
         <Container>
-
           <div className="mb-6">
             {heroPost && (
               <HeroPost
