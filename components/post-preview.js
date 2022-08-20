@@ -24,12 +24,17 @@ export default function PostPreview({
     category.node.name === 'reprint' ? 'true' : 'false'
   ))
   .includes('true')
+
+  let isUkrainianVersion = categories.edges.map((category, index) => (
+    category.node.name === 'Ukrainian Version' ? 'true' : 'false'
+  ))
+    .includes('true')
   
   // console.log(isPage)
   
   return (
     <>
-      {!isPage && !isReprint ? (
+      {!isPage && !isReprint && !isUkrainianVersion ? (
         <div className="bg-[#FFF5F2]">
           <div className="mb-2 xl:mg-5">
             {coverImage && (
