@@ -38,7 +38,7 @@ export default function PostHeader({
           </div>
           <div className="mb-4 text-lg font-adriane-text-italic text-uil-key px-0 mx-0">
             <Date dateString={date} />
-            {/* <Categories categories={categories} /> */}
+            <Categories categories={categories} />
           </div>
         </div>
       )}

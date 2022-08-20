@@ -46,6 +46,7 @@ export default function Index({ allPosts: { edges }, preview }) {
                 author={heroPost.author?.node}
                 slug={heroPost.slug}
                 excerpt={heroPost.excerpt}
+                categories={heroPost.categories}
               />
             )}
           </div>

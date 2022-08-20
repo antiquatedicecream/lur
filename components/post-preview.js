@@ -2,6 +2,7 @@ import Avatar from '../components/avatar'
 import Date from '../components/date'
 import CoverImage from './cover-image'
 import Link from 'next/link'
+import Categories from '../components/categories'
 
 export default function PostPreview({
   title,
@@ -23,6 +24,7 @@ export default function PostPreview({
     category.node.name === 'reprint' ? 'true' : 'false'
   ))
   .includes('true')
+  
   // console.log(isPage)
   
   return (
@@ -45,6 +47,7 @@ export default function PostPreview({
             </h3>
             <div className="xl:text-lg mb-4 font-adriane-text-italic">
               <Date dateString={date} />
+              <Categories categories={categories} />
             </div>
             <div
               className="text-lg leading-relaxed mb-4"
