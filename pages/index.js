@@ -11,7 +11,7 @@ import { CMS_NAME } from '../lib/constants'
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
   // console.log(edges.length)
-  const firstPosts = edges.slice(1, 7)
+  const firstPosts = edges.slice(1)
   // const heroPost2 = edges[7]?.node
   const reprintPosts = edges
   // console.log(firstPosts.length)
