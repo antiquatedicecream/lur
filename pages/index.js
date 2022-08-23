@@ -7,6 +7,7 @@ import Navbar from '../components/navbar'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
+import ArchiveStories from '../components/archive-stories'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
@@ -50,8 +51,13 @@ export default function Index({ allPosts: { edges }, preview }) {
               />
             )}
           </div>
+          {/* Current issue stories  */}
           <div className="mb-6">
             {firstPosts.length > 0 && <MoreStories posts={firstPosts} />}
+          </div>
+          {/* Past issues stories ( = archive) */}
+          <div className="mb-6">
+            {firstPosts.length > 0 && <ArchiveStories posts={firstPosts} />}
           </div>
           {/* <div className="mb-6">
             {heroPost2 && (
