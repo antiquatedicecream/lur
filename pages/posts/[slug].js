@@ -29,7 +29,7 @@ export default function Post({ post, posts, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-              <article className="bg-commemorative-post sm:w-4/5 mx-auto pb-12">
+              <article className="bg-uil-post sm:w-4/5 mx-auto pb-12">
               {/* this article tag used to have a bg-gray-100 - test for eye cancer */}
               <Head>
                 <title>

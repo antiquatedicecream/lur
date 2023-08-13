@@ -8,7 +8,8 @@ import {
   PAGES_MARKER,
   REPRINT_MARKER,
   UKRAINIAN_MARKER,
-  CURRENT_ISSUE_MARKER
+  CURRENT_ISSUE_MARKER,
+  COMMEMORATION_MARKER
 } from "../lib/categories";
 
 export default function PostPreview({
@@ -26,11 +27,12 @@ export default function PostPreview({
   const isReprint = categoriesContain(categories, REPRINT_MARKER);
   const isUkrainianVersion = categoriesContain(categories, UKRAINIAN_MARKER);
   const isCurrentIssue = categoriesContain(categories, CURRENT_ISSUE_MARKER);
-  
+  const isCommemorativePost = categoriesContain(categories, COMMEMORATION_MARKER);
+
   return (
     <>
       {!isPage && !isReprint && !isUkrainianVersion && isCurrentIssue ? (
-        <div className="bg-uil-post">
+        <div className={isCommemorativePost ? 'bg-commemorative-post' : 'bg-uil-post'}>
           <div className="mb-2 xl:mg-5">
             {coverImage && (
               <CoverImage title={title} coverImage={coverImage} slug={slug} />
