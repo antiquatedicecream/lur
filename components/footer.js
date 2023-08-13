@@ -7,7 +7,7 @@ export default function Footer() {
       <Container>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <div>
-            <a href="https://ukrainianinstitute.org.uk/" target="_blank" className="underline">©2021-2022 Ukrainian Institute London</a>
+            <a href="https://ukrainianinstitute.org.uk/" target="_blank" className="underline">©2021-2023 Ukrainian Institute London</a>
           </div>
           <div>
             Twitter: <a href="https://twitter.com/Ukr_Institute" target="_blank" className="underline">@Ukr_Institute</a>
