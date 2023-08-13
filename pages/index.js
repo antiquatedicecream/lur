@@ -1,17 +1,19 @@
 import Head from 'next/head'
 import Container from '../components/container'
-import CurrentIssueStories from '../components/more-stories'
 import Reprints from '../components/reprints'
 import HeroPost from '../components/hero-post'
 import Navbar from '../components/navbar'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
-import OldIssueStories from '../components/archive-stories'
+import {postsByCategories} from "../lib/filter-utils";
+import {CURRENT_ISSUE_MARKER, ISSUE_ONE_MARKER, ISSUE_TWO_MARKER, REPRINT_MARKER} from "../lib/constants";
+import MoreStories from '../components/more-stories';
 
 export default function Index({ allPosts: { edges }, preview }) {
-  const heroPost = edges[0]?.node
-  const mainPosts = edges.slice(1)
-  const reprintPosts = edges
+  const currentIssuePosts = postsByCategories(edges, [CURRENT_ISSUE_MARKER]);
+  const heroPost = currentIssuePosts[0]?.node;
+  const reprintPosts = postsByCategories(edges, [REPRINT_MARKER]);
+  const olderFilteredPosts = postsByCategories(edges, [ISSUE_ONE_MARKER, ISSUE_TWO_MARKER])
 
   return (
     <>
@@ -47,11 +49,10 @@ export default function Index({ allPosts: { edges }, preview }) {
             )}
           </div>
           <div className="mb-6">
-            {mainPosts.length > 0 && <CurrentIssueStories posts={mainPosts} />}
+            {currentIssuePosts.length > 0 && <MoreStories posts={currentIssuePosts.slice(1)} />}
           </div>
-          {/* Past issues stories ( = archive) */}
           <div className="mb-6">
-            {mainPosts.length > 0 && <OldIssueStories posts={mainPosts} />}
+            {olderFilteredPosts.length > 0 && <MoreStories posts={olderFilteredPosts} />}
           </div>
           <div className="">
             {reprintPosts.length > 0 && <Reprints posts={reprintPosts} />}

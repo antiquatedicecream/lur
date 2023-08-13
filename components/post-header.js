@@ -3,7 +3,8 @@ import Date from '../components/date'
 import CoverImage from '../components/cover-image'
 import PostTitle from '../components/post-title'
 import Categories from '../components/categories'
-import {categoriesContain, PAGES_MARKER} from "../lib/categories";
+import {categoriesContainMatch} from "../lib/filter-utils";
+import {PAGES_MARKER} from "../lib/constants";
 
 export default function PostHeader({
   title,
@@ -13,7 +14,7 @@ export default function PostHeader({
   categories,
 }) {
 
-  const isPage = categoriesContain(categories, PAGES_MARKER)
+  const isPage = categoriesContainMatch(categories, PAGES_MARKER)
 
   return (
     <>

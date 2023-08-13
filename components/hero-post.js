@@ -3,7 +3,8 @@ import Date from '../components/date'
 import CoverImage from '../components/cover-image'
 import Link from 'next/link'
 import Categories from '../components/categories'
-import {categoriesContain, COMMEMORATION_MARKER} from "../lib/categories";
+import {categoriesContainMatch} from "../lib/filter-utils";
+import {COMMEMORATION_MARKER} from "../lib/constants";
 
 export default function HeroPost({
   title,
@@ -16,7 +17,7 @@ export default function HeroPost({
 }) {
 
   const backgroundColour =
-      categoriesContain(categories, COMMEMORATION_MARKER)
+      categoriesContainMatch(categories, COMMEMORATION_MARKER)
       ? "bg-commemorative-post"
       : "bg-uil-post";
 
