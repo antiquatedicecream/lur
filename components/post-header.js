@@ -3,6 +3,7 @@ import Date from '../components/date'
 import CoverImage from '../components/cover-image'
 import PostTitle from '../components/post-title'
 import Categories from '../components/categories'
+import {categoriesContain, PAGES_MARKER} from "../lib/categories";
 
 export default function PostHeader({
   title,
@@ -12,10 +13,7 @@ export default function PostHeader({
   categories,
 }) {
 
-  let isPage = categories.edges.map((category, index) => (
-    category.node.name === 'pages' ? 'true' : 'false'
-  ))
-  // console.log(isPage)
+  const isPage = categoriesContain(categories, PAGES_MARKER)
 
   return (
     <>
@@ -23,7 +21,7 @@ export default function PostHeader({
         <CoverImage title={title} coverImage={coverImage} />
         <div className="sm:absolute bottom-0 left-0 md:mx-4 md:my-4 space-y-3 sm:bg-white p-4 text-uil-key">
           <PostTitle>{title}</PostTitle>
-          {isPage == 'true' ? ('') : (
+          { isPage ? ('') : (
             <div className="hidden md:block text-black">
               <Avatar author={author} />
             </div>
@@ -31,7 +29,7 @@ export default function PostHeader({
         </div>
       </div>
 
-      { isPage == 'true' ? ('') : (
+      { isPage ? ('') : (
         <div className="max-w-2xl mx-auto px-2">
           <div className="block md:hidden mb-4">
             <Avatar author={author} />

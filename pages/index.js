@@ -1,22 +1,17 @@
 import Head from 'next/head'
 import Container from '../components/container'
-import MoreStories from '../components/more-stories'
+import CurrentIssueStories from '../components/more-stories'
 import Reprints from '../components/reprints'
 import HeroPost from '../components/hero-post'
 import Navbar from '../components/navbar'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
-import { CMS_NAME } from '../lib/constants'
-import ArchiveStories from '../components/archive-stories'
+import OldIssueStories from '../components/archive-stories'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
-  // console.log(edges.length)
-  const firstPosts = edges.slice(1)
-  // const heroPost2 = edges[7]?.node
+  const mainPosts = edges.slice(1)
   const reprintPosts = edges
-  // console.log(firstPosts.length)
-  // const morePosts = edges
 
   return (
     <>
@@ -51,26 +46,13 @@ export default function Index({ allPosts: { edges }, preview }) {
               />
             )}
           </div>
-          {/* Current issue stories  */}
           <div className="mb-6">
-            {firstPosts.length > 0 && <MoreStories posts={firstPosts} />}
+            {mainPosts.length > 0 && <CurrentIssueStories posts={mainPosts} />}
           </div>
           {/* Past issues stories ( = archive) */}
           <div className="mb-6">
-            {firstPosts.length > 0 && <ArchiveStories posts={firstPosts} />}
+            {mainPosts.length > 0 && <OldIssueStories posts={mainPosts} />}
           </div>
-          {/* <div className="mb-6">
-            {heroPost2 && (
-              <HeroPost
-                title={heroPost2.title}
-                coverImage={heroPost2.featuredImage?.node}
-                date={heroPost2.date}
-                author={heroPost2.author?.node}
-                slug={heroPost2.slug}
-                excerpt={heroPost2.excerpt}
-              />
-            )}
-          </div> */}
           <div className="">
             {reprintPosts.length > 0 && <Reprints posts={reprintPosts} />}
           </div>

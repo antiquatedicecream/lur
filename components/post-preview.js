@@ -3,6 +3,13 @@ import Date from '../components/date'
 import CoverImage from './cover-image'
 import Link from 'next/link'
 import Categories from '../components/categories'
+import {
+  categoriesContain,
+  PAGES_MARKER,
+  REPRINT_MARKER,
+  UKRAINIAN_MARKER,
+  CURRENT_ISSUE_MARKER
+} from "../lib/categories";
 
 export default function PostPreview({
   title,
@@ -15,37 +22,15 @@ export default function PostPreview({
   postCount
 }) {
 
-  let isPage = categories.edges.map((category, index) => (
-    category.node.name === 'pages' ? 'true' : 'false'
-  ))
-  .includes('true')
-
-  let isReprint = categories.edges.map((category, index) => (
-    category.node.name === 'reprint' ? 'true' : 'false'
-  ))
-  .includes('true')
-
-  let isUkrainianVersion = categories.edges.map((category, index) => (
-    category.node.name === 'Ukrainian Version' ? 'true' : 'false'
-  ))
-    .includes('true')
-
-  // let isIssueTwo = categories.edges.map((category, index) => (
-  //   category.node.name === 'Issue Two' ? 'true' : 'false'
-  // ))
-  //   .includes('true')
-
-  let isIssueThree = categories.edges.map((category, index) => (
-      category.node.name === 'Issue Three' ? 'true' : 'false'
-  ))
-      .includes('true')
-  
-  // console.log(isPage)
+  const isPage = categoriesContain(categories, PAGES_MARKER);
+  const isReprint = categoriesContain(categories, REPRINT_MARKER);
+  const isUkrainianVersion = categoriesContain(categories, UKRAINIAN_MARKER);
+  const isCurrentIssue = categoriesContain(categories, CURRENT_ISSUE_MARKER);
   
   return (
     <>
-      {!isPage && !isReprint && !isUkrainianVersion && isIssueThree ? (
-        <div className="bg-[#FFF5F2]">
+      {!isPage && !isReprint && !isUkrainianVersion && isCurrentIssue ? (
+        <div className="bg-uil-post">
           <div className="mb-2 xl:mg-5">
             {coverImage && (
               <CoverImage title={title} coverImage={coverImage} slug={slug} />

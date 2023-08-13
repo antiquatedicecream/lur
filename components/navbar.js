@@ -4,7 +4,7 @@ import cn from 'classnames'
 
 export default function Navbar( {slug} ) {
     return (
-        <nav className="min-w-full bg-[#FFF5F2]">
+        <nav className="min-w-full bg-uil-post">
             <div className='container mx-auto px-5 sm:pl-7 pt-4 sm:pt-3 pb-2'>
                 <span className='font-adriane-text-bold text-white px-2 bg-uil-key text-base tracking-widest'>Special Publication of the Ukrainian Institute London</span>
             </div>

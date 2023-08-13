@@ -15,6 +15,8 @@ module.exports = {
         'uil-key': '#990500',
         'uil-accent-one': '#EF4543',
         'uil-accent-two': '#FFE2D8',
+        'uil-post': '#FFF5F2',
+        'commemorative-post': '#FFE7E0'
       },
       spacing: {
         28: '7rem',

@@ -3,7 +3,7 @@ import { EXAMPLE_PATH } from '../lib/constants'
 
 export default function Footer() {
   return (
-    <footer className="flex text-center bg-[#FFF5F2] py-12 font-adriane-text mt-32">
+    <footer className="flex text-center bg-uil-post py-12 font-adriane-text mt-32">
       <Container>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <div>

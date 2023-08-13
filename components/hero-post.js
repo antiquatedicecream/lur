@@ -3,6 +3,7 @@ import Date from '../components/date'
 import CoverImage from '../components/cover-image'
 import Link from 'next/link'
 import Categories from '../components/categories'
+import {categoriesContain, COMMEMORATION_MARKER} from "../lib/categories";
 
 export default function HeroPost({
   title,
@@ -13,10 +14,16 @@ export default function HeroPost({
   slug,
   categories,
 }) {
+
+  const backgroundColour =
+      categoriesContain(categories, COMMEMORATION_MARKER)
+      ? "bg-commemorative-post"
+      : "bg-uil-post";
+
   return (
     <section>
 
-      <div className="lg:grid lg:grid-cols-3 lg:gap-x-2 lg:col-gap-8 sm:space-x-4 bg-[#FFF5F2]">
+      <div className={`lg:grid lg:grid-cols-3 lg:gap-x-2 lg:col-gap-8 sm:space-x-4 ${backgroundColour}`}>
         <div className="col-span-2">
           {coverImage && (
             <CoverImage title={title} coverImage={coverImage} slug={slug} />

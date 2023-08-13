@@ -2,6 +2,7 @@ import Avatar from '../components/avatar'
 import Date from '../components/date'
 import CoverImage from './cover-image'
 import Link from 'next/link'
+import {categoriesContain, REPRINT_MARKER} from "../lib/categories";
 
 export default function ReprintPreview({
     title,
@@ -13,18 +14,12 @@ export default function ReprintPreview({
     categories,
 }) {
 
-    let isReprint = categories.edges.map((category, index) => (
-        category.node.name === 'reprint' ? 'true' : 'false'
-    ))
-    .includes('true')
-    // console.log(isPage)
-    // console.log(categories.edges)
-    // console.log(isReprint)
+    const isReprint = categoriesContain(categories, REPRINT_MARKER);
 
     return (
         <>
             {isReprint ? (
-                <div className="bg-[#FFF5F2]">
+                <div className="bg-uil-post">
                     <div className="mb-2 xl:mg-5">
                         {coverImage && (
                             <CoverImage title={title} coverImage={coverImage} slug={slug} />
