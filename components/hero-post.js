@@ -19,11 +19,11 @@ export default function HeroPost(
 
   const backgroundColour =
     categoriesContainMatch(categories, COMMEMORATION_MARKER)
-      ? 'bg-blue-50'
+      ? 'bg-commemorative-post'
       : 'bg-uil-post';
   const textColour =
     categoriesContainMatch(categories, COMMEMORATION_MARKER)
-      ? 'text-blue-900'
+      ? 'text-commemorative-text'
       : 'text-uil-key';
 
   return (

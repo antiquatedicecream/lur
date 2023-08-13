@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Categories from '../components/categories';
 import {categoriesContainMatch} from '../lib/filter-utils';
 import {COMMEMORATION_MARKER, UKRAINIAN_MARKER} from '../lib/constants';
-import {te} from 'date-fns/locale';
 
 export default function PostPreview(
   {
@@ -21,11 +20,11 @@ export default function PostPreview(
   const isUkrainianPost = categoriesContainMatch(categories, UKRAINIAN_MARKER);
   const backgroundColour =
     categoriesContainMatch(categories, COMMEMORATION_MARKER)
-      ? 'bg-blue-50'
+      ? 'bg-commemorative-post'
       : 'bg-uil-post';
   const textColour =
     categoriesContainMatch(categories, COMMEMORATION_MARKER)
-      ? 'text-blue-900'
+      ? 'text-commemorative-text'
       : 'text-uil-key';
 
   return (<>
