@@ -16,8 +16,9 @@ module.exports = {
         'uil-accent-one': '#EF4543',
         'uil-accent-two': '#FFE2D8',
         'uil-post': '#FFF5F2',
-        'commemorative-post': '#ffe8e5',
-        'commemorative-text': '#6e0500'
+        'commemorative-post': '#ffece9', // ffe8e5
+        'commemorative-text': '#6e0500',
+        'commemorative-hero-bg': '#ffece9'
       },
       spacing: {
         28: '7rem',
