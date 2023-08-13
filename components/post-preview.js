@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Categories from '../components/categories';
 import {categoriesContainMatch} from '../lib/filter-utils';
 import {COMMEMORATION_MARKER, UKRAINIAN_MARKER} from '../lib/constants';
+import {te} from 'date-fns/locale';
 
 export default function PostPreview(
   {
@@ -18,21 +19,25 @@ export default function PostPreview(
     postCount,
   }) {
   const isUkrainianPost = categoriesContainMatch(categories, UKRAINIAN_MARKER);
-  const isCommemorativePost = categoriesContainMatch(categories,
-    COMMEMORATION_MARKER);
+  const backgroundColour =
+    categoriesContainMatch(categories, COMMEMORATION_MARKER)
+      ? 'bg-blue-50'
+      : 'bg-uil-post';
+  const textColour =
+    categoriesContainMatch(categories, COMMEMORATION_MARKER)
+      ? 'text-blue-900'
+      : 'text-uil-key';
 
   return (<>
     {!isUkrainianPost ?
-      (<div className={isCommemorativePost ?
-        'bg-commemorative-post' :
-        'bg-uil-post'}>
+      (<div className={backgroundColour}>
         <div className="mb-2 xl:mg-5">
           {coverImage && (<CoverImage title={title} coverImage={coverImage}
                                       slug={slug}/>)}
         </div>
         <div className="mb-3 mx-3">
           <h3
-            className="text-4xl font-adriane-text-bold mb-0 leading-snug text-uil-key">
+            className={`text-4xl font-adriane-text-bold mb-0 leading-snug ${textColour}`}>
             <Link href={`/posts/${slug}`}>
               <a
                 className="hover:underline"
