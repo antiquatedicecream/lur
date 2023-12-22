@@ -11,13 +11,10 @@ import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import Tags from '../../components/tags'
 import MoreStories from '../../components/more-stories';
-import {categoriesContainMatch} from '../../lib/filter-utils';
-import {TRANSLATES_MARKER, UKRAINIAN_MARKER} from '../../lib/constants';
 
-export default function Post({ post, posts, preview }) {
+export default function Translation({ post, posts, preview }) {
   const router = useRouter()
   const morePosts = posts?.edges
-  const isTranslation = categoriesContainMatch(post.categories, TRANSLATES_MARKER);
   const route = 'translates'
 
   if (!router.isFallback && !post?.slug) {
@@ -51,7 +48,7 @@ export default function Post({ post, posts, preview }) {
               </Head>
               <PostHeader
                 title={post.title}
-                coverImage={!isTranslation && post.featuredImage?.node}
+                coverImage={post.featuredImage?.node}
                 date={post.date}
                 author={post.author?.node}
                 categories={post.categories}

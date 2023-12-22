@@ -20,7 +20,6 @@ export default function Translates({ allPosts: { edges }, preview }) {
           <title>London Ukrainian Review</title>
           <meta
             property="og:image"
-            // content={post.featuredImage?.node?.sourceUrl}
             content={heroPost.featuredImage?.node?.sourceUrl}
           />
           <meta name="twitter:card" content="summary_large_image" />
