@@ -8,7 +8,7 @@ export default function CoverImage({ title, coverImage, slug, route }) {
     <Image
       width={2000}
       height={1000}
-      alt={`Cover Image for ${title}`}
+      alt={coverImage ? `Cover Image for ${title}` : ' '}
       src={coverImage?.sourceUrl}
       className={cn('shadow-small object-cover flex-auto ', {
         'hover:shadow-medium transition-shadow duration-200': slug,

@@ -14,6 +14,7 @@ export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = currentIssuePosts[0]?.node;
   const reprintPosts = postsByCategories(edges, [REPRINT_MARKER]);
   const olderFilteredPosts = postsByCategories(edges, [ISSUE_ONE_MARKER, ISSUE_TWO_MARKER])
+  const route = 'posts'
 
   return (
     <>
@@ -32,7 +33,7 @@ export default function Index({ allPosts: { edges }, preview }) {
           <meta property="og:description" content="London Ukrainian Review is a special publication of the Ukrainian Institute London. Dedicated to the three decades of Ukraine’s independence, it discusses the challenges of climate and sustainability, achievements in cinema, literature, and academia, while looking ahead to what Ukraine has to offer to the world." />
         </Head>
         <div className="mb-4">
-          <Navbar />
+          <Navbar route={route} />
         </div>
         <Container>
           <div className="mb-6">

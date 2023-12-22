@@ -18,9 +18,9 @@ export default function PostHeader({
 
   return (
     <>
-      <div className="mt-4 mb-4 md:mb-4 mx-auto w-full sm:relative">
-        <CoverImage title={title} coverImage={coverImage} />
-        <div className="sm:absolute bottom-0 left-0 md:mx-4 md:my-4 space-y-3 sm:bg-white p-4 text-uil-key">
+      <div className={`${!coverImage && 'p-2'} mt-4 mb-4 md:mb-4 mx-auto w-full sm:relative`}>
+        {coverImage && <CoverImage title={title} coverImage={coverImage} />}
+        <div className={`${coverImage && 'sm:absolute'} bottom-0 left-0 md:mx-4 md:my-4 mt-8 space-y-3 sm:bg-white p-4 text-uil-key`}>
           <PostTitle>{title}</PostTitle>
           { isPage ? ('') : (
             <div className="hidden md:block text-black">

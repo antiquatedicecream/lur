@@ -11,10 +11,14 @@ import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import Tags from '../../components/tags'
 import MoreStories from '../../components/more-stories';
+import {categoriesContainMatch} from '../../lib/filter-utils';
+import {TRANSLATES_MARKER, UKRAINIAN_MARKER} from '../../lib/constants';
 
 export default function Post({ post, posts, preview }) {
   const router = useRouter()
   const morePosts = posts?.edges
+  const isTranslation = categoriesContainMatch(post.categories, TRANSLATES_MARKER);
+  const route = 'translates'
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -22,7 +26,7 @@ export default function Post({ post, posts, preview }) {
 
   return (
     <Layout preview={preview}>
-      <Header slug={post?.slug} />
+      <Header slug={post?.slug} route={route} />
       <Container>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
@@ -47,7 +51,7 @@ export default function Post({ post, posts, preview }) {
               </Head>
               <PostHeader
                 title={post.title}
-                coverImage={post.featuredImage?.node}
+                coverImage={!isTranslation && post.featuredImage?.node}
                 date={post.date}
                 author={post.author?.node}
                 categories={post.categories}
