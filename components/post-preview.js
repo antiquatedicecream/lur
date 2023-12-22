@@ -15,6 +15,7 @@ export default function PostPreview(
     author,
     slug,
     categories,
+    route,
     postCount,
   }) {
   const isUkrainianPost = categoriesContainMatch(categories, UKRAINIAN_MARKER);
@@ -26,18 +27,18 @@ export default function PostPreview(
     categoriesContainMatch(categories, COMMEMORATION_MARKER)
       ? 'text-commemorative-text'
       : 'text-uil-key';
+  const routeString = route ? route : 'posts';
 
   return (<>
     {!isUkrainianPost ?
       (<div className={backgroundColour}>
         <div className="mb-2 xl:mg-5">
-          {coverImage && (<CoverImage title={title} coverImage={coverImage}
-                                      slug={slug}/>)}
+          {coverImage && (<CoverImage title={title} coverImage={coverImage} slug={slug} route={route}/>)}
         </div>
         <div className="mb-3 mx-3">
           <h3
             className={`text-4xl font-adriane-text-bold mb-0 leading-snug ${textColour}`}>
-            <Link href={`/posts/${slug}`}>
+            <Link href={`/${routeString}/${slug}`}>
               <a
                 className="hover:underline"
                 dangerouslySetInnerHTML={{__html: title}}

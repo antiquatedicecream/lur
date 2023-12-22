@@ -2,7 +2,8 @@ import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function CoverImage({ title, coverImage, slug }) {
+export default function CoverImage({ title, coverImage, slug, route }) {
+  const routeString = route ? route : 'posts';
   const image = (
     <Image
       width={2000}
@@ -17,7 +18,7 @@ export default function CoverImage({ title, coverImage, slug }) {
   return (
     <div className="sm:mx-0 flex">
       {slug ? (
-        <Link href={`/posts/${slug}`}>
+        <Link href={`/${routeString}/${slug}`}>
           <a aria-label={title} className={"flex"}>{image}</a>
         </Link>
       ) : (

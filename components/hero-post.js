@@ -15,6 +15,7 @@ export default function HeroPost(
     author,
     slug,
     categories,
+    route
   }) {
 
   const backgroundColour =
@@ -25,6 +26,7 @@ export default function HeroPost(
     categoriesContainMatch(categories, COMMEMORATION_MARKER)
       ? 'text-commemorative-text'
       : 'text-uil-key';
+  const routeString = route ? route : 'posts';
 
   return (
     <section>
@@ -33,14 +35,14 @@ export default function HeroPost(
         className={`lg:grid lg:grid-cols-3 lg:gap-x-2 lg:col-gap-8 sm:space-x-4 ${backgroundColour}`}>
         <div className="col-span-2 flex">
           {coverImage && (
-            <CoverImage title={title} coverImage={coverImage} slug={slug}/>
+            <CoverImage title={title} coverImage={coverImage} slug={slug} route={route}/>
           )}
         </div>
         <div className="col-span-1 p-3">
           <div>
             <h3
               className={`mb-4 text-4xl font-adriane-text-bold lg:text-6xl leading-tight ${textColour}`}>
-              <Link href={`/posts/${slug}`}>
+              <Link href={`/${routeString}/${slug}`}>
                 <a
                   className="hover:underline"
                   dangerouslySetInnerHTML={{__html: title}}
