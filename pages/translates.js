@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Container from '../components/container'
-import HeroPost from '../components/hero-post'
 import Navbar from '../components/navbar'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
@@ -33,7 +32,7 @@ export default function Translates({ allPosts: { edges }, preview }) {
         </div>
         <Container>
           <div className="mb-6">
-            {translatesPosts.length > 0 && <MoreTranslations posts={translatesPosts} route='translates' />}
+            {translatesPosts.length > 0 && <MoreTranslations posts={translatesPosts} route={route} />}
           </div>
           
         </Container>

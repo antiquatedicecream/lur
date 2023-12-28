@@ -4,7 +4,7 @@ export default function MoreTranslations({posts, route}) {
 
   return (<section>
         <div
-            className="">
+            className="space-y-6">
           {posts.map(({node}) => (<PostPreview
                   key={node.slug}
                   title={node.title}
