@@ -28,7 +28,7 @@ export default function Navbar( {slug, route} ) {
                         'current-menu-item': slug === 'support-us-post',
                     })}>Support Us</a></li>
                     <li><a href="/translates" className={cn({
-                        'current-menu-item': route === 'translates',
+                        'current-menu-item': route === 'translates' || 'translators' || 'authors',
                     })}>LUR Translates</a></li>
                 </ul>
                 <div className="flex-initial flex justify-end">
