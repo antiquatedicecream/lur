@@ -9,8 +9,8 @@ import NavbarTranslate from '../../components/navbar-translate';
 import {TRANSLATOR_MARKER} from '../../lib/constants';
 
 export default function Translators({ allPosts: { edges }, preview }) {
-  const translatorposts = postsByCategories(edges, [TRANSLATOR_MARKER]);
-  const heroPost = translatorposts[0]?.node;
+  const translatorPosts = postsByCategories(edges, [TRANSLATOR_MARKER]);
+  const heroPost = translatorPosts[0]?.node;
   const route = 'translates/translators';
 
   return (
@@ -37,8 +37,8 @@ export default function Translators({ allPosts: { edges }, preview }) {
         </div>
         <Container>
           <div className="mb-6">
-            {translatorposts.length > 0 &&
-              <MoreTranslations posts={translatorposts} route={route} hideMetaData={true}/>}
+            {translatorPosts.length > 0 &&
+              <MoreTranslations posts={translatorPosts} route={route} hideMetaData={true}/>}
           </div>
 
         </Container>

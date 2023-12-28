@@ -66,7 +66,7 @@ export default function Author({ post, posts, preview }) {
             </article>
 
             <SectionSeparator/>
-            {morePosts.length > 0 && <MoreStories posts={morePosts}/>} // TODO:
+            {morePosts.length > 0 && <MoreStories posts={morePosts} route={route}/>} // TODO:
             add more posts with same tag as [slug] here
           </>
         )}
