@@ -15,8 +15,11 @@ export default function Navbar( {slug, route} ) {
                 <ul
                   className="flex-initial flex-col sm:flex-row sm:align-middle sm:content-center flex space-y-2 sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto text-lg text-uil-key px-14">
                     <li className={cn({
-                        'current-menu-item': slug !== 'about-us' && slug !==
-                          'archive-post' && slug !== 'support-us-post' && route !== 'translates',
+                        'current-menu-item': slug !== 'about-us'
+                          && slug !== 'archive-post'
+                          && slug !== 'support-us-post'
+                          && route !== 'translates'
+                          && route !== 'translators',
                     })}><a href="/">Home</a></li>
                     <li><a href="/posts/about-us" className={cn({
                         'current-menu-item': slug === 'about-us',
@@ -28,7 +31,9 @@ export default function Navbar( {slug, route} ) {
                         'current-menu-item': slug === 'support-us-post',
                     })}>Support Us</a></li>
                     <li><a href="/translates" className={cn({
-                        'current-menu-item': route === 'translates' || 'translators' || 'authors',
+                        'current-menu-item': route === 'translates'
+                          || route === 'translators'
+                          || route === 'authors',
                     })}>LUR Translates</a></li>
                 </ul>
                 <div className="flex-initial flex justify-end">
