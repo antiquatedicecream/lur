@@ -19,7 +19,8 @@ export default function Navbar( {slug, route} ) {
                           && slug !== 'archive-post'
                           && slug !== 'support-us-post'
                           && route !== 'translates'
-                          && route !== 'translators',
+                          && route !== 'translates/translators'
+                          && route !== 'translates/authors'
                     })}><a href="/">Home</a></li>
                     <li><a href="/posts/about-us" className={cn({
                         'current-menu-item': slug === 'about-us',
@@ -32,8 +33,8 @@ export default function Navbar( {slug, route} ) {
                     })}>Support Us</a></li>
                     <li><a href="/translates" className={cn({
                         'current-menu-item': route === 'translates'
-                          || route === 'translators'
-                          || route === 'authors',
+                          || route === 'translates/translators'
+                          || route === 'translates/authors',
                     })}>LUR Translates</a></li>
                 </ul>
                 <div className="flex-initial flex justify-end">

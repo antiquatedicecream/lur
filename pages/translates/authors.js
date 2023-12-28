@@ -38,7 +38,7 @@ export default function Authors({ allPosts: { edges }, preview }) {
         <Container>
           <div className="mb-6">
             {authorPosts.length > 0 &&
-              <MoreTranslations posts={authorPosts} route={route}/>}
+              <MoreTranslations posts={authorPosts} route={route} hideMetaData={true}/>}
           </div>
 
         </Container>
