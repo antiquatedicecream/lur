@@ -4,6 +4,7 @@ import {COMMEMORATION_MARKER} from "../lib/constants";
 export default function Categories({ categories, route }) {
 
   const filteredCategories = removeStringFromCategories(categories, COMMEMORATION_MARKER);
+  const categoriesShouldbeHidden = route === 'translates' || route === 'Translation'
 
   return (
 
@@ -11,7 +12,7 @@ export default function Categories({ categories, route }) {
 
       {filteredCategories.edges.length > 0 ? (
           filteredCategories.edges.map((category, index) => (
-          <span key={index} className={`ml-1 ${route === 'translates' ? 'hidden' : ''}`}>
+          <span key={index} className={`ml-1 ${categoriesShouldbeHidden ? 'hidden' : ''}`}>
             • {category.node.name}
           </span>
         ))

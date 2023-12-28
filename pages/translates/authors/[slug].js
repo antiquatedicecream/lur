@@ -57,6 +57,7 @@ export default function Author({ post, posts, preview }) {
                 date={post.date}
                 author={post.author?.node}
                 categories={post.categories}
+                route={route}
               />
               <PostBody content={post.content}/>
               <footer>
