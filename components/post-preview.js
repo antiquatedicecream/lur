@@ -50,7 +50,7 @@ export default function PostPreview(
           {!hideMetaData &&
             <div className="xl:text-lg mb-4 font-adriane-text-italic">
               <Date dateString={date}/>
-              <Categories categories={categories}/>
+              <Categories categories={categories} route={route}/>
             </div>}
           <div
             className="text-lg leading-relaxed mb-4"
