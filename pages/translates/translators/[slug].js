@@ -12,7 +12,7 @@ import Head from 'next/head'
 import Tags from '../../../components/tags'
 import MoreStories from '../../../components/more-stories';
 
-export default function Author({ post, posts, preview }) {
+export default function Translator({ post, posts, preview }) {
   const router = useRouter()
   const morePosts = posts?.edges
   const route = 'authors'
@@ -84,7 +84,7 @@ export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug()
 
   return {
-    paths: allPosts.edges.map(({ node }) => `/translates/authors/${node.slug}`) || [],
+    paths: allPosts.edges.map(({ node }) => `/translates/translators/${node.slug}`) || [],
     fallback: true,
   }
 }
