@@ -28,7 +28,7 @@ export default function PostHeader({
           <PostTitle>{title}</PostTitle>
           { shouldBeHidden ? ('') : (
             <div className="hidden md:block text-black">
-              <Avatar author={author} />
+              <Avatar author={author} route={route} />
             </div>
           )}
         </div>

@@ -1,6 +1,7 @@
 import Image from 'next/image'
+import Link from 'next/link';
 
-export default function Avatar({ author }) {
+export default function Avatar({ author, route }) {
   const name = author
     ? author.firstName && author.lastName
       ? `${author.firstName} ${author.lastName}`
@@ -9,15 +10,13 @@ export default function Avatar({ author }) {
 
   return (
     <div className="flex items-center">
-      {/* <div className="w-12 h-12 relative mr-4">
-        <Image
-          src={author.avatar.url}
-          layout="fill"
-          className="rounded-full"
-          alt={name}
-        />
-      </div> */}
-      <div className="text-lg font-adriane-text-italic font-bold">{name}</div>
+      {route === 'translates' ?
+        <a href={`/translates/translators/${author.lastName?.toLowerCase()}`}>
+          <div className="text-lg font-adriane-text-italic font-bold underline">{name}</div>
+        </a>
+        :
+          <div className="text-lg font-adriane-text-italic font-bold">{name}</div>}
+
     </div>
   )
 }
