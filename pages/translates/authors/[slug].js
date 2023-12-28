@@ -15,7 +15,7 @@ import MoreStories from '../../../components/more-stories';
 export default function Author({ post, posts, preview }) {
   const router = useRouter()
   const morePosts = posts?.edges
-  const route = 'authors'
+  const route = 'translates/authors'
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
