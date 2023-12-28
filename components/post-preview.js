@@ -16,6 +16,7 @@ export default function PostPreview(
     slug,
     categories,
     route,
+    titleFontSize,
     postCount,
   }) {
   const isUkrainianPost = categoriesContainMatch(categories, UKRAINIAN_MARKER);
@@ -37,7 +38,7 @@ export default function PostPreview(
         </div>
         <div className="mb-3 mx-3">
           <h3
-            className={`text-4xl font-adriane-text-bold mb-0 leading-snug ${textColour}`}>
+            className={`text-${titleFontSize ? titleFontSize : '4xl'} font-adriane-text-bold mb-0 leading-snug ${textColour}`}>
             <Link href={`/${routeString}/${slug}`}>
               <a
                 className="hover:underline"

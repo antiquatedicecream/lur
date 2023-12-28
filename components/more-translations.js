@@ -15,6 +15,7 @@ export default function MoreTranslations({posts, route}) {
                   excerpt={node.excerpt}
                   categories={node.categories}
                   route={route}
+                  titleFontSize={'2xl'}
                   postCount={posts.length}
               />))}
         </div>
