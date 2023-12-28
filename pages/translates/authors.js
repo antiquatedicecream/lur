@@ -1,17 +1,17 @@
 import Head from 'next/head'
-import Container from '../components/container'
-import Navbar from '../components/navbar'
-import Layout from '../components/layout'
-import { getAllPostsForHome } from '../lib/api'
-import {postsByCategories} from "../lib/filter-utils";
-import {TRANSLATES_MARKER} from "../lib/constants";
-import MoreTranslations from '../components/more-translations';
-import NavbarTranslate from '../components/navbar-translate';
+import Container from '../../components/container'
+import Navbar from '../../components/navbar'
+import Layout from '../../components/layout'
+import { getAllPostsForHome } from '../../lib/api'
+import {postsByCategories} from "../../lib/filter-utils";
+import MoreTranslations from '../../components/more-translations';
+import NavbarTranslate from '../../components/navbar-translate';
+import {AUTHOR_MARKER, TRANSLATOR_MARKER} from '../../lib/constants';
 
-export default function Translates({ allPosts: { edges }, preview }) {
-  const translatesPosts = postsByCategories(edges, [TRANSLATES_MARKER]);
-  const heroPost = translatesPosts[0]?.node;
-  const route = 'translates';
+export default function Authors({ allPosts: { edges }, preview }) {
+  const authorPosts = postsByCategories(edges, [AUTHOR_MARKER]);
+  const heroPost = authorPosts[0]?.node;
+  const route = 'translates/authors';
 
   return (
     <>
@@ -37,8 +37,8 @@ export default function Translates({ allPosts: { edges }, preview }) {
         </div>
         <Container>
           <div className="mb-6">
-            {translatesPosts.length > 0 &&
-              <MoreTranslations posts={translatesPosts} route={route}/>}
+            {authorPosts.length > 0 &&
+              <MoreTranslations posts={authorPosts} route={route}/>}
           </div>
 
         </Container>
