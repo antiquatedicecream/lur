@@ -38,7 +38,7 @@ export default function Translators({ allPosts: { edges }, preview }) {
         <Container>
           <div className="mb-6">
             {translatorposts.length > 0 &&
-              <MoreTranslations posts={translatorposts} route={route}/>}
+              <MoreTranslations posts={translatorposts} route={route} hideMetaData={true}/>}
           </div>
 
         </Container>

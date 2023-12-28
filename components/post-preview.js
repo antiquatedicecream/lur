@@ -17,6 +17,7 @@ export default function PostPreview(
     categories,
     route,
     titleFontSize,
+    hideMetaData,
     postCount,
   }) {
   const isUkrainianPost = categoriesContainMatch(categories, UKRAINIAN_MARKER);
@@ -46,15 +47,16 @@ export default function PostPreview(
               ></a>
             </Link>
           </h3>
-          <div className="xl:text-lg mb-4 font-adriane-text-italic">
-            <Date dateString={date}/>
-            <Categories categories={categories}/>
-          </div>
+          {!hideMetaData &&
+            <div className="xl:text-lg mb-4 font-adriane-text-italic">
+              <Date dateString={date}/>
+              <Categories categories={categories}/>
+            </div>}
           <div
             className="text-lg leading-relaxed mb-4"
             dangerouslySetInnerHTML={{__html: excerpt}}
           />
-          <Avatar author={author}/>
+          {!hideMetaData && <Avatar author={author}/>}
         </div>
       </div>) :
       ('')}

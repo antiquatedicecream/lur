@@ -9,7 +9,7 @@ export default function NavbarTranslate({slug, route}) {
           <li><a href="/translates/authors/krymskyi">Krymskyi</a></li>
           <li><a href="/translates/authors/kulish">Kulish</a></li>
           <li><a href="/translates/authors/levkova">Levkova</a></li>
-          <li><a href="/translates/authors/savka">Savka</a></li>
+          <li><a href="/translates/authors/lushchevska">Lushchevska</a></li>
           <li><a href="/translates/authors/yablonska">Yablonska</a></li>
           <li><a href="/translates/translators/">Translators</a></li>
         </ul>

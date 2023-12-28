@@ -1,6 +1,6 @@
 import PostPreview from './post-preview';
 
-export default function MoreTranslations({posts, route}) {
+export default function MoreTranslations({posts, route, hideMetaData}) {
 
   return (<section>
         <div
@@ -16,6 +16,7 @@ export default function MoreTranslations({posts, route}) {
                   categories={node.categories}
                   route={route}
                   titleFontSize={'2xl'}
+                  hideMetaData={hideMetaData}
                   postCount={posts.length}
               />))}
         </div>
