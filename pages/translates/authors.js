@@ -27,7 +27,7 @@ export default function Authors({ allPosts: { edges }, preview }) {
           <meta name="twitter:creator" content="@londonukrainianreview"/>
           <meta property="og:title" content="London Ukrainian Review"/>
           <meta property="og:description"
-                content="London Ukrainian Review is a special publication of the Ukrainian Institute London. Dedicated to the three decades of Ukraine’s independence, it discusses the challenges of climate and sustainability, achievements in cinema, literature, and academia, while looking ahead to what Ukraine has to offer to the world."/>
+                content="The London Ukrainian Review is an open-access journal that tackles global challenges through the prism of Ukraine while adopting a distinctly internationalist perspective on the Ukrainian past and present."/>
         </Head>
         <div className="mb-2">
           <Navbar route={route}/>
