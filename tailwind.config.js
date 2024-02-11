@@ -6,7 +6,10 @@ module.exports = {
     fontFamily: {
       'adriane-text': ['adriane-text'],
       'adriane-text-bold': ['adriane-text-bold'],
-      'adriane-text-italic': ['adriane-text-italic']
+      'adriane-text-italic': ['adriane-text-italic'],
+      'josefin-sans-v32-latin-regular': ['josefin-sans-v32-latin-regular'],
+      'josefin-sans-v32-latin-semibold': ['josefin-sans-v32-latin-semibold'],
+      'josefin-sans-v32-latin-bold': ['josefin-sans-v32-latin-bold']
     },
     extend: {
       colors: {
