@@ -12,7 +12,7 @@ export default function Navbar( {slug, route} ) {
                       className={'font-adriane-text-bold h-full text-8xl md:text-9xl py-1 sm:py-0 text-uil-key pr-3 sm:px-3'}>LUR
                     </div>
                     <a href="/"
-                       className="font-adriane-text-bold text-2xl sm:text-2xl py-1 sm:py-0 text-black px-3 flex flex-col justify-center">
+                       className="font-adriane-text-bold text-commemorative-text text-2xl sm:text-2xl py-1 sm:py-0 text-black px-3 flex flex-col justify-center">
                         <h1>London</h1>
                         <h1>Ukrainian</h1>
                         <h1>Review</h1></a>
