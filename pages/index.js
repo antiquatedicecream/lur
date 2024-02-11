@@ -33,7 +33,7 @@ export default function Index({ allPosts: { edges }, preview }) {
           <meta property="og:description" content="The London Ukrainian Review is an open-access journal that tackles global challenges through the prism of Ukraine while adopting a distinctly internationalist perspective on the Ukrainian past and present." />
         </Head>
         <div className="mb-4">
-          <Navbar route={route} />
+          <Navbar route={route} slug={"index"} />
         </div>
         <Container>
           <div className="mb-6">
@@ -52,12 +52,12 @@ export default function Index({ allPosts: { edges }, preview }) {
           <div className="mb-6">
             {currentIssuePosts.length > 0 && <MoreStories posts={currentIssuePosts.slice(1)} />}
           </div>
-          <div className="mb-6">
-            {olderFilteredPosts.length > 0 && <MoreStories posts={olderFilteredPosts} />}
-          </div>
-          <div className="">
-            {reprintPosts.length > 0 && <Reprints posts={reprintPosts} />}
-          </div>
+          {/*<div className="mb-6">*/}
+          {/*  {olderFilteredPosts.length > 0 && <MoreStories posts={olderFilteredPosts} />}*/}
+          {/*</div>*/}
+          {/*<div className="">*/}
+          {/*  {reprintPosts.length > 0 && <Reprints posts={reprintPosts} />}*/}
+          {/*</div>*/}
           
         </Container>
       </Layout>

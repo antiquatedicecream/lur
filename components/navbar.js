@@ -20,12 +20,7 @@ export default function Navbar( {slug, route} ) {
                 <ul
                   className="grid grid-cols-2 gap-2 text-center sm:flex-initial sm:flex-row sm:align-middle sm:content-center sm:flex  sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto text-lg text-uil-key">
                     <li className={cn({
-                        'current-menu-item': slug !== 'about-us'
-                          && slug !== 'archive-post'
-                          && slug !== 'support-us-post'
-                          && route !== 'translates'
-                          && route !== 'translates/translators'
-                          && route !== 'translates/authors'
+                        'current-menu-item': slug === 'index',
                     })}><a href="/">Home</a></li>
                     <li><a href="/posts/about-us" className={cn({
                         'current-menu-item': slug === 'about-us',
@@ -41,6 +36,9 @@ export default function Navbar( {slug, route} ) {
                           || route === 'translates/translators'
                           || route === 'translates/authors',
                     })}>LUR Translates</a></li>
+                    <li><a href="/archive" className={cn({
+                        'current-menu-item': slug === 'archive',
+                    })}>Archive</a></li>
                 </ul>
                 {/*<div className="flex-initial flex justify-end">*/}
                 {/*    <a href="https://ukrainianinstitute.org.uk/" target="_blank"*/}
