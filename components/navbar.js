@@ -6,7 +6,7 @@ export default function Navbar( {slug, route} ) {
     return (
         <nav className="min-w-full bg-uil-post">
             <div
-              className="container flex flex-col sm:flex-row mx-auto md:px-5 sm:pl-7 pt-4 sm:pt-3 pb-2 md:flex md:flex-row space-y-2 md:space-y-0 md:whitespace-nowrap md:align-middle items-center">
+              className="container flex flex-col sm:flex-row mx-auto px-0 md:px-5 sm:pl-7 sm:pt-3 pb-2 md:flex md:flex-row space-y-2 md:space-y-0 md:whitespace-nowrap md:align-middle items-center">
                 <div className="flex-1 flex justify-start">
                     <div
                       className={'font-adriane-text-bold h-full text-8xl md:text-9xl py-1 sm:py-0 text-uil-key pr-3 sm:px-3'}>LUR
