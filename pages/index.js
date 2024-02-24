@@ -6,12 +6,19 @@ import Navbar from '../components/navbar'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
 import {postsByCategories} from "../lib/filter-utils";
-import {SPECIAL_CURRENT_ISSUE_MARKER, SPECIAL_ISSUE_ONE_MARKER, SPECIAL_ISSUE_TWO_MARKER, REPRINT_MARKER} from "../lib/constants";
+import {
+  SPECIAL_ISSUE_THREE_MARKER,
+  SPECIAL_ISSUE_ONE_MARKER,
+  SPECIAL_ISSUE_TWO_MARKER,
+  REPRINT_MARKER,
+  CURRENT_ISSUE_MARKER,
+} from '../lib/constants';
 import MoreStories from '../components/more-stories';
 
 export default function Index({ allPosts: { edges }, preview }) {
-  const currentIssuePosts = postsByCategories(edges, [SPECIAL_CURRENT_ISSUE_MARKER]);
+  const currentIssuePosts = postsByCategories(edges, [CURRENT_ISSUE_MARKER]);
   const heroPost = currentIssuePosts[0]?.node;
+  const specialIssueThreePosts = postsByCategories(edges, [SPECIAL_ISSUE_THREE_MARKER]);
   const reprintPosts = postsByCategories(edges, [REPRINT_MARKER]);
   const olderFilteredPosts = postsByCategories(edges, [SPECIAL_ISSUE_ONE_MARKER, SPECIAL_ISSUE_TWO_MARKER])
   const route = 'posts'
@@ -50,7 +57,13 @@ export default function Index({ allPosts: { edges }, preview }) {
             )}
           </div>
           <div className="mb-6">
-            {currentIssuePosts.length > 0 && <MoreStories posts={currentIssuePosts.slice(1)} />}
+            {currentIssuePosts.length > 0 &&
+              <MoreStories posts={currentIssuePosts.slice(1)}/>}
+          </div>
+          <div className="mb-6">
+            {specialIssueThreePosts.length > 0 &&
+              <MoreStories posts={specialIssueThreePosts}
+                           heading={'Special Issue 3 (2023)'}/>}
           </div>
           {/*<div className="mb-6">*/}
           {/*  {olderFilteredPosts.length > 0 && <MoreStories posts={olderFilteredPosts} />}*/}
@@ -58,16 +71,16 @@ export default function Index({ allPosts: { edges }, preview }) {
           {/*<div className="">*/}
           {/*  {reprintPosts.length > 0 && <Reprints posts={reprintPosts} />}*/}
           {/*</div>*/}
-          
+
         </Container>
       </Layout>
     </>
   )
 }
 
-export async function getStaticProps({ preview = false }) {
+export async function getStaticProps({preview = false}) {
   const allPosts = await getAllPostsForHome(preview)
   return {
-    props: { allPosts, preview },
+    props: {allPosts, preview},
   }
 }

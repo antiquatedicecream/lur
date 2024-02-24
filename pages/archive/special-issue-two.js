@@ -6,7 +6,7 @@ import Navbar from '../../components/navbar'
 import Layout from '../../components/layout'
 import { getAllPostsForHome } from '../../lib/api'
 import {postsByCategories} from "../../lib/filter-utils";
-import {SPECIAL_CURRENT_ISSUE_MARKER, SPECIAL_ISSUE_ONE_MARKER, SPECIAL_ISSUE_TWO_MARKER, REPRINT_MARKER} from "../../lib/constants";
+import {SPECIAL_ISSUE_THREE_MARKER, SPECIAL_ISSUE_ONE_MARKER, SPECIAL_ISSUE_TWO_MARKER, REPRINT_MARKER} from "../../lib/constants";
 import MoreStories from '../../components/more-stories';
 import NavbarTranslate from '../../components/navbar-translate';
 import NavbarArchive from '../../components/navbar-archive';
