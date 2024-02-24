@@ -60,11 +60,11 @@ export default function Index({ allPosts: { edges }, preview }) {
             {currentIssuePosts.length > 0 &&
               <MoreStories posts={currentIssuePosts.slice(1)}/>}
           </div>
-          <div className="mb-6">
-            {specialIssueThreePosts.length > 0 &&
-              <MoreStories posts={specialIssueThreePosts}
-                           heading={'Special Issue 3 (2023)'}/>}
-          </div>
+          {/*<div className="mb-6">*/}
+          {/*  {specialIssueThreePosts.length > 0 &&*/}
+          {/*    <MoreStories posts={specialIssueThreePosts}*/}
+          {/*                 heading={'Special Issue 3 (2023)'}/>}*/}
+          {/*</div>*/}
           {/*<div className="mb-6">*/}
           {/*  {olderFilteredPosts.length > 0 && <MoreStories posts={olderFilteredPosts} />}*/}
           {/*</div>*/}
