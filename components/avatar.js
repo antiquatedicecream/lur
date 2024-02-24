@@ -1,4 +1,4 @@
-export default function Avatar({ author, route }) {
+export default function Avatar({ author, route, translatorBioToLink }) {
   const name = author
     ? author.firstName && author.lastName
       ? `${author.firstName} ${author.lastName}`
@@ -7,8 +7,8 @@ export default function Avatar({ author, route }) {
 
   return (
     <div className="flex items-center">
-      {route === 'translates' ?
-        <a href={`/translates/translators/${author.lastName?.toLowerCase()}`}>
+      {route === 'translates' || translatorBioToLink ?
+        <a href={`/translates/translators/${translatorBioToLink ? translatorBioToLink : author.lastName?.toLowerCase()}`}>
           <div className="text-lg font-adriane-text-italic font-bold underline">{name}</div>
         </a>
         :

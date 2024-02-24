@@ -12,7 +12,8 @@ export default function PostHeader({
   date,
   author,
   categories,
-  route
+  route,
+  translatorBioToLink
 }) {
 
   const isPage = categoriesContainMatch(categories, PAGES_MARKER)
@@ -28,7 +29,7 @@ export default function PostHeader({
           <PostTitle>{title}</PostTitle>
           { shouldBeHidden ? ('') : (
             <div className="hidden md:block text-black">
-              <Avatar author={author} route={route} />
+              <Avatar author={author} route={route} translatorBioToLink={translatorBioToLink} />
             </div>
           )}
         </div>

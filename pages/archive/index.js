@@ -1,17 +1,17 @@
 import Head from 'next/head'
-import Container from '../components/container'
-import Reprints from '../components/reprints'
-import HeroPost from '../components/hero-post'
-import Navbar from '../components/navbar'
-import Layout from '../components/layout'
-import { getAllPostsForHome } from '../lib/api'
-import {postsByCategories} from "../lib/filter-utils";
-import {CURRENT_ISSUE_MARKER, ISSUE_ONE_MARKER, ISSUE_TWO_MARKER, REPRINT_MARKER} from "../lib/constants";
-import MoreStories from '../components/more-stories';
-import NavbarTranslate from '../components/navbar-translate';
-import NavbarArchive from '../components/navbar-archive';
+import Container from '../../components/container'
+import Reprints from '../../components/reprints'
+import HeroPost from '../../components/hero-post'
+import Navbar from '../../components/navbar'
+import Layout from '../../components/layout'
+import { getAllPostsForHome } from '../../lib/api'
+import {postsByCategories} from "../../lib/filter-utils";
+import {CURRENT_ISSUE_MARKER, ISSUE_ONE_MARKER, ISSUE_TWO_MARKER, REPRINT_MARKER} from "../../lib/constants";
+import MoreStories from '../../components/more-stories';
+import NavbarTranslate from '../../components/navbar-translate';
+import NavbarArchive from '../../components/navbar-archive';
 
-export default function Archive({ allPosts: { edges }, preview }) {
+export default function ArchiveIndex({ allPosts: { edges }, preview }) {
   // const currentIssuePosts = postsByCategories(edges, [CURRENT_ISSUE_MARKER]);
   // const heroPost = currentIssuePosts[0]?.node;
   const reprintPosts = postsByCategories(edges, [REPRINT_MARKER]);
