@@ -6,14 +6,14 @@ import Navbar from '../components/navbar'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
 import {postsByCategories} from "../lib/filter-utils";
-import {CURRENT_ISSUE_MARKER, ISSUE_ONE_MARKER, ISSUE_TWO_MARKER, REPRINT_MARKER} from "../lib/constants";
+import {SPECIAL_CURRENT_ISSUE_MARKER, SPECIAL_ISSUE_ONE_MARKER, SPECIAL_ISSUE_TWO_MARKER, REPRINT_MARKER} from "../lib/constants";
 import MoreStories from '../components/more-stories';
 
 export default function Index({ allPosts: { edges }, preview }) {
-  const currentIssuePosts = postsByCategories(edges, [CURRENT_ISSUE_MARKER]);
+  const currentIssuePosts = postsByCategories(edges, [SPECIAL_CURRENT_ISSUE_MARKER]);
   const heroPost = currentIssuePosts[0]?.node;
   const reprintPosts = postsByCategories(edges, [REPRINT_MARKER]);
-  const olderFilteredPosts = postsByCategories(edges, [ISSUE_ONE_MARKER, ISSUE_TWO_MARKER])
+  const olderFilteredPosts = postsByCategories(edges, [SPECIAL_ISSUE_ONE_MARKER, SPECIAL_ISSUE_TWO_MARKER])
   const route = 'posts'
 
   return (

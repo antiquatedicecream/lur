@@ -11,12 +11,12 @@ import MoreStories from '../../components/more-stories';
 import NavbarTranslate from '../../components/navbar-translate';
 import NavbarArchive from '../../components/navbar-archive';
 
-export default function ArchiveIndex({ allPosts: { edges }, preview }) {
+export default function SpecialIssueOne({ allPosts: { edges }, preview }) {
   // const currentIssuePosts = postsByCategories(edges, [CURRENT_ISSUE_MARKER]);
   // const heroPost = currentIssuePosts[0]?.node;
   const reprintPosts = postsByCategories(edges, [REPRINT_MARKER]);
-  const specialIssueOnePosts = postsByCategories(edges, [SPECIAL_ISSUE_ONE_MARKER]);
-  const specialIssueTwoPosts = postsByCategories(edges, [SPECIAL_ISSUE_TWO_MARKER]);
+  // const specialIssueOnePosts = postsByCategories(edges, [SPECIAL_ISSUE_ONE_MARKER]);
+  // const specialIssueTwoPosts = postsByCategories(edges, [SPECIAL_ISSUE_TWO_MARKER]);
   const specialIssueThreePosts = postsByCategories(edges, [SPECIAL_CURRENT_ISSUE_MARKER]);
   const route = 'posts'
 
@@ -48,16 +48,16 @@ export default function ArchiveIndex({ allPosts: { edges }, preview }) {
               <MoreStories posts={specialIssueThreePosts}
                            heading={'Special Issue 3 (2023)'}/>}
           </div>
-          <div className="mb-6">
-            {specialIssueTwoPosts.length > 0 &&
-              <MoreStories posts={specialIssueTwoPosts}
-                           heading={'Special Issue 2 (2022)'}/>}
-          </div>
-          <div className="mb-6">
-            {specialIssueOnePosts.length > 0 &&
-              <MoreStories posts={specialIssueOnePosts}
-                           heading={'Special Issue 1 (2021)'}/>}
-          </div>
+          {/*<div className="mb-6">*/}
+          {/*  {specialIssueTwoPosts.length > 0 &&*/}
+          {/*    <MoreStories posts={specialIssueTwoPosts}*/}
+          {/*                 heading={'Special Issue 2 (2022)'}/>}*/}
+          {/*</div>*/}
+          {/*<div className="mb-6">*/}
+          {/*  {specialIssueOnePosts.length > 0 &&*/}
+          {/*    <MoreStories posts={specialIssueOnePosts}*/}
+          {/*                 heading={'Special Issue 1 (2021)'}/>}*/}
+          {/*</div>*/}
           <div className="">
             {reprintPosts.length > 0 && <Reprints posts={reprintPosts}/>}
           </div>
