@@ -4,7 +4,7 @@ export default function MoreStories({posts, route, heading}) {
 
   return (<section>
     {heading && <div
-      className={'font-adriane-text-bold text-commemorative-text text-2xl p-4 bg-commemorative-hero-bg text-center'}>{heading}</div>}
+      className={'font-adriane-text-bold text-commemorative-text text-2xl p-4 bg-uil-post text-center'}>{heading}</div>}
     <div
       className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 md:gap-x-12 lg:gap-x-12 gap-y-12">
     {posts.map(({node}) => (<PostPreview
