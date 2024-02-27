@@ -36,9 +36,7 @@ export default function Post({ post, posts, preview }) {
               <article className="bg-uil-post sm:w-4/5 mx-auto pb-12">
               {/* this article tag used to have a bg-gray-100 - test for eye cancer */}
               <Head>
-                <title>
-                  {post.title} | London Ukrainian Review
-                </title>
+                <title>{`${post.title} | London Ukrainian Review`}</title>
                 <meta
                   property="og:image"
                   // content={post.featuredImage?.node?.sourceUrl}
