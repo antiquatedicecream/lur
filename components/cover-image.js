@@ -6,7 +6,7 @@ export default function CoverImage({ title, coverImage, slug, route }) {
   const routeString = route ? route : 'posts';
   const image = (
     <Image
-      width={1600}
+      width={2000}
       height={1000}
       alt={coverImage ? `Cover Image for ${title}` : ' '}
       src={coverImage?.sourceUrl}
