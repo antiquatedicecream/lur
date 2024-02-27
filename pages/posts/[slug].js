@@ -20,7 +20,6 @@ import {
 export default function Post({ post, posts, preview }) {
   const router = useRouter()
   const morePosts = posts?.edges
-  const shouldLinkToTranslatorBio = categoriesContainMatch(post.categories, LINK_TRANSLATOR_BIO);
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
