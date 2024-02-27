@@ -56,7 +56,7 @@ export default function PostPreview(
             className="text-lg leading-relaxed mb-4"
             dangerouslySetInnerHTML={{__html: excerpt}}
           />
-          {!hideMetaData && <Avatar author={author}/>}
+          {!hideMetaData && <Avatar author={author} categories={categories} />}
         </div>
       </div>) :
       ('')}

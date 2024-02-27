@@ -1,5 +1,4 @@
 import {
-  removeStringFromCategories,
   removeStringsFromCategories,
 } from '../lib/filter-utils';
 import {COMMEMORATION_MARKER, LINK_TRANSLATOR_BIO} from '../lib/constants';

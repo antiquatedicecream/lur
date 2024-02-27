@@ -45,7 +45,7 @@ export default function ReprintPreview(
             className="text-lg leading-relaxed mb-4"
             dangerouslySetInnerHTML={{__html: excerpt}}
           />
-          <Avatar author={author}/>
+          <Avatar author={author} categories={categories}/>
         </div>
       </div>) :
       ('')}

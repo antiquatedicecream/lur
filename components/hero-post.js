@@ -60,7 +60,7 @@ export default function HeroPost(
               className="text-lg lg:text-sm xl:text-lg leading-relaxed mb-4 overflow-ellipsis"
               dangerouslySetInnerHTML={{__html: excerpt}}
             />
-            <Avatar author={author}/>
+            <Avatar author={author} categories={categories}/>
           </div>
         </div>
       </div>

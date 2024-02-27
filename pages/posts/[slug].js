@@ -11,10 +11,16 @@ import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import Tags from '../../components/tags'
 import MoreStories from '../../components/more-stories';
+import {categoriesContainMatch} from '../../lib/filter-utils';
+import {LINK_TRANSLATOR_BIO} from '../../lib/constants';
+import {
+  structuredClone
+} from 'next/dist/compiled/@edge-runtime/primitives/structured-clone';
 
 export default function Post({ post, posts, preview }) {
   const router = useRouter()
   const morePosts = posts?.edges
+  const shouldLinkToTranslatorBio = categoriesContainMatch(post.categories, LINK_TRANSLATOR_BIO);
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -51,7 +57,6 @@ export default function Post({ post, posts, preview }) {
                 date={post.date}
                 author={post.author?.node}
                 categories={post.categories}
-                translatorBioToLink={post.author?.node.lastName.toLowerCase()}
               />
               <PostBody content={post.content} />
               <footer>
