@@ -7,17 +7,25 @@ export default function Avatar({ author, route, categories }) {
       ? `${author.firstName} ${author.lastName}`
       : author.name
     : null
-  const shouldLinkTranslatorBio = route === 'translates' || categoriesContainMatch(categories, LINK_TRANSLATOR_BIO);
+  const lastNameLowerCase = author.lastName?.toLowerCase();
+  const href = '/translates/translators/' + lastNameLowerCase;
+  let shouldLinkTranslatorBio;
+  shouldLinkTranslatorBio = route === 'translates' || categoriesContainMatch(categories, LINK_TRANSLATOR_BIO);;
 
-  return (
-    <div className="flex items-center">
-      { shouldLinkTranslatorBio ?
-        <a href={`/translates/translators/${author.lastName?.toLowerCase()}`}>
+  if(shouldLinkTranslatorBio){
+    return (
+      <div className="flex items-center">
+        <a href={href}>
           <div className="text-lg font-adriane-text-italic font-bold underline">{name}</div>
         </a>
-        :
-          <div className="text-lg font-adriane-text-italic font-bold">{name}</div>}
-
-    </div>
-  )
+      </div>
+    )
+  } else {
+    return (
+      <div className="flex items-center">
+          <div
+            className="text-lg font-adriane-text-italic font-bold">{name}</div>
+      </div>
+    )
+  }
 }

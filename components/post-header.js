@@ -14,6 +14,9 @@ import {
   TRANSLATOR_MARKER,
 } from '../lib/constants';
 import {ca} from 'date-fns/locale';
+import {
+  structuredClone
+} from 'next/dist/compiled/@edge-runtime/primitives/structured-clone';
 
 export default function PostHeader({
   title,
@@ -50,7 +53,7 @@ export default function PostHeader({
           </div>
           <div className="mb-4 text-lg font-adriane-text-italic text-uil-key px-0 mx-0">
             <Date dateString={date} />
-            <Categories categories={categories} route={route}/>
+            <Categories categories={structuredClone(categories)} route={route}/>
           </div>
         </div>
       )}
