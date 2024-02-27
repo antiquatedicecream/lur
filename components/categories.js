@@ -1,9 +1,12 @@
-import {removeStringFromCategories} from "../lib/filter-utils";
-import {COMMEMORATION_MARKER} from "../lib/constants";
+import {
+  removeStringFromCategories,
+  removeStringsFromCategories,
+} from '../lib/filter-utils';
+import {COMMEMORATION_MARKER, LINK_TRANSLATOR_BIO} from '../lib/constants';
 
 export default function Categories({ categories, route }) {
 
-  const filteredCategories = removeStringFromCategories(categories, COMMEMORATION_MARKER);
+  const filteredCategories = removeStringsFromCategories(categories, [COMMEMORATION_MARKER, LINK_TRANSLATOR_BIO]);
   const categoriesShouldbeHidden = route === 'translates' || route === 'Translation'
 
   return (
