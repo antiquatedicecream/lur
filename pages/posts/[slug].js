@@ -51,6 +51,7 @@ export default function Post({ post, posts, preview }) {
                 date={post.date}
                 author={post.author?.node}
                 categories={post.categories}
+                translatorBioToLink={post.author?.node.lastName.toLowerCase()}
               />
               <PostBody content={post.content} />
               <footer>
