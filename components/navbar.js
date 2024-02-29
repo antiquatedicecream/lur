@@ -17,7 +17,7 @@ export default function Navbar( {slug, route} ) {
               className="container flex flex-col md:flex lg:flex-row mx-auto px-0 md:px-5 sm:pl-7 sm:pt-3 pb-2 space-y-2 md:space-y-0 md:whitespace-nowrap md:align-middle items-center">
                 <div className="flex-1 flex justify-start">
                     <a href="/"
-                      className={'font-josefin-sans-v32-latin-semibold font-black h-full text-8xl md:text-9xl py-0 sm:py-0 text-uil-key pr-3 sm:px-3 mt-5'}>LUR
+                      className={'font-josefin-sans-v32-latin-semibold font-black h-full text-8xl md:text-9xl py-0 sm:py-0 text-uil-key pr-3 sm:px-3 mt-6'}>LUR
                     </a>
                     <a href="/"
                        className="font-adriane-text-bold text-commemorative-text text-2xl sm:text-2xl py-0 sm:py-0 px-3 flex flex-col justify-center">
