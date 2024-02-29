@@ -27,7 +27,7 @@ export default function Navbar( {slug, route} ) {
                 </div>
                 <div className={`flex flex-col`}>
                     <ul
-                      className="grid grid-cols-2 gap-4 sm:gap-2 text-center sm:flex-initial sm:flex-row sm:align-middle sm:content-center sm:flex  sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto text-lg text-uil-key">
+                      className="grid grid-cols-2 gap-4 2xl:gap-2 text-center sm:flex-initial sm:flex-row sm:align-middle sm:content-center sm:flex  sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto text-lg text-uil-key">
                         <li className={cn({
                             'current-menu-item': slug === 'index',
                         })}><a href="/">Home</a></li>
@@ -70,7 +70,7 @@ export default function Navbar( {slug, route} ) {
                               leaveTo="transform opacity-0 scale-95"
                             >
                                 <Menu.Items
-                                  className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right bg-uil-post shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                  className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                     <div className="py-1">
                                         <Menu.Item>
                                             {({active}) => (
