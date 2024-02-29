@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Container from '../components/container'
 import Navbar from '../components/navbar'
 import Layout from '../components/layout'
-import { getAllPostsForHome } from '../lib/api'
+import {getAllPostsByCategoryName, getAllPostsForHome} from '../lib/api';
 import {postsByCategories} from "../lib/filter-utils";
 import {TRANSLATES_MARKER} from "../lib/constants";
 import MoreTranslations from '../components/more-translations';
@@ -48,7 +48,7 @@ export default function Translates({ allPosts: { edges }, preview }) {
 }
 
 export async function getStaticProps({preview = false}) {
-  const allPosts = await getAllPostsForHome(preview)
+  const allPosts = await getAllPostsByCategoryName(preview, TRANSLATES_MARKER)
   return {
     props: { allPosts, preview },
   }

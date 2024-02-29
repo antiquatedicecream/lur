@@ -6,12 +6,17 @@ import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
 import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
-import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
+import {
+  getAllPostsWithSlug,
+  getAllPostsWithSlugByCategoryName,
+  getPostAndMorePosts,
+} from '../../lib/api';
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import Tags from '../../components/tags'
 import MoreStories from '../../components/more-stories';
 import NavbarTranslate from '../../components/navbar-translate';
+import {TRANSLATES_MARKER, TRANSLATORS_MARKER} from '../../lib/constants';
 
 export default function Translation({ post, posts, preview }) {
   const router = useRouter()
@@ -85,7 +90,7 @@ export async function getStaticProps({params, preview = false, previewData}) {
 }
 
 export async function getStaticPaths() {
-  const allPosts = await getAllPostsWithSlug()
+  const allPosts = await getAllPostsWithSlugByCategoryName(TRANSLATES_MARKER)
 
   return {
     paths: allPosts.edges.map(({ node }) => `/translates/${node.slug}`) || [],

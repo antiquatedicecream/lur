@@ -4,20 +4,22 @@ import Reprints from '../../components/reprints'
 import HeroPost from '../../components/hero-post'
 import Navbar from '../../components/navbar'
 import Layout from '../../components/layout'
-import { getAllPostsForHome } from '../../lib/api'
+import {getAllPostsByCategoryName, getAllPostsForHome} from '../../lib/api';
 import {postsByCategories} from "../../lib/filter-utils";
-import {SPECIAL_ISSUE_THREE_MARKER, SPECIAL_ISSUE_ONE_MARKER, SPECIAL_ISSUE_TWO_MARKER, REPRINT_MARKER} from "../../lib/constants";
+import {
+  SPECIAL_ISSUE_THREE_MARKER,
+  SPECIAL_ISSUE_ONE_MARKER,
+  SPECIAL_ISSUE_TWO_MARKER,
+  REPRINT_MARKER,
+  SPECIAL_ISSUE_TWO_CATEGORY_NAME,
+} from '../../lib/constants';
 import MoreStories from '../../components/more-stories';
 import NavbarTranslate from '../../components/navbar-translate';
 import NavbarArchive from '../../components/navbar-archive';
 
 export default function SpecialIssueOne({ allPosts: { edges }, preview }) {
-  // const currentIssuePosts = postsByCategories(edges, [CURRENT_ISSUE_MARKER]);
-  // const heroPost = currentIssuePosts[0]?.node;
   const reprintPosts = postsByCategories(edges, [REPRINT_MARKER]);
-  // const specialIssueOnePosts = postsByCategories(edges, [SPECIAL_ISSUE_ONE_MARKER]);
   const specialIssueTwoPosts = postsByCategories(edges, [SPECIAL_ISSUE_TWO_MARKER]);
-  // const specialIssueThreePosts = postsByCategories(edges, [SPECIAL_CURRENT_ISSUE_MARKER]);
   const route = 'posts'
 
   return (
@@ -69,7 +71,7 @@ export default function SpecialIssueOne({ allPosts: { edges }, preview }) {
 }
 
 export async function getStaticProps({preview = false}) {
-  const allPosts = await getAllPostsForHome(preview);
+  const allPosts = await getAllPostsByCategoryName(preview, SPECIAL_ISSUE_TWO_CATEGORY_NAME);
   return {
     props: {allPosts, preview },
   }

@@ -8,10 +8,10 @@ import {
   categoriesContainMatch,
 } from '../lib/filter-utils';
 import {
-  AUTHOR_MARKER,
+  AUTHORS_MARKER,
   LINK_TRANSLATOR_BIO,
   PAGES_MARKER,
-  TRANSLATOR_MARKER,
+  TRANSLATORS_MARKER,
 } from '../lib/constants';
 import {ca} from 'date-fns/locale';
 import {
@@ -28,8 +28,8 @@ export default function PostHeader({
 }) {
 
   const isPage = categoriesContainMatch(categories, PAGES_MARKER)
-  const isTranslatorBio = categoriesContainMatch(categories, TRANSLATOR_MARKER)
-  const isAuthorBio = categoriesContainMatch(categories, AUTHOR_MARKER)
+  const isTranslatorBio = categoriesContainMatch(categories, TRANSLATORS_MARKER)
+  const isAuthorBio = categoriesContainMatch(categories, AUTHORS_MARKER)
   const shouldBeHidden = isPage || isTranslatorBio || isAuthorBio
 
   return (

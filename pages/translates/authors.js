@@ -2,14 +2,14 @@ import Head from 'next/head'
 import Container from '../../components/container'
 import Navbar from '../../components/navbar'
 import Layout from '../../components/layout'
-import { getAllPostsForHome } from '../../lib/api'
+import {getAllPostsByCategoryName, getAllPostsForHome} from '../../lib/api';
 import {postsByCategories} from "../../lib/filter-utils";
 import MoreTranslations from '../../components/more-translations';
 import NavbarTranslate from '../../components/navbar-translate';
-import {AUTHOR_MARKER, TRANSLATOR_MARKER} from '../../lib/constants';
+import {AUTHORS_MARKER, TRANSLATORS_MARKER} from '../../lib/constants';
 
 export default function Authors({ allPosts: { edges }, preview }) {
-  const authorPosts = postsByCategories(edges, [AUTHOR_MARKER]);
+  const authorPosts = postsByCategories(edges, [AUTHORS_MARKER]);
   const heroPost = authorPosts[0]?.node;
   const route = 'translates/authors';
 
@@ -48,7 +48,7 @@ export default function Authors({ allPosts: { edges }, preview }) {
 }
 
 export async function getStaticProps({preview = false}) {
-  const allPosts = await getAllPostsForHome(preview)
+  const allPosts = await getAllPostsByCategoryName(preview, AUTHORS_MARKER)
   return {
     props: { allPosts, preview },
   }
