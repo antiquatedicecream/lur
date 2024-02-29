@@ -6,6 +6,8 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
+import { CMS_NAME, CMS_URL } from '../lib/constants'
+import Image from 'next/image'
 import cn from 'classnames'
 
 export default function Navbar( {slug, route} ) {
@@ -44,9 +46,7 @@ export default function Navbar( {slug, route} ) {
                     })}>LUR Translates</a></li>
                     <Menu as="div" className="relative inline-block text-left">
                         <div>
-                            <Menu.Button className={`inline-flex w-full justify-center gap-x-1.5 rounded-md ${cn({
-                                'current-menu-item': slug === 'archive',
-                            })}`}>
+                            <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md">
                                 Archive
                                 <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
                             </Menu.Button>
@@ -61,14 +61,14 @@ export default function Navbar( {slug, route} ) {
                           leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95"
                         >
-                            <Menu.Items className="absolute  sm:right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            <Menu.Items className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                 <div className="py-1">
                                     <Menu.Item>
                                         {({ active }) => (
                                           <a
                                             href="/archive/special-issue-three"
                                             className={classNames(
-                                              active ? 'bg-gray-100 text-commemorative-text' : '',
+                                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                               'block px-4 py-2 text-sm'
                                             )}
                                           >
@@ -81,7 +81,7 @@ export default function Navbar( {slug, route} ) {
                                           <a
                                             href="/archive/special-issue-two"
                                             className={classNames(
-                                              active ? 'bg-gray-100 text-commemorative-text' : '',
+                                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                               'block px-4 py-2 text-sm'
                                             )}
                                           >
@@ -94,7 +94,7 @@ export default function Navbar( {slug, route} ) {
                                           <a
                                             href="/archive/special-issue-one"
                                             className={classNames(
-                                              active ? 'bg-gray-100 text-commemorative-text' : '',
+                                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                               'block px-4 py-2 text-sm'
                                             )}
                                           >
