@@ -26,7 +26,7 @@ export default function Navbar( {slug, route} ) {
                         <h1>Review</h1></a>
                 </div>
                 <ul
-                  className="grid grid-cols-2 gap-2 text-center sm:flex-initial sm:flex-row sm:align-middle sm:content-center sm:flex  sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto text-lg text-uil-key">
+                  className="grid grid-cols-2 gap-4 text-center sm:flex-initial sm:flex-row sm:align-middle sm:content-center sm:flex  sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto text-lg text-uil-key">
                     <li className={cn({
                         'current-menu-item': slug === 'index',
                     })}><a href="/">Home</a></li>
@@ -44,7 +44,7 @@ export default function Navbar( {slug, route} ) {
                           || route === 'translates/translators'
                           || route === 'translates/authors',
                     })}>LUR Translates</a></li>
-                    <Menu as="div" className="relative inline-block text-left">
+                    <Menu as="div" className="relative inline-block text-center sm:text-left">
                         <div>
                             <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md">
                                 Archive
@@ -61,14 +61,14 @@ export default function Navbar( {slug, route} ) {
                           leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95"
                         >
-                            <Menu.Items className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            <Menu.Items className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-uil-post shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                 <div className="py-1">
                                     <Menu.Item>
                                         {({ active }) => (
                                           <a
                                             href="/archive/special-issue-three"
                                             className={classNames(
-                                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                              active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text',
                                               'block px-4 py-2 text-sm'
                                             )}
                                           >
@@ -81,7 +81,7 @@ export default function Navbar( {slug, route} ) {
                                           <a
                                             href="/archive/special-issue-two"
                                             className={classNames(
-                                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                              active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text',
                                               'block px-4 py-2 text-sm'
                                             )}
                                           >
@@ -94,7 +94,7 @@ export default function Navbar( {slug, route} ) {
                                           <a
                                             href="/archive/special-issue-one"
                                             className={classNames(
-                                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                              active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text',
                                               'block px-4 py-2 text-sm'
                                             )}
                                           >
