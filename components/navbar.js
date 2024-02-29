@@ -44,7 +44,7 @@ export default function Navbar( {slug, route} ) {
                     })}>LUR Translates</a></li>
                     <Menu as="div" className="relative inline-block text-left">
                         <div>
-                            <Menu.Button className={`inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white  hover:bg-gray-50 ${cn({
+                            <Menu.Button className={`inline-flex w-full justify-center gap-x-1.5 rounded-md  hover:bg-gray-50 ${cn({
                                 'current-menu-item': slug === 'archive',
                             })}`}>
                                 Archive
