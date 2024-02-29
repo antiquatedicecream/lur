@@ -25,88 +25,110 @@ export default function Navbar( {slug, route} ) {
                         <h1>Ukrainian</h1>
                         <h1>Review</h1></a>
                 </div>
-                <ul
-                  className="grid grid-cols-2 gap-4 text-center sm:flex-initial sm:flex-row sm:align-middle sm:content-center sm:flex  sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto text-lg text-uil-key">
-                    <li className={cn({
-                        'current-menu-item': slug === 'index',
-                    })}><a href="/">Home</a></li>
-                    <li><a href="/posts/about-us" className={cn({
-                        'current-menu-item': slug === 'about-us',
-                    })}>About</a></li>
-                    {/* <li><a href="/posts/archive-post" className={cn({
+                <div className={`flex flex-col`}>
+                    <ul
+                      className="grid grid-cols-2 gap-4 sm:gap-2 text-center sm:flex-initial sm:flex-row sm:align-middle sm:content-center sm:flex  sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto text-lg text-uil-key">
+                        <li className={cn({
+                            'current-menu-item': slug === 'index',
+                        })}><a href="/">Home</a></li>
+                        <li><a href="/posts/about-us" className={cn({
+                            'current-menu-item': slug === 'about-us',
+                        })}>About</a></li>
+                        {/* <li><a href="/posts/archive-post" className={cn({
                         'current-menu-item': slug === 'archive-post'
                     })}>Archive</a></li> */}
-                    <li><a href="/posts/support-us-post" className={cn({
-                        'current-menu-item': slug === 'support-us-post',
-                    })}>Support Us</a></li>
-                    <li><a href="/translates" className={cn({
-                        'current-menu-item': route === 'translates'
-                          || route === 'translates/translators'
-                          || route === 'translates/authors',
-                    })}>LUR Translates</a></li>
-                    <Menu as="div" className="relative inline-block text-center sm:text-left">
-                        <div>
-                            <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md">
-                                Archive
-                                <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
-                            </Menu.Button>
-                        </div>
+                        <li><a href="/posts/support-us-post" className={cn({
+                            'current-menu-item': slug === 'support-us-post',
+                        })}>Support Us</a></li>
+                        <li><a href="/translates" className={cn({
+                            'current-menu-item': route === 'translates'
+                              || route === 'translates/translators'
+                              || route === 'translates/authors',
+                        })}>LUR Translates</a></li>
+                        {/*<li><a href="/archive" className={cn({*/}
+                        {/*    'current-menu-item': slug === 'archive',*/}
+                        {/*})}>Archive</a></li>*/}
+                        <Menu as="div"
+                              className="relative inline-block text-center sm:text-left">
+                            <div>
+                                <Menu.Button
+                                  className="inline-flex w-full justify-center gap-x-1.5 rounded-md">
+                                    Archive
+                                    {/*<ChevronDownIcon*/}
+                                    {/*  className="-mr-1 h-5 w-5 text-gray-400"*/}
+                                    {/*  aria-hidden="true"/>*/}
+                                </Menu.Button>
+                            </div>
 
-                        <Transition
-                          as={Fragment}
-                          enter="transition ease-out duration-100"
-                          enterFrom="transform opacity-0 scale-95"
-                          enterTo="transform opacity-100 scale-100"
-                          leave="transition ease-in duration-75"
-                          leaveFrom="transform opacity-100 scale-100"
-                          leaveTo="transform opacity-0 scale-95"
-                        >
-                            <Menu.Items className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right bg-uil-post shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                <div className="py-1">
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                          <a
-                                            href="/archive/special-issue-three"
-                                            className={classNames(
-                                              active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text',
-                                              'block px-4 py-2 text-sm'
+                            <Transition
+                              as={Fragment}
+                              enter="transition ease-out duration-100"
+                              enterFrom="transform opacity-0 scale-95"
+                              enterTo="transform opacity-100 scale-100"
+                              leave="transition ease-in duration-75"
+                              leaveFrom="transform opacity-100 scale-100"
+                              leaveTo="transform opacity-0 scale-95"
+                            >
+                                <Menu.Items
+                                  className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right bg-uil-post shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                    <div className="py-1">
+                                        <Menu.Item>
+                                            {({active}) => (
+                                              <a
+                                                href="/archive/special-issue-three"
+                                                className={classNames(
+                                                  active ?
+                                                    'bg-gray-100 text-gray-900' :
+                                                    'text-commemorative-text',
+                                                  'block px-4 py-2 text-sm',
+                                                )}
+                                              >
+                                                  Special Issue 3 (2023)
+                                              </a>
                                             )}
-                                          >
-                                              Special Issue 3 (2023)
-                                          </a>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                          <a
-                                            href="/archive/special-issue-two"
-                                            className={classNames(
-                                              active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text',
-                                              'block px-4 py-2 text-sm'
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            {({active}) => (
+                                              <a
+                                                href="/archive/special-issue-two"
+                                                className={classNames(
+                                                  active ?
+                                                    'bg-gray-100 text-gray-900' :
+                                                    'text-commemorative-text',
+                                                  'block px-4 py-2 text-sm',
+                                                )}
+                                              >
+                                                  Special Issue 2 (2022)
+                                              </a>
                                             )}
-                                          >
-                                              Special Issue 2 (2022)
-                                          </a>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                          <a
-                                            href="/archive/special-issue-one"
-                                            className={classNames(
-                                              active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text',
-                                              'block px-4 py-2 text-sm'
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            {({active}) => (
+                                              <a
+                                                href="/archive/special-issue-one"
+                                                className={classNames(
+                                                  active ?
+                                                    'bg-gray-100 text-gray-900' :
+                                                    'text-commemorative-text',
+                                                  'block px-4 py-2 text-sm',
+                                                )}
+                                              >
+                                                  Special Issue 1 (2021)
+                                              </a>
                                             )}
-                                          >
-                                              Special Issue 1 (2021)
-                                          </a>
-                                        )}
-                                    </Menu.Item>
-                                </div>
-                            </Menu.Items>
-                        </Transition>
-                    </Menu>
-                </ul>
+                                        </Menu.Item>
+                                    </div>
+                                </Menu.Items>
+                            </Transition>
+                        </Menu>
+                    </ul>
+                    {/*<ul*/}
+                    {/*  className="mt-4 text-sm bg-uil-key text-white p-1 grid grid-cols-2 gap-4 text-center sm:flex-initial sm:flex-row sm:align-middle sm:content-center sm:flex  sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto">*/}
+                    {/*    <li><a href="/archive/special-issue-three">Special Issue 3 (2023)</a></li>*/}
+                    {/*    <li><a href="/archive/special-issue-two">Special Issue 2 (2022)</a></li>*/}
+                    {/*    <li><a href="/archive/special-issue-one">Special Issue 1 (2021)</a></li>*/}
+                    {/*</ul>*/}
+                </div>
                 {/*<div className="flex-initial flex justify-end">*/}
                 {/*    <a href="https://ukrainianinstitute.org.uk/" target="_blank"*/}
                 {/*       className=" flex flex-col w-18 h-12 font-adriane-text-bold text-2xl text-white">*/}
