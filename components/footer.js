@@ -7,16 +7,16 @@ export default function Footer() {
       <Container>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <div>
-            <a href="https://ukrainianinstitute.org.uk/" target="_blank" className="underline">©2021-2024 Ukrainian Institute London</a>
+            <a href="https://www.londonukrainianreview.org/" target="_blank" className="underline">©2021-2024 London Ukrainian Review</a>
           </div>
           <div>
-            Twitter: <a href="https://twitter.com/Ukr_Institute" target="_blank" className="underline">@Ukr_Institute</a>
+            Twitter: <a href="https://twitter.com/ukrlondonreview" target="_blank" className="underline">@ukrlondonreview</a>
           </div>
+          {/*<div>*/}
+          {/*  Facebook: <a href="https://www.facebook.com/UkrainianInstitute.London" target="_blank" className="underline">@UkrainianInstitute.London</a>*/}
+          {/*</div>*/}
           <div>
-            Facebook: <a href="https://www.facebook.com/UkrainianInstitute.London" target="_blank" className="underline">@UkrainianInstitute.London</a>
-          </div>
-          <div>
-            Instagram: <a href="https://www.instagram.com/ukr_institute/" target="_blank" className="underline">@ukr_institute</a>
+            Instagram: <a href="https://www.instagram.com/londonukrainianreview/" target="_blank" className="underline">@londonukrainianreview</a>
           </div>
         </div>
       </Container>
