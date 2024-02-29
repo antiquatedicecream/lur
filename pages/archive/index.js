@@ -38,9 +38,9 @@ export default function ArchiveIndex({ allPosts: { edges }, preview }) {
         </Head>
         <div className="mb-4">
           <Navbar route={route} slug={'archive'}/>
-          <div className="mt-2 mb-4">
-            <NavbarArchive route={route}/>
-          </div>
+          {/*<div className="mt-2 mb-4">*/}
+          {/*  <NavbarArchive route={route}/>*/}
+          {/*</div>*/}
         </div>
         <Container>
           <div className="mb-6">

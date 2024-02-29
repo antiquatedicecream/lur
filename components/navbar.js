@@ -1,5 +1,11 @@
-import { CMS_NAME, CMS_URL } from '../lib/constants'
-import Image from 'next/image'
+import { Fragment } from 'react'
+import { Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+}
+
 import cn from 'classnames'
 
 export default function Navbar( {slug, route} ) {
@@ -36,9 +42,70 @@ export default function Navbar( {slug, route} ) {
                           || route === 'translates/translators'
                           || route === 'translates/authors',
                     })}>LUR Translates</a></li>
-                    <li><a href="/archive" className={cn({
-                        'current-menu-item': slug === 'archive',
-                    })}>Archive</a></li>
+                    <Menu as="div" className="relative inline-block text-left">
+                        <div>
+                            <Menu.Button className={`inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white  hover:bg-gray-50 ${cn({
+                                'current-menu-item': slug === 'archive',
+                            })}`}>
+                                Archive
+                                <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+                            </Menu.Button>
+                        </div>
+
+                        <Transition
+                          as={Fragment}
+                          enter="transition ease-out duration-100"
+                          enterFrom="transform opacity-0 scale-95"
+                          enterTo="transform opacity-100 scale-100"
+                          leave="transition ease-in duration-75"
+                          leaveFrom="transform opacity-100 scale-100"
+                          leaveTo="transform opacity-0 scale-95"
+                        >
+                            <Menu.Items className="absolute  sm:right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                <div className="py-1">
+                                    <Menu.Item>
+                                        {({ active }) => (
+                                          <a
+                                            href="/archive/special-issue-three"
+                                            className={classNames(
+                                              active ? 'bg-gray-100 text-commemorative-text' : '',
+                                              'block px-4 py-2 text-sm'
+                                            )}
+                                          >
+                                              Special Issue 3 (2023)
+                                          </a>
+                                        )}
+                                    </Menu.Item>
+                                    <Menu.Item>
+                                        {({ active }) => (
+                                          <a
+                                            href="/archive/special-issue-two"
+                                            className={classNames(
+                                              active ? 'bg-gray-100 text-commemorative-text' : '',
+                                              'block px-4 py-2 text-sm'
+                                            )}
+                                          >
+                                              Special Issue 2 (2022)
+                                          </a>
+                                        )}
+                                    </Menu.Item>
+                                    <Menu.Item>
+                                        {({ active }) => (
+                                          <a
+                                            href="/archive/special-issue-one"
+                                            className={classNames(
+                                              active ? 'bg-gray-100 text-commemorative-text' : '',
+                                              'block px-4 py-2 text-sm'
+                                            )}
+                                          >
+                                              Special Issue 1 (2021)
+                                          </a>
+                                        )}
+                                    </Menu.Item>
+                                </div>
+                            </Menu.Items>
+                        </Transition>
+                    </Menu>
                 </ul>
                 {/*<div className="flex-initial flex justify-end">*/}
                 {/*    <a href="https://ukrainianinstitute.org.uk/" target="_blank"*/}
