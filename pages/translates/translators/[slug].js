@@ -47,6 +47,11 @@ export default function Translator({ post, posts, preview }) {
                   // content={post.featuredImage?.node?.sourceUrl}
                   content={post.featuredImage?.node?.sourceUrl}
                 />
+                <meta
+                  property="twitter:image"
+                  // content={post.featuredImage?.node?.sourceUrl}
+                  content={post.featuredImage?.node?.sourceUrl}
+                />
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta name="twitter:site" content="@londonukrainianreview"/>
                 <meta name="twitter:creator" content="@londonukrainianreview"/>
