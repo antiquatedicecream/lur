@@ -22,6 +22,10 @@ export default function Translates({ allPosts: { edges }, preview }) {
             property="og:image"
             content={heroPost.featuredImage?.node?.sourceUrl}
           />
+          <meta
+            property="twitter:image"
+            content={heroPost.featuredImage?.node?.sourceUrl}
+          />
           <meta name="twitter:card" content="summary_large_image"/>
           <meta name="twitter:site" content="@londonukrainianreview"/>
           <meta name="twitter:creator" content="@londonukrainianreview"/>

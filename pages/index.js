@@ -33,14 +33,20 @@ export default function Index({ allPosts: { edges }, preview }) {
             // content={post.featuredImage?.node?.sourceUrl}
             content={heroPost.featuredImage?.node?.sourceUrl}
           />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@londonukrainianreview" />
-          <meta name="twitter:creator" content="@londonukrainianreview" />
-          <meta property="og:title" content="London Ukrainian Review" />
-          <meta property="og:description" content="The London Ukrainian Review is an open-access journal that tackles global challenges through the prism of Ukraine while adopting a distinctly internationalist perspective on the Ukrainian past and present." />
+          <meta
+            property="twitter:image"
+            // content={post.featuredImage?.node?.sourceUrl}
+            content={heroPost.featuredImage?.node?.sourceUrl}
+          />
+          <meta name="twitter:card" content="summary_large_image"/>
+          <meta name="twitter:site" content="@londonukrainianreview"/>
+          <meta name="twitter:creator" content="@londonukrainianreview"/>
+          <meta property="og:title" content="London Ukrainian Review"/>
+          <meta property="og:description"
+                content="The London Ukrainian Review is an open-access journal that tackles global challenges through the prism of Ukraine while adopting a distinctly internationalist perspective on the Ukrainian past and present."/>
         </Head>
         <div className="mb-4">
-          <Navbar route={route} slug={"index"} />
+          <Navbar route={route} slug={'index'}/>
         </div>
         <Container>
           <div className="mb-6">

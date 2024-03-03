@@ -35,25 +35,32 @@ export default function Post({ post, posts, preview }) {
           <>
               <article className="bg-uil-post sm:w-4/5 mx-auto pb-12">
               {/* this article tag used to have a bg-gray-100 - test for eye cancer */}
-              <Head>
-                <title>{`${post.title} | London Ukrainian Review`}</title>
-                <meta
-                  property="og:image"
-                  // content={post.featuredImage?.node?.sourceUrl}
-                  content={post.featuredImage?.node?.sourceUrl}
-                />
-                  <meta name="twitter:card" content="summary_large_image" />
-                  <meta name="twitter:site" content="@londonukrainianreview" />
-                  <meta name="twitter:creator" content="@londonukrainianreview" />
-                  <meta property="og:title" content={post.title} />
-                  <meta property="og:description" content={post.excerpt.replace(/<[^>]+>/g, '')} />
-              </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.featuredImage?.node}
-                date={post.date}
-                author={post.author?.node}
-                categories={post.categories}
+                <Head>
+                  <title>{`${post.title} | London Ukrainian Review`}</title>
+                  <meta
+                    property="og:image"
+                    // content={post.featuredImage?.node?.sourceUrl}
+                    content={post.featuredImage?.node?.sourceUrl}
+                  />
+                  <meta
+                    property="twitter:image"
+                    // content={post.featuredImage?.node?.sourceUrl}
+                    content={post.featuredImage?.node?.sourceUrl}
+                  />
+                  <meta name="twitter:card" content="summary_large_image"/>
+                  <meta name="twitter:site" content="@londonukrainianreview"/>
+                  <meta name="twitter:creator"
+                        content="@londonukrainianreview"/>
+                  <meta property="og:title" content={post.title}/>
+                  <meta property="og:description"
+                        content={post.excerpt.replace(/<[^>]+>/g, '')}/>
+                </Head>
+                <PostHeader
+                  title={post.title}
+                  coverImage={post.featuredImage?.node}
+                  date={post.date}
+                  author={post.author?.node}
+                  categories={post.categories}
               />
               <PostBody content={post.content} />
               <footer>
