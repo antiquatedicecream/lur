@@ -1,21 +1,19 @@
 import Head from 'next/head'
 import Container from '../../components/container'
 import Reprints from '../../components/reprints'
-import HeroPost from '../../components/hero-post'
 import Navbar from '../../components/navbar'
 import Layout from '../../components/layout'
-import {getAllPostsByCategoryName, getAllPostsForHome} from '../../lib/api';
+import {getAllPostsByCategoryName} from '../../lib/api';
 import {postsByCategories} from "../../lib/filter-utils";
 import {
-  SPECIAL_ISSUE_TWO_MARKER,
   REPRINT_MARKER,
-  SPECIAL_ISSUE_TWO_CATEGORY_NAME,
+  SPECIAL_ISSUE_ONE_CATEGORY_NAME, ISSUE_ONE_MARKER, ISSUE_ONE_CATEGORY_NAME,
 } from '../../lib/constants';
 import MoreStories from '../../components/more-stories';
 
-export default function SpecialIssueOne({ allPosts: { edges }, preview }) {
+export default function IssueOne({ allPosts: { edges }, preview }) {
   const reprintPosts = postsByCategories(edges, [REPRINT_MARKER]);
-  const specialIssueTwoPosts = postsByCategories(edges, [SPECIAL_ISSUE_TWO_MARKER]);
+  const issueOnePosts = postsByCategories(edges, [ISSUE_ONE_MARKER]);
   const route = 'posts'
 
   return (
@@ -46,16 +44,16 @@ export default function SpecialIssueOne({ allPosts: { edges }, preview }) {
           {/*    <MoreStories posts={specialIssueThreePosts}*/}
           {/*                 heading={'Special Issue 3 (2023)'}/>}*/}
           {/*</div>*/}
-          <div className="mb-6">
-            {specialIssueTwoPosts.length > 0 &&
-              <MoreStories posts={specialIssueTwoPosts}
-                           heading={'Special Issue 2 (2022)'}/>}
-          </div>
           {/*<div className="mb-6">*/}
-          {/*  {specialIssueOnePosts.length > 0 &&*/}
-          {/*    <MoreStories posts={specialIssueOnePosts}*/}
-          {/*                 heading={'Special Issue 1 (2021)'}/>}*/}
+          {/*  {specialIssueTwoPosts.length > 0 &&*/}
+          {/*    <MoreStories posts={specialIssueTwoPosts}*/}
+          {/*                 heading={'Special Issue 2 (2022)'}/>}*/}
           {/*</div>*/}
+          <div className="mb-6">
+            {issueOnePosts.length > 0 &&
+              <MoreStories posts={issueOnePosts}
+                           heading={'Issue 1 (2024)'}/>}
+          </div>
           <div className="">
             {reprintPosts.length > 0 && <Reprints posts={reprintPosts}/>}
           </div>
@@ -67,7 +65,7 @@ export default function SpecialIssueOne({ allPosts: { edges }, preview }) {
 }
 
 export async function getStaticProps({preview = false}) {
-  const allPosts = await getAllPostsByCategoryName(preview, SPECIAL_ISSUE_TWO_CATEGORY_NAME);
+  const allPosts = await getAllPostsByCategoryName(preview, ISSUE_ONE_CATEGORY_NAME);
   return {
     props: {allPosts, preview },
   }

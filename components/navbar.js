@@ -75,6 +75,21 @@ export default function Navbar( {slug, route} ) {
                                         <Menu.Item>
                                             {({active}) => (
                                               <a
+                                                href="/archive/issue-one"
+                                                className={classNames(
+                                                  active ?
+                                                    'bg-gray-100 text-gray-900' :
+                                                    'text-commemorative-text',
+                                                  'block px-4 py-2 text-sm',
+                                                )}
+                                              >
+                                                  Issue 1 (2024)
+                                              </a>
+                                            )}
+                                        </Menu.Item>
+                                        <Menu.Item>
+                                            {({active}) => (
+                                              <a
                                                 href="/archive/special-issue-three"
                                                 className={classNames(
                                                   active ?
