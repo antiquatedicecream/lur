@@ -11,14 +11,14 @@ import {
   SPECIAL_ISSUE_ONE_MARKER,
   SPECIAL_ISSUE_TWO_MARKER,
   REPRINT_MARKER,
-  CURRENT_ISSUE_MARKER,
+  CURRENT_ISSUE_MARKER, ISSUE_ONE_MARKER,
 } from '../lib/constants';
 import MoreStories from '../components/more-stories';
 
 export default function Index({ allPosts: { edges }, preview }) {
   const currentIssuePosts = postsByCategories(edges, [CURRENT_ISSUE_MARKER]);
   const heroPost = currentIssuePosts[0]?.node;
-  const specialIssueThreePosts = postsByCategories(edges, [SPECIAL_ISSUE_THREE_MARKER]);
+  const issueOnePosts = postsByCategories(edges, [ISSUE_ONE_MARKER]);
   const reprintPosts = postsByCategories(edges, [REPRINT_MARKER]);
   const olderFilteredPosts = postsByCategories(edges, [SPECIAL_ISSUE_ONE_MARKER, SPECIAL_ISSUE_TWO_MARKER])
   const route = 'posts'
@@ -66,11 +66,11 @@ export default function Index({ allPosts: { edges }, preview }) {
             {currentIssuePosts.length > 0 &&
               <MoreStories posts={currentIssuePosts.slice(1)}/>}
           </div>
-          {/*<div className="mb-6">*/}
-          {/*  {specialIssueThreePosts.length > 0 &&*/}
-          {/*    <MoreStories posts={specialIssueThreePosts}*/}
-          {/*                 heading={'Special Issue 3 (2023)'}/>}*/}
-          {/*</div>*/}
+          <div className="mb-6">
+            {issueOnePosts.length > 0 &&
+              <MoreStories posts={issueOnePosts}
+                           heading={'LUR 1 (2024): War on the Environment'}/>}
+          </div>
           {/*<div className="mb-6">*/}
           {/*  {olderFilteredPosts.length > 0 && <MoreStories posts={olderFilteredPosts} />}*/}
           {/*</div>*/}
