@@ -59,17 +59,18 @@ export default function Index({ allPosts: { edges }, preview }) {
                 slug={heroPost.slug}
                 excerpt={heroPost.excerpt}
                 categories={heroPost.categories}
+                heading={'LUR Issue 2 (2024)'}
               />
             )}
           </div>
-          <div className="mb-6">
+          <div className="mb-12">
             {currentIssuePosts.length > 0 &&
               <MoreStories posts={currentIssuePosts.slice(1)}/>}
           </div>
           <div className="mb-6">
             {issueOnePosts.length > 0 &&
               <MoreStories posts={issueOnePosts}
-                           heading={'LUR 1 (2024): War on the Environment'}/>}
+                           heading={'LUR Issue 1 (2024): War on the Environment'}/>}
           </div>
           {/*<div className="mb-6">*/}
           {/*  {olderFilteredPosts.length > 0 && <MoreStories posts={olderFilteredPosts} />}*/}

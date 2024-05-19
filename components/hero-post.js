@@ -15,7 +15,8 @@ export default function HeroPost(
     author,
     slug,
     categories,
-    route
+    route,
+    heading
   }) {
 
   const backgroundColour =
@@ -30,7 +31,8 @@ export default function HeroPost(
 
   return (
     <section>
-
+      {heading && <div
+        className={'font-adriane-text-bold text-commemorative-text text-2xl p-4 bg-uil-post text-center'}>{heading}</div>}
       <div
         className={`lg:grid lg:grid-cols-3 lg:gap-x-2 lg:col-gap-8 sm:space-x-4 ${backgroundColour}`}>
         <div className="col-span-2 flex">
