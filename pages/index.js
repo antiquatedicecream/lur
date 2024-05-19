@@ -59,7 +59,7 @@ export default function Index({ allPosts: { edges }, preview }) {
                 slug={heroPost.slug}
                 excerpt={heroPost.excerpt}
                 categories={heroPost.categories}
-                heading={'LUR Issue 2 (2024)'}
+                heading={'Issue 2 (2024)'}
               />
             )}
           </div>
@@ -70,7 +70,7 @@ export default function Index({ allPosts: { edges }, preview }) {
           <div className="mb-6">
             {issueOnePosts.length > 0 &&
               <MoreStories posts={issueOnePosts}
-                           heading={'LUR Issue 1 (2024): War on the Environment'}/>}
+                           heading={'Issue 1 (2024): War on the Environment'}/>}
           </div>
           {/*<div className="mb-6">*/}
           {/*  {olderFilteredPosts.length > 0 && <MoreStories posts={olderFilteredPosts} />}*/}
