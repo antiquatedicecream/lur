@@ -7,13 +7,16 @@ import {getAllPostsByCategoryName} from '../../lib/api';
 import {postsByCategories} from "../../lib/filter-utils";
 import {
   REPRINT_MARKER,
-  SPECIAL_ISSUE_ONE_CATEGORY_NAME, ISSUE_TWO_MARKER, ISSUE_TWO_CATEGORY_NAME,
+  SPECIAL_ISSUE_ONE_CATEGORY_NAME,
+  ISSUE_TWO_MARKER,
+  ISSUE_TWO_CATEGORY_NAME,
+  ISSUE_THREE_MARKER, ISSUE_THREE_CATEGORY_NAME,
 } from '../../lib/constants';
 import MoreStories from '../../components/more-stories';
 
 export default function IssueOne({ allPosts: { edges }, preview }) {
   const reprintPosts = postsByCategories(edges, [REPRINT_MARKER]);
-  const issueTwoPosts = postsByCategories(edges, [ISSUE_TWO_MARKER]);
+  const issueThreePosts = postsByCategories(edges, [ISSUE_THREE_MARKER]);
   const route = 'posts'
 
   return (
@@ -50,9 +53,9 @@ export default function IssueOne({ allPosts: { edges }, preview }) {
           {/*                 heading={'Special Issue 2 (2022)'}/>}*/}
           {/*</div>*/}
           <div className="mb-6">
-            {issueTwoPosts.length > 0 &&
-              <MoreStories posts={issueTwoPosts}
-                           heading={'Issue 2 (2024)'}/>}
+            {issueThreePosts.length > 0 &&
+              <MoreStories posts={issueThreePosts}
+                           heading={'Issue 3 (2024)'}/>}
           </div>
           <div className="">
             {reprintPosts.length > 0 && <Reprints posts={reprintPosts}/>}
@@ -65,7 +68,7 @@ export default function IssueOne({ allPosts: { edges }, preview }) {
 }
 
 export async function getStaticProps({preview = false}) {
-  const allPosts = await getAllPostsByCategoryName(preview, ISSUE_TWO_CATEGORY_NAME);
+  const allPosts = await getAllPostsByCategoryName(preview, ISSUE_THREE_CATEGORY_NAME);
   return {
     props: {allPosts, preview },
   }
