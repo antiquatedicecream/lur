@@ -59,7 +59,7 @@ export default function Index({ allPosts: { edges }, preview }) {
                 slug={heroPost.slug}
                 excerpt={heroPost.excerpt}
                 categories={heroPost.categories}
-                heading={'Issue 4 (2025)'}
+                heading={'Issue 4 (June 2025): Childhood'}
               />
             )}
           </div>
@@ -70,7 +70,7 @@ export default function Index({ allPosts: { edges }, preview }) {
           <div className="mb-6">
             {issueThreePosts.length > 0 &&
               <MoreStories posts={issueThreePosts}
-                           heading={'Issue 3 (2024)'}/>}
+                           heading={'Issue 3 (October 2024)'}/>}
           </div>
           {/*<div className="mb-6">*/}
           {/*  {olderFilteredPosts.length > 0 && <MoreStories posts={olderFilteredPosts} />}*/}

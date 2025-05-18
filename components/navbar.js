@@ -83,7 +83,7 @@ export default function Navbar( {slug, route} ) {
                                               'block px-4 py-2 text-sm',
                                             )}
                                           >
-                                            Issue 3 (2024)
+                                            Issue 3 (October 2024)
                                           </a>
                                         )}
                                       </Menu.Item>
@@ -98,7 +98,7 @@ export default function Navbar( {slug, route} ) {
                               'block px-4 py-2 text-sm',
                             )}
                           >
-                            Issue 2 (2024)
+                            Issue 2 (May 2024)
                           </a>
                         )}
                       </Menu.Item>
@@ -113,7 +113,7 @@ export default function Navbar( {slug, route} ) {
                                                   'block px-4 py-2 text-sm',
                                                 )}
                                               >
-                                                  Issue 1 (2024)
+                                                  Issue 1 (March 2024)
                                               </a>
                                             )}
                                         </Menu.Item>
@@ -128,7 +128,7 @@ export default function Navbar( {slug, route} ) {
                                                   'block px-4 py-2 text-sm',
                                                 )}
                                               >
-                                                  Special Issue 3 (2023)
+                                                  Special Issue 3 (August 2023)
                                               </a>
                                             )}
                                         </Menu.Item>
@@ -143,7 +143,7 @@ export default function Navbar( {slug, route} ) {
                                                   'block px-4 py-2 text-sm',
                                                 )}
                                               >
-                                                  Special Issue 2 (2022)
+                                                  Special Issue 2 (August 2022)
                                               </a>
                                             )}
                                         </Menu.Item>
@@ -158,7 +158,7 @@ export default function Navbar( {slug, route} ) {
                                                   'block px-4 py-2 text-sm',
                                                 )}
                                               >
-                                                  Special Issue 1 (2021)
+                                                  Special Issue 1 (December 2021)
                                               </a>
                                             )}
                                         </Menu.Item>
@@ -169,9 +169,9 @@ export default function Navbar( {slug, route} ) {
                     </ul>
                     {/*<ul*/}
                     {/*  className="mt-4 text-sm bg-uil-key text-white p-1 grid grid-cols-2 gap-4 text-center sm:flex-initial sm:flex-row sm:align-middle sm:content-center sm:flex  sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto">*/}
-                    {/*    <li><a href="/archive/special-issue-three">Special Issue 3 (2023)</a></li>*/}
-                    {/*    <li><a href="/archive/special-issue-two">Special Issue 2 (2022)</a></li>*/}
-                    {/*    <li><a href="/archive/special-issue-one">Special Issue 1 (2021)</a></li>*/}
+                    {/*    <li><a href="/archive/special-issue-three">Special Issue 3 (August 2023)</a></li>*/}
+                    {/*    <li><a href="/archive/special-issue-two">Special Issue 2 (August 2022)</a></li>*/}
+                    {/*    <li><a href="/archive/special-issue-one">Special Issue 1 (December 2021)</a></li>*/}
                     {/*</ul>*/}
                 </div>
                 {/*<div className="flex-initial flex justify-end">*/}

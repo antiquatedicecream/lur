@@ -42,17 +42,17 @@ export default function IssueOne({ allPosts: { edges }, preview }) {
           {/*<div className="mb-6">*/}
           {/*  {specialIssueTwoPosts.length > 0 &&*/}
           {/*    <MoreStories posts={specialIssueThreePosts}*/}
-          {/*                 heading={'Special Issue 3 (2023)'}/>}*/}
+          {/*                 heading={'Special Issue 3 (August 2023)'}/>}*/}
           {/*</div>*/}
           {/*<div className="mb-6">*/}
           {/*  {specialIssueTwoPosts.length > 0 &&*/}
           {/*    <MoreStories posts={specialIssueTwoPosts}*/}
-          {/*                 heading={'Special Issue 2 (2022)'}/>}*/}
+          {/*                 heading={'Special Issue 2 (August 2022)'}/>}*/}
           {/*</div>*/}
           <div className="mb-6">
             {issueTwoPosts.length > 0 &&
               <MoreStories posts={issueTwoPosts}
-                           heading={'Issue 2 (2024)'}/>}
+                           heading={'Issue 2 (May 2024)'}/>}
           </div>
           <div className="">
             {reprintPosts.length > 0 && <Reprints posts={reprintPosts}/>}
