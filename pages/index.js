@@ -11,7 +11,7 @@ import {
   SPECIAL_ISSUE_ONE_MARKER,
   SPECIAL_ISSUE_TWO_MARKER,
   REPRINT_MARKER,
-  CURRENT_ISSUE_MARKER, ISSUE_TWO_MARKER, ISSUE_THREE_MARKER,
+  CURRENT_ISSUE_MARKER, ISSUE_TWO_MARKER, ISSUE_THREE_MARKER, ISSUE_ONE_MARKER,
 } from '../lib/constants';
 import MoreStories from '../components/more-stories';
 
@@ -19,8 +19,11 @@ export default function Index({ allPosts: { edges }, preview }) {
   const currentIssuePosts = postsByCategories(edges, [CURRENT_ISSUE_MARKER]);
   const heroPost = currentIssuePosts[0]?.node;
   const issueThreePosts = postsByCategories(edges, [ISSUE_THREE_MARKER]);
-  const reprintPosts = postsByCategories(edges, [REPRINT_MARKER]);
-  const olderFilteredPosts = postsByCategories(edges, [SPECIAL_ISSUE_ONE_MARKER, SPECIAL_ISSUE_TWO_MARKER])
+  const issueTwoPosts = postsByCategories(edges, [ISSUE_TWO_MARKER]);
+  const issueOnePosts = postsByCategories(edges, [ISSUE_ONE_MARKER]);
+  const specialIssueThreePosts = postsByCategories(edges, [SPECIAL_ISSUE_THREE_MARKER]);
+  const specialIssueTwoPosts = postsByCategories(edges, [SPECIAL_ISSUE_TWO_MARKER]);
+  const specialIssueOnePosts = postsByCategories(edges, [SPECIAL_ISSUE_ONE_MARKER]);
   const route = 'posts'
 
   return (
@@ -71,6 +74,31 @@ export default function Index({ allPosts: { edges }, preview }) {
             {issueThreePosts.length > 0 &&
               <MoreStories posts={issueThreePosts}
                            heading={'Issue 3 (October 2024)'}/>}
+          </div>
+          <div className="mb-6">
+            {issueTwoPosts.length > 0 &&
+              <MoreStories posts={issueTwoPosts}
+                           heading={'Issue 2 (May 2024)'}/>}
+          </div>
+          <div className="mb-6">
+            {issueOnePosts.length > 0 &&
+              <MoreStories posts={issueOnePosts}
+                           heading={'Issue 1 (March 2024)'}/>}
+          </div>
+          <div className="mb-6">
+            {specialIssueThreePosts.length > 0 &&
+              <MoreStories posts={specialIssueThreePosts}
+                           heading={'Special Issue 3 (August 2023)'}/>}
+          </div>
+          <div className="mb-6">
+            {specialIssueTwoPosts.length > 0 &&
+              <MoreStories posts={specialIssueTwoPosts}
+                           heading={'Special Issue 2 (August 2022)'}/>}
+          </div>
+          <div className="mb-6">
+            {specialIssueOnePosts.length > 0 &&
+              <MoreStories posts={specialIssueOnePosts}
+                           heading={'Special Issue 1 (December 2021)'}/>}
           </div>
           {/*<div className="mb-6">*/}
           {/*  {olderFilteredPosts.length > 0 && <MoreStories posts={olderFilteredPosts} />}*/}
