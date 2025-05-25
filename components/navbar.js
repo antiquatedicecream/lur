@@ -136,7 +136,7 @@ export default function Navbar({slug, route}) {
                             </Menu.Items>
                         </Transition>
                     </Menu>
-                    <form onSubmit={handleSubmit(onSubmit)} className={'relative flex flex-row justify-between bg-white shadow rounded border-0 sm:p-3 text-commemorative-text'}>
+                    <form onSubmit={handleSubmit(onSubmit)} className={'relative flex flex-row justify-between bg-white shadow rounded border-0 sm:p-3 text-gray-400'}>
                         {/* register your input into the hook by invoking the "register" function */}
                         <input placeholder={'Search'} {...register('searchInputString')}
                                className={'w-20 bg-white shadow-none outline-0 focus:outline-none rounded border-0 indent-2'}/>
