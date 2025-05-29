@@ -6,14 +6,21 @@
     "start": "next start"
   },
   "dependencies": {
+    "@algolia/client-common": "^5.25.0",
+    "@docsearch/react": "^3.9.0",
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
+    "@material-tailwind/react": "^2.1.10",
+    "algoliasearch": "^5.25.0",
     "classnames": "2.3.2",
     "date-fns": "2.30.0",
+    "instantsearch.js": "^4.78.3",
     "next": "^12.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.56.4"
+    "react-hook-form": "^7.56.4",
+    "react-instantsearch": "^7.15.7",
+    "react-instantsearch-router-nextjs": "^7.15.7"
   },
   "devDependencies": {
     "autoprefixer": "10.4.15",

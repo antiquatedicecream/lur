@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Categories from '../components/categories';
 import {categoriesContainMatch} from '../lib/filter-utils';
 import {COMMEMORATION_MARKER, UKRAINIAN_MARKER} from '../lib/constants';
+import AlgoliaCategories from "./algoliaCategories";
 
 export default function PostPreview(
   {
@@ -15,6 +16,7 @@ export default function PostPreview(
     author,
     slug,
     categories,
+    algoliaCategories,
     route,
     titleFontSize,
     hideMetaData,
@@ -50,7 +52,8 @@ export default function PostPreview(
           {!hideMetaData &&
             <div className="xl:text-lg mb-4 font-adriane-text-italic">
               <Date dateString={date}/>
-              <Categories categories={categories} route={route}/>
+                {categories !== undefined && <Categories categories={categories} route={route}/>}
+                {algoliaCategories !== undefined && <AlgoliaCategories algoliaCategories={algoliaCategories} route={route}/>}
             </div>}
           <div
             className="text-lg leading-relaxed mb-4"

@@ -1,16 +1,11 @@
 import {Fragment} from 'react';
 import {Menu, Transition} from '@headlessui/react';
-import {ChevronDownIcon} from '@heroicons/react/20/solid';
+import cn from 'classnames';
+import {useForm} from 'react-hook-form';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
 }
-
-import {CMS_NAME, CMS_URL} from '../lib/constants';
-import Image from 'next/image';
-import cn from 'classnames';
-import {useForm} from 'react-hook-form';
-import {SubmitHandler} from 'react-hook-form';
 
 export default function Navbar({slug, route}) {
 
@@ -19,10 +14,10 @@ export default function Navbar({slug, route}) {
     } = useForm();
 
     function searchUrl(searchInputString) {
-        return `https://www.google.com/search?q=${searchInputString}+site:londonukrainianreview.org`;
+        return `/search?wp_searchable_posts%5Bquery%5D=${searchInputString}`;
     }
 
-    const onSubmit = (data) => window.open(searchUrl(data.searchInputString), '_blank');
+    const onSubmit = (data) => window.open(searchUrl(data.searchInputString), '_self');
 
     // console.log(watch("searchInputString")); // watch input value by passing the name of it
 
@@ -136,24 +131,25 @@ export default function Navbar({slug, route}) {
                             </Menu.Items>
                         </Transition>
                     </Menu>
-                    <form onSubmit={handleSubmit(onSubmit)} className={'relative flex flex-row justify-between bg-white shadow rounded border-0 sm:p-3 text-gray-400'}>
-                        {/* register your input into the hook by invoking the "register" function */}
-                        <input placeholder={'Search'} {...register('searchInputString')}
-                               className={'w-20 bg-white shadow-none outline-0 focus:outline-none rounded border-0 indent-2'}/>
-                        <button
-                            className="sm:pin-r sm:pin-t sm:mb-2 sm:mt-2 mr-2 text-purple-lighter">
-                            <svg version="1.1" className="h-4 text-dark"
-                                 xmlns="http://www.w3.org/2000/svg"
-                                 x="0px" y="0px"
-                                 viewBox="0 0 52.966 52.966">
-                                <path d="M51.704,51.273L36.845,35.82c3.79-3.801,6.138-9.041,6.138-14.82c0-11.58-9.42-21-21-21s-21,9.42-21,21s9.42,21,21,21
+                    {route !== 'search' && (
+                        <form onSubmit={handleSubmit(onSubmit)} className={'relative flex flex-row justify-between bg-white shadow rounded border-0 sm:p-3 text-gray-400'}>
+                            {/* register your input into the hook by invoking the "register" function */}
+                            <input placeholder={'Search'} {...register('searchInputString')}
+                                   className={'w-20 bg-white shadow-none outline-0 focus:outline-none rounded border-0 indent-2'}/>
+                            <button
+                                className="sm:pin-r sm:pin-t sm:mb-2 sm:mt-2 mr-2 text-purple-lighter">
+                                <svg version="1.1" className="h-4 text-dark"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     x="0px" y="0px"
+                                     viewBox="0 0 52.966 52.966">
+                                    <path d="M51.704,51.273L36.845,35.82c3.79-3.801,6.138-9.041,6.138-14.82c0-11.58-9.42-21-21-21s-21,9.42-21,21s9.42,21,21,21
         c5.083,0,9.748-1.817,13.384-4.832l14.895,15.491c0.196,0.205,0.458,0.307,0.721,0.307c0.25,0,0.499-0.093,0.693-0.279
         C52.074,52.304,52.086,51.671,51.704,51.273z M21.983,40c-10.477,0-19-8.523-19-19s8.523-19,19-19s19,8.523,19,19
         S32.459,40,21.983,40z"/>
-                            </svg>
-                        </button>
-                        {/*<input type="submit"/>*/}
-                    </form>
+                                </svg>
+                            </button>
+                        </form>
+                    )}
                 </ul>
                 {/*<ul*/}
                 {/*  className="mt-4 text-sm bg-uil-key text-white p-1 grid grid-cols-2 gap-4 text-center sm:flex-initial sm:flex-row sm:align-middle sm:content-center sm:flex  sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto">*/}
