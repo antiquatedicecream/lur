@@ -62,7 +62,7 @@ export default function Index({ allPosts: { edges }, preview }) {
                 slug={heroPost.slug}
                 excerpt={heroPost.excerpt}
                 categories={heroPost.categories}
-                heading={'Issue 4 (June 2025): Childhood'}
+                heading={'Issue 4 (June 2025): Wartime Childhood'}
               />
             )}
           </div>
