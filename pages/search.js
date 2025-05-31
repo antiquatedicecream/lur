@@ -21,9 +21,6 @@ function Hit({hit}) {
     const slug = href.substring(href.lastIndexOf('/') + 1);
     const date = new Date(hit.post_date * 1000); // convert timestamp to milliseconds and construct Date object
 
-    console.log(href)
-    console.log(slug)
-
     return (<>
         <PostPreview
             key={slug}
