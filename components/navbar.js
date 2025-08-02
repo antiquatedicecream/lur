@@ -43,27 +43,61 @@ export default function Navbar({slug, route}) {
                     <li><a href="/posts/about-us" className={cn({
                         'current-menu-item': slug === 'about-us',
                     })}>About</a></li>
-                    {/* <li><a href="/posts/archive-post" className={cn({
-                        'current-menu-item': slug === 'archive-post'
-                    })}>Archive</a></li> */}
                     <li><a href="/posts/support-us-post" className={cn({
                         'current-menu-item': slug === 'support-us-post',
                     })}>Support Us</a></li>
-                    <li><a href="/translates" className={cn({
-                        'current-menu-item': route === 'translates' || route === 'translates/translators' || route === 'translates/authors',
-                    })}>LUR Translates</a></li>
-                    {/*<li><a href="/archive" className={cn({*/}
-                    {/*    'current-menu-item': slug === 'archive',*/}
-                    {/*})}>Archive</a></li>*/}
+                    {/*<li><a href="/translates" className={cn({*/}
+                    {/*    'current-menu-item': route === 'translates' || route === 'translates/translators' || route === 'translates/authors',*/}
+                    {/*})}>LUR Translates</a></li>*/}
+                    <Menu as="div"
+                          className={`relative inline-block text-center sm:text-left`}>
+                        <div>
+                            <Menu.Button
+                                className={`inline-flex w-full justify-center gap-x-1.5 rounded-md ` + cn({
+                                    'current-menu-item': route === 'translates' || route === 'translates/translators' || route === 'translates/authors',
+                                })}>
+                                LUR Translates
+                            </Menu.Button>
+                        </div>
+
+                        <Transition
+                            as={Fragment}
+                            enter="transition ease-out duration-100"
+                            enterFrom="transform opacity-0 scale-95"
+                            enterTo="transform opacity-100 scale-100"
+                            leave="transition ease-in duration-75"
+                            leaveFrom="transform opacity-100 scale-100"
+                            leaveTo="transform opacity-0 scale-95"
+                        >
+                            <Menu.Items
+                                className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                <div className="py-1">
+                                    <Menu.Item>
+                                        {({active}) => (<a
+                                            href="/translates"
+                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
+                                        >
+                                            Authors
+                                        </a>)}
+                                    </Menu.Item>
+                                    <Menu.Item>
+                                        {({active}) => (<a
+                                            href="/translates/translators"
+                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
+                                        >
+                                            Translators
+                                        </a>)}
+                                    </Menu.Item>
+                                </div>
+                            </Menu.Items>
+                        </Transition>
+                    </Menu>
                     <Menu as="div"
                           className="relative inline-block text-center sm:text-left">
                         <div>
                             <Menu.Button
                                 className="inline-flex w-full justify-center gap-x-1.5 rounded-md">
                                 Archive
-                                {/*<ChevronDownIcon*/}
-                                {/*  className="-mr-1 h-5 w-5 text-gray-400"*/}
-                                {/*  aria-hidden="true"/>*/}
                             </Menu.Button>
                         </div>
 
