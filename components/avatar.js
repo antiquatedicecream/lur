@@ -1,5 +1,6 @@
 import {categoriesContainAnyStartsWith, categoriesContainMatch} from '../lib/filter-utils';
 import {LINK_TRANSLATOR_BIO} from '../lib/constants';
+import Link from "next/link";
 
 export default function Avatar({author, route, categories}) {
     const name = author
@@ -7,16 +8,16 @@ export default function Avatar({author, route, categories}) {
             ? `${author.firstName} ${author.lastName}`
             : author.name
         : null
-    console.log(`Categories: `)
-    console.log(categories)
     const lastNameLowerCase = author.lastName?.toLowerCase();
     const href = '/translates/translators/' + lastNameLowerCase;
     let shouldLinkTranslatorBio;
     shouldLinkTranslatorBio = route === 'translates' || categoriesContainMatch(categories, LINK_TRANSLATOR_BIO);
+
     const translatorNames = categoriesContainAnyStartsWith(categories, 'Translator:');
-    const hasMultipleTranslators = translatorNames.length > 1;
-    console.log(`Filtered categories:`)
-    console.log(categoriesContainAnyStartsWith(categories, 'Translator:'))
+    const translatorOneLastNameToLowercase = translatorNames.length > 0 ? translatorNames[0].split(' ').map((string) => string.toLowerCase()).slice(-1) : '';
+    const translatorOneFullName = translatorNames.length > 0 ? translatorNames[0].split(' ').slice(-2).join(' ') : '';
+    const translatorTwoLastNameToLowerCase = translatorNames.length > 1 ? translatorNames[1].split(' ').map((string) => string.toLowerCase()).slice(-1) : '';
+    const translatorTwoFullName = translatorNames.length > 1 ? translatorNames[1].split(' ').slice(-2).join(' ') : '';
 
     if (shouldLinkTranslatorBio) {
         return (
@@ -26,20 +27,23 @@ export default function Avatar({author, route, categories}) {
                         <div className="text-lg font-adriane-text-italic font-bold underline">{name}</div>
                     </a>
                 }
-                {translatorNames.length > 0 && // if post has categories starting with string 'Translator:'
+                {translatorOneFullName && // if post has categories starting with string 'Translator:'
                     <div className={`flex flex-row items-end`}>
-                        <a href={translatorNames[0].split(' ').map((string) => string.toLowerCase()).slice(-1)}
-                           className="text-lg font-adriane-text-italic font-bold underline">
-                                trans. by {translatorNames[0].split(' ').slice(-2).join(' ')}
-                        </a>
-                        {translatorNames[1] &&
+                        <div className={`text-lg font-bold font-adriane-text-italic`}>trans. by&nbsp;</div>
+                        <Link href={`/translates/translators/${translatorOneLastNameToLowercase}`}>
+                            <a className="text-lg font-adriane-text-italic font-bold underline">
+                                {translatorOneFullName}
+                            </a>
+                        </Link>
+                        {translatorTwoFullName &&
                         <div className={`text-lg font-bold font-adriane-text-italic`}>&nbsp;and&nbsp;</div>
                         }
-                        {translatorNames[1] &&
-                            <a href={translatorNames[1].split(' ').map((string) => string.toLowerCase()).slice(-1)}
-                               className="text-lg font-adriane-text-italic font-bold underline">
-                                    {translatorNames[1].split(' ').slice(-2).join(' ')}
-                            </a>}
+                        {translatorTwoFullName &&
+                            <Link href={`/translates/translators/${translatorTwoLastNameToLowerCase}`}>
+                                <a className="text-lg font-adriane-text-italic font-bold underline">
+                                {translatorTwoFullName}
+                                </a>
+                            </Link>}
                     </div>
                 }
             </div>
