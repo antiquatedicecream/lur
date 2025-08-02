@@ -3,13 +3,31 @@ import Container from '../components/container'
 import Navbar from '../components/navbar'
 import Layout from '../components/layout'
 import {getAllPostsByCategoryName, getAllPostsForHome} from '../lib/api';
-import {postsByCategories} from "../lib/filter-utils";
+import {categoriesContainAnyStartsWith, postsByCategories} from "../lib/filter-utils";
 import {TRANSLATES_MARKER} from "../lib/constants";
 import MoreTranslations from '../components/more-translations';
 import NavbarTranslate from '../components/navbar-translate';
 
 export default function Translates({ allPosts: { edges }, preview }) {
   const translatesPosts = postsByCategories(edges, [TRANSLATES_MARKER]);
+
+  function compare( a, b ) {
+    const postAFullAuthorName = categoriesContainAnyStartsWith(a.node.categories, 'Author:');
+    const postAAuthorLastName = postAFullAuthorName ? postAFullAuthorName[0].split(' ').splice(-1)[0] : '';
+    const postBFullAuthorName = categoriesContainAnyStartsWith(b.node.categories, 'Author:');
+    const postBAuthorLastName = postBFullAuthorName ? postBFullAuthorName[0].split(' ').splice(-1)[0] : '';
+
+    if ( postAAuthorLastName < postBAuthorLastName ){
+      return -1;
+    }
+    if ( postAAuthorLastName > postBAuthorLastName ){
+      return 1;
+    }
+    return 0;
+  }
+
+  translatesPosts.sort(compare);
+
   const heroPost = translatesPosts[0]?.node;
   const route = 'translates';
 
