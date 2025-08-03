@@ -70,7 +70,7 @@ export default function Navbar({slug, route}) {
                             leaveTo="transform opacity-0 scale-95"
                         >
                             <Menu.Items
-                                className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                className="absolute sm:right-0 z-10 mt-2 w-36 md:w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                 <div className="py-1">
                                     <Menu.Item>
                                         {({active}) => (<a
