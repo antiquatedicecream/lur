@@ -3,7 +3,7 @@ import Container from '../../components/container'
 import Navbar from '../../components/navbar'
 import Layout from '../../components/layout'
 import {getAllPostsByCategoryName, getAllPostsForHome} from '../../lib/api';
-import {postsByCategories} from "../../lib/filter-utils";
+import {categoriesContainAnyStartsWith, postsByCategories} from "../../lib/filter-utils";
 import MoreTranslations from '../../components/more-translations';
 import NavbarTranslate from '../../components/navbar-translate';
 import {TRANSLATORS_MARKER} from '../../lib/constants';
@@ -12,6 +12,23 @@ export default function Translators({ allPosts: { edges }, preview }) {
   const translatorPosts = postsByCategories(edges, [TRANSLATORS_MARKER]);
   const heroPost = translatorPosts[0]?.node;
   const route = 'translates/translators';
+
+    function compare( a, b ) {
+        const postAFullAuthorName = categoriesContainAnyStartsWith(a.node.categories, 'Translator:');
+        const postAAuthorLastName = postAFullAuthorName ? postAFullAuthorName[0].split(' ').splice(-1)[0] : '';
+        const postBFullAuthorName = categoriesContainAnyStartsWith(b.node.categories, 'Translator:');
+        const postBAuthorLastName = postBFullAuthorName ? postBFullAuthorName[0].split(' ').splice(-1)[0] : '';
+
+        if ( postAAuthorLastName < postBAuthorLastName ){
+            return -1;
+        }
+        if ( postAAuthorLastName > postBAuthorLastName ){
+            return 1;
+        }
+        return 0;
+    }
+
+    translatorPosts.sort(compare);
 
   return (
     <>
