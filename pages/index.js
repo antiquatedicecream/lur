@@ -7,17 +7,18 @@ import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
 import {postsByCategories} from "../lib/filter-utils";
 import {
-  SPECIAL_ISSUE_THREE_MARKER,
-  SPECIAL_ISSUE_ONE_MARKER,
-  SPECIAL_ISSUE_TWO_MARKER,
-  REPRINT_MARKER,
-  CURRENT_ISSUE_MARKER, ISSUE_TWO_MARKER, ISSUE_THREE_MARKER, ISSUE_ONE_MARKER,
+    SPECIAL_ISSUE_THREE_MARKER,
+    SPECIAL_ISSUE_ONE_MARKER,
+    SPECIAL_ISSUE_TWO_MARKER,
+    REPRINT_MARKER,
+    CURRENT_ISSUE_MARKER, ISSUE_TWO_MARKER, ISSUE_THREE_MARKER, ISSUE_ONE_MARKER, ISSUE_FOUR_MARKER,
 } from '../lib/constants';
 import MoreStories from '../components/more-stories';
 
 export default function Index({ allPosts: { edges }, preview }) {
   const currentIssuePosts = postsByCategories(edges, [CURRENT_ISSUE_MARKER]);
   const heroPost = currentIssuePosts[0]?.node;
+  const issueFourPosts = postsByCategories(edges, [ISSUE_FOUR_MARKER]);
   const issueThreePosts = postsByCategories(edges, [ISSUE_THREE_MARKER]);
   const issueTwoPosts = postsByCategories(edges, [ISSUE_TWO_MARKER]);
   const issueOnePosts = postsByCategories(edges, [ISSUE_ONE_MARKER]);
@@ -62,7 +63,7 @@ export default function Index({ allPosts: { edges }, preview }) {
                 slug={heroPost.slug}
                 excerpt={heroPost.excerpt}
                 categories={heroPost.categories}
-                heading={'Issue 4 (June 2025): Wartime Childhood'}
+                heading={'Issue 5 (October 2025): Culture as Security'}
               />
             )}
           </div>
@@ -70,6 +71,11 @@ export default function Index({ allPosts: { edges }, preview }) {
             {currentIssuePosts.length > 0 &&
               <MoreStories posts={currentIssuePosts.slice(1)}/>}
           </div>
+            <div className="mb-6">
+                {issueFourPosts.length > 0 &&
+                    <MoreStories posts={issueThreePosts}
+                                 heading={'Issue 4 (June 2025)'}/>}
+            </div>
           <div className="mb-6">
             {issueThreePosts.length > 0 &&
               <MoreStories posts={issueThreePosts}
