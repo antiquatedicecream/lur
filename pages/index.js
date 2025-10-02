@@ -73,7 +73,7 @@ export default function Index({ allPosts: { edges }, preview }) {
           </div>
             <div className="mb-6">
                 {issueFourPosts.length > 0 &&
-                    <MoreStories posts={issueThreePosts}
+                    <MoreStories posts={issueFourPosts}
                                  heading={'Issue 4 (June 2025)'}/>}
             </div>
           <div className="mb-6">
