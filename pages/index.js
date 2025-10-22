@@ -81,31 +81,6 @@ export default function Index({ allPosts: { edges }, preview }) {
               <MoreStories posts={issueThreePosts}
                            heading={'Issue 3 (October 2024)'}/>}
           </div>
-          <div className="mb-6">
-            {issueTwoPosts.length > 0 &&
-              <MoreStories posts={issueTwoPosts}
-                           heading={'Issue 2 (May 2024)'}/>}
-          </div>
-          <div className="mb-6">
-            {issueOnePosts.length > 0 &&
-              <MoreStories posts={issueOnePosts}
-                           heading={'Issue 1 (March 2024)'}/>}
-          </div>
-          <div className="mb-6">
-            {specialIssueThreePosts.length > 0 &&
-              <MoreStories posts={specialIssueThreePosts}
-                           heading={'Special Issue 3 (August 2023)'}/>}
-          </div>
-          <div className="mb-6">
-            {specialIssueTwoPosts.length > 0 &&
-              <MoreStories posts={specialIssueTwoPosts}
-                           heading={'Special Issue 2 (August 2022)'}/>}
-          </div>
-          <div className="mb-6">
-            {specialIssueOnePosts.length > 0 &&
-              <MoreStories posts={specialIssueOnePosts}
-                           heading={'Special Issue 1 (December 2021)'}/>}
-          </div>
           {/*<div className="mb-6">*/}
           {/*  {olderFilteredPosts.length > 0 && <MoreStories posts={olderFilteredPosts} />}*/}
           {/*</div>*/}
