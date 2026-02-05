@@ -13,9 +13,6 @@ import Tags from '../../components/tags'
 import MoreStories from '../../components/more-stories';
 import {categoriesContainMatch} from '../../lib/filter-utils';
 import {LINK_TRANSLATOR_BIO} from '../../lib/constants';
-import {
-  structuredClone
-} from 'next/dist/compiled/@edge-runtime/primitives/structured-clone';
 
 export default function Post({ post, posts, preview }) {
   const router = useRouter()

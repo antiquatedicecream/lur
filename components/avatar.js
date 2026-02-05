@@ -30,19 +30,15 @@ export default function Avatar({author, route, categories}) {
                 {translatorOneFullName && // if post has categories starting with string 'Translator:'
                     <div className={`flex flex-row items-end`}>
                         <div className={`text-lg font-bold font-adriane-text-italic`}>trans. by&nbsp;</div>
-                        <Link href={`/translates/translators/${translatorOneLastNameToLowercase}`}>
-                            <a className="text-lg font-adriane-text-italic font-bold underline">
-                                {translatorOneFullName}
-                            </a>
+                        <Link href={`/translates/translators/${translatorOneLastNameToLowercase}`} className="text-lg font-adriane-text-italic font-bold underline">
+                            {translatorOneFullName}
                         </Link>
                         {translatorTwoFullName &&
                         <div className={`text-lg font-bold font-adriane-text-italic`}>&nbsp;and&nbsp;</div>
                         }
                         {translatorTwoFullName &&
-                            <Link href={`/translates/translators/${translatorTwoLastNameToLowerCase}`}>
-                                <a className="text-lg font-adriane-text-italic font-bold underline">
+                            <Link href={`/translates/translators/${translatorTwoLastNameToLowerCase}`} className="text-lg font-adriane-text-italic font-bold underline">
                                 {translatorTwoFullName}
-                                </a>
                             </Link>}
                     </div>
                 }

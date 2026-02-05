@@ -31,12 +31,11 @@ export default function ReprintPreview(
         <div className="mb-3 mx-3">
           <h3
             className="text-4xl font-adriane-text-bold mb-0 leading-snug text-uil-key">
-            <Link href={`/posts/${slug}`}>
-              <a
-                className="hover:underline"
-                dangerouslySetInnerHTML={{__html: title}}
-              ></a>
-            </Link>
+            <Link
+              href={`/posts/${slug}`}
+              className="hover:underline"
+              dangerouslySetInnerHTML={{__html: title}}
+            />
           </h3>
           <div className="xl:text-lg mb-4 font-adriane-text-italic">
             <Date dateString={date}/>

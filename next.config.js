@@ -1,5 +1,14 @@
 module.exports = {
     images: {
-        domains: ['mloh.net', 'secure.gravatar.com'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'mloh.net',
+            },
+            {
+                protocol: 'https',
+                hostname: 'secure.gravatar.com',
+            },
+        ],
     },
 }

@@ -42,12 +42,11 @@ export default function PostPreview(
         <div className="mb-3 mx-3">
           <h3
             className={`text-${titleFontSize ? titleFontSize : '4xl'} font-adriane-text-bold mb-0 leading-snug ${textColour}`}>
-            <Link href={`/${routeString}/${slug}`}>
-              <a
-                className="hover:underline"
-                dangerouslySetInnerHTML={{__html: title}}
-              ></a>
-            </Link>
+            <Link
+              href={`/${routeString}/${slug}`}
+              className="hover:underline"
+              dangerouslySetInnerHTML={{__html: title}}
+            />
           </h3>
           {!hideMetaData &&
             <div className="xl:text-lg mb-4 font-adriane-text-italic">

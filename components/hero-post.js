@@ -44,12 +44,11 @@ export default function HeroPost(
           <div>
             <h3
               className={`mb-4 text-4xl font-adriane-text-bold lg:text-6xl leading-tight ${textColour}`}>
-              <Link href={`/${routeString}/${slug}`}>
-                <a
-                  className="hover:underline"
-                  dangerouslySetInnerHTML={{__html: title}}
-                />
-              </Link>
+              <Link
+                href={`/${routeString}/${slug}`}
+                className="hover:underline"
+                dangerouslySetInnerHTML={{__html: title}}
+              />
             </h3>
             <div
               className="mb-4 md:mb-0 text-lg lg:text-sm xl:text-lg font-adriane-text-italic">

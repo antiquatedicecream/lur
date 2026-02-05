@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import Link from 'next/link'
 
 export default function CoverImage({ title, coverImage, slug, route }) {
@@ -18,8 +18,8 @@ export default function CoverImage({ title, coverImage, slug, route }) {
   return (
     <div className="sm:mx-0 flex">
       {slug ? (
-        <Link href={`/${routeString}/${slug}`}>
-          <a aria-label={title} className={"flex"}>{image}</a>
+        <Link href={`/${routeString}/${slug}`} aria-label={title} className={"flex"}>
+          {image}
         </Link>
       ) : (
         image
