@@ -114,6 +114,14 @@ export default function Navbar({slug, route}) {
                                 className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                 <div className="py-1">
                                     <Menu.Item>
+                                        {({ active }) => (<a
+                                            href="/archive/issue-five"
+                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
+                                        >
+                                            Issue 5 (October 2025)
+                                        </a>)}
+                                    </Menu.Item>
+                                    <Menu.Item>
                                         {({active}) => (<a
                                             href="/archive/issue-four"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
