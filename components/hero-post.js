@@ -43,7 +43,7 @@ export default function HeroPost(
         <div className="col-span-1 p-3 sm:ml-4">
           <div>
             <h3
-              className={`mb-4 text-4xl font-adriane-text-bold lg:text-6xl leading-tight ${textColour}`}>
+              className={`mb-4 max-lg:text-4xl font-adriane-text-bold lg:text-6xl leading-tight ${textColour}`}>
               <Link
                 href={`/${routeString}/${slug}`}
                 className="hover:underline"
@@ -51,14 +51,14 @@ export default function HeroPost(
               />
             </h3>
             <div
-              className="mb-4 md:mb-0 text-lg lg:text-sm xl:text-lg font-adriane-text-italic">
+              className="max-md:mb-4 md:mb-0 max-lg:text-lg lg:text-sm xl:text-lg font-adriane-text-italic">
               <Date dateString={date}/>
               <Categories categories={categories}/>
             </div>
           </div>
           <div>
             <div
-              className="text-lg lg:text-sm xl:text-lg sm:leading-relaxed xl:leading-7 mb-4 text-ellipsis"
+              className="max-lg:text-lg lg:text-sm xl:text-lg sm:leading-relaxed xl:leading-7 mb-4 text-ellipsis"
               dangerouslySetInnerHTML={{__html: excerpt}}
             />
             <Avatar author={author} categories={categories}/>

@@ -1,17 +1,16 @@
-import {Fragment} from 'react';
-import {Menu, Transition} from '@headlessui/react';
+import { Fragment } from 'react';
+import { Menu, Transition } from '@headlessui/react';
 import cn from 'classnames';
-import {useForm} from 'react-hook-form';
-import { ISSUE_FIVE_HEADING, ISSUE_FIVE_MARKER, ISSUE_FOUR_HEADING, ISSUE_FOUR_MARKER, ISSUE_ONE_HEADING, ISSUE_ONE_MARKER, ISSUE_THREE_HEADING, ISSUE_THREE_MARKER, ISSUE_TWO_HEADING, ISSUE_TWO_MARKER, SPECIAL_ISSUE_ONE_HEADING, SPECIAL_ISSUE_ONE_MARKER, SPECIAL_ISSUE_THREE_HEADING, SPECIAL_ISSUE_THREE_MARKER, SPECIAL_ISSUE_TWO_HEADING, SPECIAL_ISSUE_TWO_MARKER } from '../lib/constants';
+import { useForm } from 'react-hook-form';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
 }
 
-export default function Navbar({slug, route}) {
+export default function Navbar({ slug, route }) {
 
     const {
-        register, handleSubmit, watch, formState: {errors},
+        register, handleSubmit, watch, formState: { errors },
     } = useForm();
 
     function searchUrl(searchInputString) {
@@ -27,10 +26,10 @@ export default function Navbar({slug, route}) {
             className="container flex max-xl:flex-col md:flex xl:flex-row mx-auto max-sm:px-0 md:px-5 sm:pl-7 sm:pt-3 pb-2 max-md:space-y-2 md:space-y-0 md:whitespace-nowrap md:align-middle items-center">
             <div className="flex-1 flex justify-start max-sm:mt-4 max-sm:mb-4">
                 <a href="/"
-                   className={'font-josefin-sans-v32-latin-semibold font-black h-full max-md:text-8xl md:text-9xl py-0 text-uil-key max-sm:pr-3 sm:px-3 mt-6'}>LUR
+                    className={'font-josefin-sans-v32-latin-semibold font-black h-full max-md:text-8xl md:text-9xl py-0 text-uil-key max-sm:pr-3 sm:px-3 mt-6'}>LUR
                 </a>
                 <a href="/"
-                   className="font-adriane-text-bold text-commemorative-text text-2xl py-0 px-3 flex flex-col justify-center">
+                    className="font-adriane-text-bold text-commemorative-text text-2xl py-0 px-3 flex flex-col justify-center">
                     <h1>London</h1>
                     <h1>Ukrainian</h1>
                     <h1>Review</h1></a>
@@ -47,8 +46,11 @@ export default function Navbar({slug, route}) {
                     <li><a href="/posts/support-us-post" className={cn({
                         'current-menu-item': slug === 'support-us-post',
                     })}>Support Us</a></li>
+                    {/*<li><a href="/translates" className={cn({*/}
+                    {/*    'current-menu-item': route === 'translates' || route === 'translates/translators' || route === 'translates/authors',*/}
+                    {/*})}>LUR Translates</a></li>*/}
                     <Menu as="div"
-                          className={`relative inline-block max-sm:text-center sm:text-left`}>
+                        className={`relative inline-block max-sm:text-center sm:text-left`}>
                         <div>
                             <Menu.Button
                                 className={`inline-flex w-full justify-center gap-x-1.5 rounded-md ` + cn({
@@ -71,7 +73,7 @@ export default function Navbar({slug, route}) {
                                 className="absolute sm:right-0 z-10 mt-2 w-36 md:w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black/5 focus:outline-none">
                                 <div className="py-1">
                                     <Menu.Item>
-                                        {({active}) => (<a
+                                        {({ active }) => (<a
                                             href="/translates"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
@@ -79,7 +81,7 @@ export default function Navbar({slug, route}) {
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
-                                        {({active}) => (<a
+                                        {({ active }) => (<a
                                             href="/translates/translators"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
@@ -91,7 +93,7 @@ export default function Navbar({slug, route}) {
                         </Transition>
                     </Menu>
                     <Menu as="div"
-                          className="relative inline-block max-sm:text-center sm:text-left">
+                        className="relative inline-block max-sm:text-center sm:text-left">
                         <div>
                             <Menu.Button
                                 className="inline-flex w-full justify-center gap-x-1.5 rounded-md">
@@ -113,66 +115,58 @@ export default function Navbar({slug, route}) {
                                 <div className="py-1">
                                     <Menu.Item>
                                         {({ active }) => (<a
-                                            href="/archive/issue-five"
-                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
-                                        >
-                                            {ISSUE_FIVE_MARKER}
-                                        </a>)}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({active}) => (<a
                                             href="/archive/issue-four"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {ISSUE_FOUR_MARKER}
+                                            Issue 4 (June 2025)
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
-                                        {({active}) => (<a
+                                        {({ active }) => (<a
                                             href="/archive/issue-three"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {ISSUE_THREE_MARKER}
+                                            Issue 3 (October 2024)
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
-                                        {({active}) => (<a
+                                        {({ active }) => (<a
                                             href="/archive/issue-two"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {ISSUE_TWO_MARKER}
+                                            Issue 2 (May 2024)
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
-                                        {({active}) => (<a
+                                        {({ active }) => (<a
                                             href="/archive/issue-one"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {ISSUE_ONE_MARKER}
+                                            Issue 1 (March 2024)
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
-                                        {({active}) => (<a
+                                        {({ active }) => (<a
                                             href="/archive/special-issue-three"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {SPECIAL_ISSUE_THREE_MARKER}
+                                            Special Issue 3 (August 2023)
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
-                                        {({active}) => (<a
+                                        {({ active }) => (<a
                                             href="/archive/special-issue-two"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {SPECIAL_ISSUE_TWO_MARKER}
+                                            Special Issue 2 (August 2022)
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
-                                        {({active}) => (<a
+                                        {({ active }) => (<a
                                             href="/archive/special-issue-one"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {SPECIAL_ISSUE_ONE_MARKER}
+                                            Special Issue 1 (December 2021)
                                         </a>)}
                                     </Menu.Item>
                                 </div>
@@ -180,16 +174,15 @@ export default function Navbar({slug, route}) {
                         </Transition>
                     </Menu>
                     {route !== 'search' && (
-                        <form onSubmit={handleSubmit(onSubmit)} className={'relative flex flex-row justify-between bg-white shadow rounded border-0 sm:p-3 text-gray-600'}>
+                        <form onSubmit={handleSubmit(onSubmit)} className={'relative flex flex-row justify-between bg-white shadow rounded border-0 sm:p-3 text-gray-400'}>
                             {/* register your input into the hook by invoking the "register" function */}
                             <input placeholder={'Search'} {...register('searchInputString')}
-                                   className={'w-20 bg-white shadow-none outline-0 focus:outline-none rounded border-0 indent-2'}/>
-                            <button
-                                className="mr-2">
+                                className={'w-20 bg-white shadow-none outline-0 focus:outline-none rounded border-0 indent-2 text-gray-600'} />
+                            <button className="mr-2">
                                 <svg version="1.1" className="h-4 text-dark"
-                                     xmlns="http://www.w3.org/2000/svg"
-                                     x="0px" y="0px"
-                                     viewBox="0 0 52.966 52.966">
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    x="0px" y="0px"
+                                    viewBox="0 0 52.966 52.966">
                                     <path d="M51.704,51.273L36.845,35.82c3.79-3.801,6.138-9.041,6.138-14.82c0-11.58-9.42-21-21-21s-21,9.42-21,21s9.42,21,21,21
         c5.083,0,9.748-1.817,13.384-4.832l14.895,15.491c0.196,0.205,0.458,0.307,0.721,0.307c0.25,0,0.499-0.093,0.693-0.279
         C52.074,52.304,52.086,51.671,51.704,51.273z M21.983,40c-10.477,0-19-8.523-19-19s8.523-19,19-19s19,8.523,19,19
@@ -200,6 +193,12 @@ export default function Navbar({slug, route}) {
                     )}
                 </ul>
             </div>
+            {/*<div className="flex-initial flex justify-end">*/}
+            {/*    <a href="https://ukrainianinstitute.org.uk/" target="_blank"*/}
+            {/*       className=" flex flex-col w-18 h-12 font-adriane-text-bold text-2xl text-white">*/}
+            {/*        <img className="w-full h-full p-1" alt="Ukrainian Institute London Logo" width="1887px" height="698px" src="/images/uil-logo.svg" />*/}
+            {/*    </a>*/}
+            {/*</div>*/}
         </div>
     </nav>);
 }
