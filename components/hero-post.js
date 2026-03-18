@@ -1,6 +1,6 @@
 import Avatar from '../components/avatar';
 import Date from '../components/date';
-import CoverImage from '../components/cover-image';
+import Image from 'next/image';
 import Link from 'next/link';
 import Categories from '../components/categories';
 import {categoriesContainMatch} from '../lib/filter-utils';
@@ -34,10 +34,18 @@ export default function HeroPost(
       {heading && <div
         className={'font-adriane-text-bold text-commemorative-text text-2xl p-4 bg-uil-post text-center'}>{heading}</div>}
       <div
-        className={`lg:grid lg:grid-cols-3 lg:gap-x-2 lg:col-gap-8 sm:space-x-4 ${backgroundColour}`}>
-        <div className="col-span-2 flex">
+        className={`lg:grid lg:grid-cols-3 lg:gap-x-8 ${backgroundColour}`}>
+        <div className="col-span-2 relative min-h-64">
           {coverImage && (
-            <CoverImage title={title} coverImage={coverImage} slug={slug} route={route}/>
+            <Link href={`/${routeString}/${slug}`} aria-label={title} className="absolute inset-0">
+              <Image
+                fill
+                sizes="(min-width: 1024px) 66vw, 100vw"
+                src={coverImage.sourceUrl}
+                alt={`Cover Image for ${title}`}
+                className="object-cover"
+              />
+            </Link>
           )}
         </div>
         <div className="col-span-1 p-3">
@@ -58,7 +66,7 @@ export default function HeroPost(
           </div>
           <div>
             <div
-              className="text-lg lg:text-sm xl:text-lg leading-relaxed mb-4 overflow-ellipsis"
+              className="text-lg lg:text-sm xl:text-lg leading-relaxed mb-4 text-ellipsis"
               dangerouslySetInnerHTML={{__html: excerpt}}
             />
             <Avatar author={author} categories={categories}/>
