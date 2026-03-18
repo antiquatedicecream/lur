@@ -9,7 +9,7 @@ export default function AlgoliaCategories({ algoliaCategories, route }) {
       {algoliaCategories?.length > 0 ? (
           algoliaCategories.map((category, index) => (
           <span key={index} className={`ml-1 ${categoriesShouldbeHidden ? 'hidden' : ''}`}>
-            • {category.node.name}
+            • {typeof category === 'string' ? category : category.node.name}
           </span>
         ))
       ) : null}
