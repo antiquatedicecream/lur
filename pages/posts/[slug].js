@@ -11,8 +11,8 @@ import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import Tags from '../../components/tags'
 import MoreStories from '../../components/more-stories';
-import {categoriesContainMatch, categoriesContainAnyMatch} from '../../lib/filter-utils';
-import {LINK_TRANSLATOR_BIO, ALL_ISSUES} from '../../lib/constants';
+import {categoriesContainMatch} from '../../lib/filter-utils';
+import {LINK_TRANSLATOR_BIO} from '../../lib/constants';
 
 export default function Post({ post, posts, preview }) {
   const router = useRouter()
@@ -78,11 +78,6 @@ export async function getStaticProps({ params, preview = false, previewData }) {
   const data = await getPostAndMorePosts(params.slug, preview, previewData)
 
   if (!preview && data.post?.status !== 'publish') {
-    return { notFound: true }
-  }
-
-  const whitelistedMarkers = ALL_ISSUES.map(({ marker }) => marker)
-  if (!preview && !categoriesContainAnyMatch(data.post?.categories, whitelistedMarkers)) {
     return { notFound: true }
   }
 

@@ -34,13 +34,13 @@ export default function HeroPost(
       {heading && <div
         className={'font-adriane-text-bold text-commemorative-text text-2xl p-4 bg-uil-post text-center'}>{heading}</div>}
       <div
-        className={`lg:grid lg:grid-cols-3 lg:gap-x-2 lg:col-gap-8 sm:space-x-4 ${backgroundColour}`}>
+        className={`lg:grid lg:grid-cols-3 lg:gap-x-2 lg:col-gap-8 ${backgroundColour}`}>
         <div className="col-span-2 flex">
           {coverImage && (
             <CoverImage title={title} coverImage={coverImage} slug={slug} route={route}/>
           )}
         </div>
-        <div className="col-span-1 p-3">
+        <div className="col-span-1 p-3 sm:ml-4">
           <div>
             <h3
               className={`mb-4 text-4xl font-adriane-text-bold lg:text-6xl leading-tight ${textColour}`}>
@@ -58,7 +58,7 @@ export default function HeroPost(
           </div>
           <div>
             <div
-              className="text-lg lg:text-sm xl:text-lg leading-relaxed mb-4 overflow-ellipsis"
+              className="text-lg lg:text-sm xl:text-lg leading-relaxed mb-4 text-ellipsis"
               dangerouslySetInnerHTML={{__html: excerpt}}
             />
             <Avatar author={author} categories={categories}/>

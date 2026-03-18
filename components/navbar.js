@@ -25,7 +25,7 @@ export default function Navbar({slug, route}) {
     return (<nav className="min-w-full bg-uil-post">
         <div
             className="container flex flex-col md:flex xl:flex-row mx-auto px-0 md:px-5 sm:pl-7 sm:pt-3 pb-2 space-y-2 md:space-y-0 md:whitespace-nowrap md:align-middle items-center">
-            <div className="flex-1 flex justify-start">
+            <div className="flex-1 flex justify-start mt-4 sm:mt-0 mb-4 sm:mb-0">
                 <a href="/"
                    className={'font-josefin-sans-v32-latin-semibold font-black h-full text-8xl md:text-9xl py-0 sm:py-0 text-uil-key pr-3 sm:px-3 mt-6'}>LUR
                 </a>
@@ -71,7 +71,7 @@ export default function Navbar({slug, route}) {
                             leaveTo="transform opacity-0 scale-95"
                         >
                             <Menu.Items
-                                className="absolute sm:right-0 z-10 mt-2 w-36 md:w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                className="absolute sm:right-0 z-10 mt-2 w-36 md:w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black/5 focus:outline-none">
                                 <div className="py-1">
                                     <Menu.Item>
                                         {({active}) => (<a
@@ -112,7 +112,7 @@ export default function Navbar({slug, route}) {
                             leaveTo="transform opacity-0 scale-95"
                         >
                             <Menu.Items
-                                className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black/5 focus:outline-none">
                                 <div className="py-1">
                                     <Menu.Item>
                                         {({ active }) => (<a
@@ -183,7 +183,7 @@ export default function Navbar({slug, route}) {
                         </Transition>
                     </Menu>
                     {route !== 'search' && (
-                        <form onSubmit={handleSubmit(onSubmit)} className={'relative flex flex-row justify-between bg-white shadow rounded border-0 sm:p-3 text-gray-400'}>
+                        <form onSubmit={handleSubmit(onSubmit)} className={'relative flex flex-row justify-between bg-white shadow rounded border-0 sm:p-3 text-gray-600'}>
                             {/* register your input into the hook by invoking the "register" function */}
                             <input placeholder={'Search'} {...register('searchInputString')}
                                    className={'w-20 bg-white shadow-none outline-0 focus:outline-none rounded border-0 indent-2'}/>
