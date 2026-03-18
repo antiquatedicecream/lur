@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="flex text-center bg-uil-post py-12 font-adriane-text mt-32">
       <Container>
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+        <div className="flex max-sm:flex-col sm:flex-row gap-6 justify-center">
           <div>
             <a href="https://www.londonukrainianreview.org/" target="_blank" className="underline">©2021-2026 London Ukrainian Review</a>
           </div>

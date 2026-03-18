@@ -172,7 +172,7 @@ export default function Navbar({ slug, route }) {
                         <form onSubmit={handleSubmit(onSubmit)} className="relative flex flex-row justify-between bg-white shadow rounded border-0 sm:p-3 text-gray-400">
                             <input placeholder="Search" {...register('searchInputString')}
                                 className="w-20 bg-white shadow-none outline-0 focus:outline-none rounded border-0 indent-2 text-gray-600" />
-                            <button className="mr-2">
+                            <button className="sm:pin-r sm:pin-t sm:mb-2 sm:mt-2 mr-2 text-purple-lighter">
                                 <svg version="1.1" className="h-4 text-dark"
                                     xmlns="http://www.w3.org/2000/svg"
                                     x="0px" y="0px"
