@@ -13,10 +13,6 @@ import {
   PAGES_MARKER,
   TRANSLATORS_MARKER,
 } from '../lib/constants';
-import {ca} from 'date-fns/locale';
-import {
-  structuredClone
-} from 'next/dist/compiled/@edge-runtime/primitives/structured-clone';
 
 export default function PostHeader({
   title,
