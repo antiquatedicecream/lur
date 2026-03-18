@@ -11,6 +11,7 @@ import {
     ISSUE_TWO_MARKER,
     ISSUE_TWO_CATEGORY_NAME,
     ISSUE_THREE_MARKER, ISSUE_THREE_CATEGORY_NAME, ISSUE_FOUR_MARKER, ISSUE_FOUR_CATEGORY_NAME,
+    ISSUE_FOUR_HEADING,
 } from '../../lib/constants';
 import MoreStories from '../../components/more-stories';
 
@@ -37,25 +38,12 @@ export default function IssueOne({ allPosts: { edges }, preview }) {
         </Head>
         <div className="mb-4">
           <Navbar route={route} slug={'archive'}/>
-          {/*<div className="mt-2 mb-4">*/}
-          {/*  <NavbarArchive route={route}/>*/}
-          {/*</div>*/}
         </div>
         <Container>
-          {/*<div className="mb-6">*/}
-          {/*  {specialIssueTwoPosts.length > 0 &&*/}
-          {/*    <MoreStories posts={specialIssueThreePosts}*/}
-          {/*                 heading={'Special Issue 3 (August 2023)'}/>}*/}
-          {/*</div>*/}
-          {/*<div className="mb-6">*/}
-          {/*  {specialIssueTwoPosts.length > 0 &&*/}
-          {/*    <MoreStories posts={specialIssueTwoPosts}*/}
-          {/*                 heading={'Special Issue 2 (August 2022)'}/>}*/}
-          {/*</div>*/}
           <div className="mb-6">
             {issueThreePosts.length > 0 &&
               <MoreStories posts={issueThreePosts}
-                           heading={'Issue 4 (June 2025)'}/>}
+                           heading={ISSUE_FOUR_HEADING}/>}
           </div>
           <div className="">
             {reprintPosts.length > 0 && <Reprints posts={reprintPosts}/>}

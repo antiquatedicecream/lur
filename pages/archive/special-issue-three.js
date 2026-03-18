@@ -9,6 +9,7 @@ import {
   SPECIAL_ISSUE_THREE_MARKER,
   REPRINT_MARKER,
   SPECIAL_ISSUE_THREE_CATEGORY_NAME,
+  SPECIAL_ISSUE_THREE_HEADING,
 } from '../../lib/constants';
 import MoreStories from '../../components/more-stories';
 
@@ -35,26 +36,13 @@ export default function SpecialIssueOne({ allPosts: { edges }, preview }) {
         </Head>
         <div className="mb-4">
           <Navbar route={route} slug={'archive'}/>
-          {/*<div className="mt-2 mb-4">*/}
-          {/*  <NavbarArchive route={route}/>*/}
-          {/*</div>*/}
         </div>
         <Container>
           <div className="mb-6">
             {specialIssueThreePosts.length > 0 &&
               <MoreStories posts={specialIssueThreePosts}
-                           heading={'Special Issue 3 (August 2023)'}/>}
+                           heading={SPECIAL_ISSUE_THREE_HEADING}/>}
           </div>
-          {/*<div className="mb-6">*/}
-          {/*  {specialIssueTwoPosts.length > 0 &&*/}
-          {/*    <MoreStories posts={specialIssueTwoPosts}*/}
-          {/*                 heading={'Special Issue 2 (August 2022)'}/>}*/}
-          {/*</div>*/}
-          {/*<div className="mb-6">*/}
-          {/*  {specialIssueOnePosts.length > 0 &&*/}
-          {/*    <MoreStories posts={specialIssueOnePosts}*/}
-          {/*                 heading={'Special Issue 1 (December 2021)'}/>}*/}
-          {/*</div>*/}
           <div className="">
             {reprintPosts.length > 0 && <Reprints posts={reprintPosts}/>}
           </div>

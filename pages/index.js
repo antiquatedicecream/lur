@@ -7,16 +7,24 @@ import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
 import {postsByCategories} from "../lib/filter-utils";
 import {
+  ISSUE_TWO_MARKER,
+    ISSUE_ONE_MARKER,
     SPECIAL_ISSUE_THREE_MARKER,
-    SPECIAL_ISSUE_ONE_MARKER,
     SPECIAL_ISSUE_TWO_MARKER,
-    REPRINT_MARKER,
-    CURRENT_ISSUE_MARKER, ISSUE_TWO_MARKER, ISSUE_THREE_MARKER, ISSUE_ONE_MARKER, ISSUE_FOUR_MARKER, ISSUE_FIVE_MARKER,
+    SPECIAL_ISSUE_ONE_MARKER,
+    ISSUE_SIX_MARKER,
+    ISSUE_SIX_HEADING,
+    ISSUE_FIVE_HEADING,
+    ISSUE_FOUR_HEADING,
+    ISSUE_THREE_HEADING,
+    ISSUE_FIVE_MARKER,
+    ISSUE_FOUR_MARKER,
+    ISSUE_THREE_MARKER,
 } from '../lib/constants';
 import MoreStories from '../components/more-stories';
 
 export default function Index({ allPosts: { edges }, preview }) {
-  const currentIssuePosts = postsByCategories(edges, [CURRENT_ISSUE_MARKER]);
+  const currentIssuePosts = postsByCategories(edges, [ISSUE_SIX_MARKER]);
   const heroPost = currentIssuePosts[0]?.node;
   const issueFivePosts = postsByCategories(edges, [ISSUE_FIVE_MARKER]);
   const issueFourPosts = postsByCategories(edges, [ISSUE_FOUR_MARKER]);
@@ -64,7 +72,7 @@ export default function Index({ allPosts: { edges }, preview }) {
                 slug={heroPost.slug}
                 excerpt={heroPost.excerpt}
                 categories={heroPost.categories}
-                heading={'Issue 6 (March 2026): Legacies of Chornobyl'}
+                heading={ISSUE_SIX_HEADING}
               />
             )}
           </div>
@@ -75,17 +83,17 @@ export default function Index({ allPosts: { edges }, preview }) {
           <div className="mb-6">
             {issueFivePosts.length > 0 &&
               <MoreStories posts={issueFivePosts}
-                heading={'Issue 5 (October 2025)'} />}
+                heading={ISSUE_FIVE_HEADING} />}
           </div>
             <div className="mb-6">
                 {issueFourPosts.length > 0 &&
                     <MoreStories posts={issueFourPosts}
-                                 heading={'Issue 4 (June 2025)'}/>}
+                                 heading={ISSUE_FOUR_HEADING}/>}
             </div>
           <div className="mb-6">
             {issueThreePosts.length > 0 &&
               <MoreStories posts={issueThreePosts}
-                           heading={'Issue 3 (October 2024)'}/>}
+                           heading={ISSUE_THREE_HEADING}/>}
           </div>
           {/*<div className="mb-6">*/}
           {/*  {olderFilteredPosts.length > 0 && <MoreStories posts={olderFilteredPosts} />}*/}

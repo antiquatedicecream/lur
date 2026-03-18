@@ -8,6 +8,7 @@ import {postsByCategories} from "../../lib/filter-utils";
 import {
   REPRINT_MARKER,
   SPECIAL_ISSUE_ONE_CATEGORY_NAME, ISSUE_ONE_MARKER, ISSUE_ONE_CATEGORY_NAME,
+  ISSUE_ONE_HEADING,
 } from '../../lib/constants';
 import MoreStories from '../../components/more-stories';
 
@@ -34,25 +35,12 @@ export default function IssueOne({ allPosts: { edges }, preview }) {
         </Head>
         <div className="mb-4">
           <Navbar route={route} slug={'archive'}/>
-          {/*<div className="mt-2 mb-4">*/}
-          {/*  <NavbarArchive route={route}/>*/}
-          {/*</div>*/}
         </div>
         <Container>
-          {/*<div className="mb-6">*/}
-          {/*  {specialIssueTwoPosts.length > 0 &&*/}
-          {/*    <MoreStories posts={specialIssueThreePosts}*/}
-          {/*                 heading={'Special Issue 3 (August 2023)'}/>}*/}
-          {/*</div>*/}
-          {/*<div className="mb-6">*/}
-          {/*  {specialIssueTwoPosts.length > 0 &&*/}
-          {/*    <MoreStories posts={specialIssueTwoPosts}*/}
-          {/*                 heading={'Special Issue 2 (August 2022)'}/>}*/}
-          {/*</div>*/}
           <div className="mb-6">
             {issueOnePosts.length > 0 &&
               <MoreStories posts={issueOnePosts}
-                           heading={'Issue 1 (March 2024)'}/>}
+                           heading={ISSUE_ONE_HEADING}/>}
           </div>
           <div className="">
             {reprintPosts.length > 0 && <Reprints posts={reprintPosts}/>}

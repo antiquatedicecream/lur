@@ -2,6 +2,7 @@ import {Fragment} from 'react';
 import {Menu, Transition} from '@headlessui/react';
 import cn from 'classnames';
 import {useForm} from 'react-hook-form';
+import { ISSUE_FIVE_HEADING, ISSUE_FOUR_HEADING, ISSUE_ONE_HEADING, ISSUE_THREE_HEADING, ISSUE_TWO_HEADING, SPECIAL_ISSUE_ONE_HEADING, SPECIAL_ISSUE_THREE_HEADING, SPECIAL_ISSUE_TWO_HEADING } from '../lib/constants';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
@@ -118,7 +119,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/issue-five"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            Issue 5 (October 2025)
+                                            {ISSUE_FIVE_HEADING}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -126,7 +127,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/issue-four"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            Issue 4 (June 2025)
+                                            {ISSUE_FOUR_HEADING}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -134,7 +135,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/issue-three"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            Issue 3 (October 2024)
+                                            {ISSUE_THREE_HEADING}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -142,7 +143,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/issue-two"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            Issue 2 (May 2024)
+                                            {ISSUE_TWO_HEADING}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -150,7 +151,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/issue-one"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            Issue 1 (March 2024)
+                                            {ISSUE_ONE_HEADING}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -158,7 +159,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/special-issue-three"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            Special Issue 3 (August 2023)
+                                            {SPECIAL_ISSUE_THREE_HEADING}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -166,7 +167,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/special-issue-two"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            Special Issue 2 (August 2022)
+                                            {SPECIAL_ISSUE_TWO_HEADING}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -174,7 +175,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/special-issue-one"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            Special Issue 1 (December 2021)
+                                            {SPECIAL_ISSUE_ONE_HEADING}
                                         </a>)}
                                     </Menu.Item>
                                 </div>
@@ -201,19 +202,7 @@ export default function Navbar({slug, route}) {
                         </form>
                     )}
                 </ul>
-                {/*<ul*/}
-                {/*  className="mt-4 text-sm bg-uil-key text-white p-1 grid grid-cols-2 gap-4 text-center sm:flex-initial sm:flex-row sm:align-middle sm:content-center sm:flex  sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end mx-auto">*/}
-                {/*    <li><a href="/archive/special-issue-three">Special Issue 3 (August 2023)</a></li>*/}
-                {/*    <li><a href="/archive/special-issue-two">Special Issue 2 (August 2022)</a></li>*/}
-                {/*    <li><a href="/archive/special-issue-one">Special Issue 1 (December 2021)</a></li>*/}
-                {/*</ul>*/}
             </div>
-            {/*<div className="flex-initial flex justify-end">*/}
-            {/*    <a href="https://ukrainianinstitute.org.uk/" target="_blank"*/}
-            {/*       className=" flex flex-col w-18 h-12 font-adriane-text-bold text-2xl text-white">*/}
-            {/*        <img className="w-full h-full p-1" alt="Ukrainian Institute London Logo" width="1887px" height="698px" src="/images/uil-logo.svg" />*/}
-            {/*    </a>*/}
-            {/*</div>*/}
         </div>
     </nav>);
 }
