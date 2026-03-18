@@ -101,6 +101,6 @@ export async function getStaticPaths() {
 
   return {
     paths: allPosts.edges.map(({ node }) => `/translates/translators/${node.slug}`) || [],
-    fallback: true,
+    fallback: 'blocking',
   }
 }

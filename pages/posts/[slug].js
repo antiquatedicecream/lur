@@ -7,12 +7,9 @@ import PostHeader from '../../components/post-header'
 import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
-import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import Tags from '../../components/tags'
 import MoreStories from '../../components/more-stories';
-import {categoriesContainMatch} from '../../lib/filter-utils';
-import {LINK_TRANSLATOR_BIO} from '../../lib/constants';
 
 export default function Post({ post, posts, preview }) {
   const router = useRouter()
@@ -26,9 +23,7 @@ export default function Post({ post, posts, preview }) {
     <Layout preview={preview}>
       <Header slug={post?.slug} />
       <Container>
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
+        {!router.isFallback && (
           <>
               <article className="bg-uil-post sm:w-4/5 mx-auto pb-12">
               {/* this article tag used to have a bg-gray-100 - test for eye cancer */}
@@ -96,6 +91,6 @@ export async function getStaticPaths() {
 
   return {
     paths: allPosts.edges.map(({ node }) => `/posts/${node.slug}`) || [],
-    fallback: true,
+    fallback: 'blocking',
   }
 }
