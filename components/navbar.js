@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import cn from 'classnames';
 import { useForm } from 'react-hook-form';
+import { ISSUE_FIVE_MARKER, ISSUE_FOUR_HEADING, ISSUE_FOUR_MARKER, ISSUE_ONE_HEADING, ISSUE_ONE_MARKER, ISSUE_THREE_HEADING, ISSUE_THREE_MARKER, ISSUE_TWO_HEADING, ISSUE_TWO_MARKER, SPECIAL_ISSUE_ONE_MARKER, SPECIAL_ISSUE_TWO_MARKER } from '../lib/constants';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
@@ -110,10 +111,18 @@ export default function Navbar({ slug, route }) {
                                 <div className="py-1">
                                     <Menu.Item>
                                         {({ active }) => (<a
+                                            href="/archive/issue-five"
+                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
+                                        >
+                                            {ISSUE_FIVE_MARKER}
+                                        </a>)}
+                                    </Menu.Item>
+                                    <Menu.Item>
+                                        {({ active }) => (<a
                                             href="/archive/issue-four"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
                                         >
-                                            Issue 4 (June 2025)
+                                            {ISSUE_FOUR_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -121,7 +130,7 @@ export default function Navbar({ slug, route }) {
                                             href="/archive/issue-three"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
                                         >
-                                            Issue 3 (October 2024)
+                                            {ISSUE_THREE_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -129,7 +138,7 @@ export default function Navbar({ slug, route }) {
                                             href="/archive/issue-two"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
                                         >
-                                            Issue 2 (May 2024)
+                                            {ISSUE_TWO_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -137,7 +146,7 @@ export default function Navbar({ slug, route }) {
                                             href="/archive/issue-one"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
                                         >
-                                            Issue 1 (March 2024)
+                                            {ISSUE_ONE_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -145,7 +154,7 @@ export default function Navbar({ slug, route }) {
                                             href="/archive/special-issue-three"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
                                         >
-                                            Special Issue 3 (August 2023)
+                                            {SPECIAL_ISSUE_ONE_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -153,7 +162,7 @@ export default function Navbar({ slug, route }) {
                                             href="/archive/special-issue-two"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
                                         >
-                                            Special Issue 2 (August 2022)
+                                            {SPECIAL_ISSUE_TWO_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -161,7 +170,7 @@ export default function Navbar({ slug, route }) {
                                             href="/archive/special-issue-one"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
                                         >
-                                            Special Issue 1 (December 2021)
+                                            {SPECIAL_ISSUE_ONE_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                 </div>
