@@ -167,3 +167,7 @@ img {
 td {
   @apply pr-6 pb-2
 }
+
+hr {
+  border-color: #e5e7eb;
+}

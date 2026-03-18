@@ -2,7 +2,7 @@ import {Fragment} from 'react';
 import {Menu, Transition} from '@headlessui/react';
 import cn from 'classnames';
 import {useForm} from 'react-hook-form';
-import { ISSUE_FIVE_HEADING, ISSUE_FOUR_HEADING, ISSUE_ONE_HEADING, ISSUE_THREE_HEADING, ISSUE_TWO_HEADING, SPECIAL_ISSUE_ONE_HEADING, SPECIAL_ISSUE_THREE_HEADING, SPECIAL_ISSUE_TWO_HEADING } from '../lib/constants';
+import { ISSUE_FIVE_HEADING, ISSUE_FIVE_MARKER, ISSUE_FOUR_HEADING, ISSUE_FOUR_MARKER, ISSUE_ONE_HEADING, ISSUE_ONE_MARKER, ISSUE_THREE_HEADING, ISSUE_THREE_MARKER, ISSUE_TWO_HEADING, ISSUE_TWO_MARKER, SPECIAL_ISSUE_ONE_HEADING, SPECIAL_ISSUE_ONE_MARKER, SPECIAL_ISSUE_THREE_HEADING, SPECIAL_ISSUE_THREE_MARKER, SPECIAL_ISSUE_TWO_HEADING, SPECIAL_ISSUE_TWO_MARKER } from '../lib/constants';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
@@ -24,20 +24,20 @@ export default function Navbar({slug, route}) {
 
     return (<nav className="min-w-full bg-uil-post">
         <div
-            className="container flex flex-col md:flex xl:flex-row mx-auto px-0 md:px-5 sm:pl-7 sm:pt-3 pb-2 space-y-2 md:space-y-0 md:whitespace-nowrap md:align-middle items-center">
-            <div className="flex-1 flex justify-start mt-4 sm:mt-0 mb-4 sm:mb-0">
+            className="container flex max-xl:flex-col md:flex xl:flex-row mx-auto max-sm:px-0 md:px-5 sm:pl-7 sm:pt-3 pb-2 max-md:space-y-2 md:space-y-0 md:whitespace-nowrap md:align-middle items-center">
+            <div className="flex-1 flex justify-start max-sm:mt-4 max-sm:mb-4">
                 <a href="/"
-                   className={'font-josefin-sans-v32-latin-semibold font-black h-full text-8xl md:text-9xl py-0 sm:py-0 text-uil-key pr-3 sm:px-3 mt-6'}>LUR
+                   className={'font-josefin-sans-v32-latin-semibold font-black h-full max-md:text-8xl md:text-9xl py-0 text-uil-key max-sm:pr-3 sm:px-3 mt-6'}>LUR
                 </a>
                 <a href="/"
-                   className="font-adriane-text-bold text-commemorative-text text-2xl sm:text-2xl py-0 sm:py-0 px-3 flex flex-col justify-center">
+                   className="font-adriane-text-bold text-commemorative-text text-2xl py-0 px-3 flex flex-col justify-center">
                     <h1>London</h1>
                     <h1>Ukrainian</h1>
                     <h1>Review</h1></a>
             </div>
             <div className={`flex flex-col`}>
                 <ul
-                    className="grid grid-cols-2 gap-4 2xl:gap-2 text-center sm:flex-initial sm:flex-row sm:align-middle sm:content-center sm:flex  sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end items-center mx-auto text-lg text-uil-key">
+                    className="max-sm:grid grid-cols-2 max-2xl:gap-4 2xl:gap-2 text-center sm:flex-initial sm:flex-row sm:align-middle sm:content-center sm:flex sm:space-y-0 sm:space-x-4 lg:space-x-4 justify-end items-center mx-auto text-lg text-uil-key">
                     <li className={cn({
                         'current-menu-item': slug === 'index',
                     })}><a href="/">Home</a></li>
@@ -47,11 +47,8 @@ export default function Navbar({slug, route}) {
                     <li><a href="/posts/support-us-post" className={cn({
                         'current-menu-item': slug === 'support-us-post',
                     })}>Support Us</a></li>
-                    {/*<li><a href="/translates" className={cn({*/}
-                    {/*    'current-menu-item': route === 'translates' || route === 'translates/translators' || route === 'translates/authors',*/}
-                    {/*})}>LUR Translates</a></li>*/}
                     <Menu as="div"
-                          className={`relative inline-block text-center sm:text-left`}>
+                          className={`relative inline-block max-sm:text-center sm:text-left`}>
                         <div>
                             <Menu.Button
                                 className={`inline-flex w-full justify-center gap-x-1.5 rounded-md ` + cn({
@@ -94,7 +91,7 @@ export default function Navbar({slug, route}) {
                         </Transition>
                     </Menu>
                     <Menu as="div"
-                          className="relative inline-block text-center sm:text-left">
+                          className="relative inline-block max-sm:text-center sm:text-left">
                         <div>
                             <Menu.Button
                                 className="inline-flex w-full justify-center gap-x-1.5 rounded-md">
@@ -119,7 +116,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/issue-five"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {ISSUE_FIVE_HEADING}
+                                            {ISSUE_FIVE_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -127,7 +124,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/issue-four"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {ISSUE_FOUR_HEADING}
+                                            {ISSUE_FOUR_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -135,7 +132,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/issue-three"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {ISSUE_THREE_HEADING}
+                                            {ISSUE_THREE_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -143,7 +140,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/issue-two"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {ISSUE_TWO_HEADING}
+                                            {ISSUE_TWO_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -151,7 +148,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/issue-one"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {ISSUE_ONE_HEADING}
+                                            {ISSUE_ONE_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -159,7 +156,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/special-issue-three"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {SPECIAL_ISSUE_THREE_HEADING}
+                                            {SPECIAL_ISSUE_THREE_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -167,7 +164,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/special-issue-two"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {SPECIAL_ISSUE_TWO_HEADING}
+                                            {SPECIAL_ISSUE_TWO_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                     <Menu.Item>
@@ -175,7 +172,7 @@ export default function Navbar({slug, route}) {
                                             href="/archive/special-issue-one"
                                             className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm',)}
                                         >
-                                            {SPECIAL_ISSUE_ONE_HEADING}
+                                            {SPECIAL_ISSUE_ONE_MARKER}
                                         </a>)}
                                     </Menu.Item>
                                 </div>
@@ -188,7 +185,7 @@ export default function Navbar({slug, route}) {
                             <input placeholder={'Search'} {...register('searchInputString')}
                                    className={'w-20 bg-white shadow-none outline-0 focus:outline-none rounded border-0 indent-2'}/>
                             <button
-                                className="sm:pin-r sm:pin-t sm:mb-2 sm:mt-2 mr-2 text-purple-lighter">
+                                className="mr-2">
                                 <svg version="1.1" className="h-4 text-dark"
                                      xmlns="http://www.w3.org/2000/svg"
                                      x="0px" y="0px"

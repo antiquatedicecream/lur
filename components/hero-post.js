@@ -32,7 +32,7 @@ export default function HeroPost(
   return (
     <section>
       {heading && <div
-        className={'font-adriane-text-bold text-commemorative-text text-2xl p-4 bg-uil-post text-center'}>{heading}</div>}
+        className={'font-adriane-text-bold text-commemorative-text text-2xl leading-8 p-4 bg-uil-post text-center'}>{heading}</div>}
       <div
         className={`lg:grid lg:grid-cols-3 lg:gap-x-2 lg:col-gap-8 ${backgroundColour}`}>
         <div className="col-span-2 flex">
@@ -58,7 +58,7 @@ export default function HeroPost(
           </div>
           <div>
             <div
-              className="text-lg lg:text-sm xl:text-lg leading-relaxed mb-4 text-ellipsis"
+              className="text-lg lg:text-sm xl:text-lg sm:leading-relaxed xl:leading-7 mb-4 text-ellipsis"
               dangerouslySetInnerHTML={{__html: excerpt}}
             />
             <Avatar author={author} categories={categories}/>
