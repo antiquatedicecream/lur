@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function CoverImage({ title, coverImage, slug, route }) {
@@ -10,7 +10,7 @@ export default function CoverImage({ title, coverImage, slug, route }) {
       height={1000}
       alt={coverImage ? `Cover Image for ${title}` : ' '}
       src={coverImage?.sourceUrl}
-      className={cn('shadow-small object-cover flex-auto ', {
+      className={cn('object-cover flex-auto ', {
         'hover:shadow-medium transition-shadow duration-200': slug,
       })}
     />

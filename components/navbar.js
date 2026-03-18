@@ -1,12 +1,17 @@
-import { Fragment } from 'react';
-import { Menu, Transition } from '@headlessui/react';
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import cn from 'classnames';
 import { useForm } from 'react-hook-form';
-import { ISSUE_FIVE_MARKER, ISSUE_FOUR_HEADING, ISSUE_FOUR_MARKER, ISSUE_ONE_HEADING, ISSUE_ONE_MARKER, ISSUE_THREE_HEADING, ISSUE_THREE_MARKER, ISSUE_TWO_HEADING, ISSUE_TWO_MARKER, SPECIAL_ISSUE_ONE_MARKER, SPECIAL_ISSUE_TWO_MARKER } from '../lib/constants';
-
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ');
-}
+import {
+    ISSUE_FIVE_MARKER,
+    ISSUE_FOUR_MARKER,
+    ISSUE_ONE_MARKER,
+    ISSUE_SIX_MARKER,
+    ISSUE_THREE_MARKER,
+    ISSUE_TWO_MARKER,
+    SPECIAL_ISSUE_ONE_MARKER,
+    SPECIAL_ISSUE_THREE_MARKER,
+    SPECIAL_ISSUE_TWO_MARKER,
+} from '../lib/constants';
 
 export default function Navbar({ slug, route }) {
 
@@ -48,140 +53,122 @@ export default function Navbar({ slug, route }) {
                     <Menu as="div"
                         className="relative inline-block max-sm:text-center sm:text-left">
                         <div>
-                            <Menu.Button
+                            <MenuButton
                                 className={`inline-flex w-full justify-center gap-x-1.5 rounded-md ` + cn({
                                     'current-menu-item': route === 'translates' || route === 'translates/translators' || route === 'translates/authors',
                                 })}>
                                 LUR Translates
-                            </Menu.Button>
+                            </MenuButton>
                         </div>
 
-                        <Transition
-                            as={Fragment}
-                            enter="transition ease-out duration-100"
-                            enterFrom="transform opacity-0 scale-95"
-                            enterTo="transform opacity-100 scale-100"
-                            leave="transition ease-in duration-75"
-                            leaveFrom="transform opacity-100 scale-100"
-                            leaveTo="transform opacity-0 scale-95"
-                        >
-                            <Menu.Items
-                                className="absolute sm:right-0 z-10 mt-2 w-36 md:w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black/5 focus:outline-none">
-                                <div className="py-1">
-                                    <Menu.Item>
-                                        {({ active }) => (<a
-                                            href="/translates"
-                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
-                                        >
-                                            Authors
-                                        </a>)}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (<a
-                                            href="/translates/translators"
-                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
-                                        >
-                                            Translators
-                                        </a>)}
-                                    </Menu.Item>
-                                </div>
-                            </Menu.Items>
-                        </Transition>
+                        <MenuItems
+                            transition
+                            className="absolute sm:right-0 z-10 mt-2 w-36 md:w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black/5 focus:outline-none transition ease-out data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[leave]:ease-in">
+                            <div className="py-1">
+                                <MenuItem>
+                                    <a
+                                        href="/translates"
+                                        className="text-commemorative-text data-[focus]:bg-gray-100 data-[focus]:text-gray-900 block px-4 py-2 text-sm"
+                                    >
+                                        Authors
+                                    </a>
+                                </MenuItem>
+                                <MenuItem>
+                                    <a
+                                        href="/translates/translators"
+                                        className="text-commemorative-text data-[focus]:bg-gray-100 data-[focus]:text-gray-900 block px-4 py-2 text-sm"
+                                    >
+                                        Translators
+                                    </a>
+                                </MenuItem>
+                            </div>
+                        </MenuItems>
                     </Menu>
                     <Menu as="div"
                         className="relative inline-block max-sm:text-center sm:text-left">
                         <div>
-                            <Menu.Button
+                            <MenuButton
                                 className="inline-flex w-full justify-center gap-x-1.5 rounded-md">
                                 Archive
-                            </Menu.Button>
+                            </MenuButton>
                         </div>
 
-                        <Transition
-                            as={Fragment}
-                            enter="transition ease-out duration-100"
-                            enterFrom="transform opacity-0 scale-95"
-                            enterTo="transform opacity-100 scale-100"
-                            leave="transition ease-in duration-75"
-                            leaveFrom="transform opacity-100 scale-100"
-                            leaveTo="transform opacity-0 scale-95"
-                        >
-                            <Menu.Items
-                                className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black/5 focus:outline-none">
-                                <div className="py-1">
-                                    <Menu.Item>
-                                        {({ active }) => (<a
-                                            href="/archive/issue-five"
-                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
-                                        >
-                                            {ISSUE_FIVE_MARKER}
-                                        </a>)}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (<a
-                                            href="/archive/issue-four"
-                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
-                                        >
-                                            {ISSUE_FOUR_MARKER}
-                                        </a>)}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (<a
-                                            href="/archive/issue-three"
-                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
-                                        >
-                                            {ISSUE_THREE_MARKER}
-                                        </a>)}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (<a
-                                            href="/archive/issue-two"
-                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
-                                        >
-                                            {ISSUE_TWO_MARKER}
-                                        </a>)}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (<a
-                                            href="/archive/issue-one"
-                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
-                                        >
-                                            {ISSUE_ONE_MARKER}
-                                        </a>)}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (<a
-                                            href="/archive/special-issue-three"
-                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
-                                        >
-                                            {SPECIAL_ISSUE_ONE_MARKER}
-                                        </a>)}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (<a
-                                            href="/archive/special-issue-two"
-                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
-                                        >
-                                            {SPECIAL_ISSUE_TWO_MARKER}
-                                        </a>)}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (<a
-                                            href="/archive/special-issue-one"
-                                            className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-commemorative-text', 'block px-4 py-2 text-sm')}
-                                        >
-                                            {SPECIAL_ISSUE_ONE_MARKER}
-                                        </a>)}
-                                    </Menu.Item>
-                                </div>
-                            </Menu.Items>
-                        </Transition>
+                        <MenuItems
+                            transition
+                            className="absolute sm:right-0 z-10 mt-2 w-56 origin-top-right bg-uil-post shadow-lg ring-1 ring-black/5 focus:outline-none transition ease-out data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[leave]:ease-in">
+                            <div className="py-1">
+                                <MenuItem>
+                                    <a
+                                        href="/archive/issue-five"
+                                        className="text-commemorative-text data-[focus]:bg-gray-100 data-[focus]:text-gray-900 block px-4 py-2 text-sm"
+                                    >
+                                        {ISSUE_FIVE_MARKER}
+                                    </a>
+                                </MenuItem>
+                                <MenuItem>
+                                    <a
+                                        href="/archive/issue-four"
+                                        className="text-commemorative-text data-[focus]:bg-gray-100 data-[focus]:text-gray-900 block px-4 py-2 text-sm"
+                                    >
+                                        {ISSUE_FOUR_MARKER}
+                                    </a>
+                                </MenuItem>
+                                <MenuItem>
+                                    <a
+                                        href="/archive/issue-three"
+                                        className="text-commemorative-text data-[focus]:bg-gray-100 data-[focus]:text-gray-900 block px-4 py-2 text-sm"
+                                    >
+                                        {ISSUE_THREE_MARKER}
+                                    </a>
+                                </MenuItem>
+                                <MenuItem>
+                                    <a
+                                        href="/archive/issue-two"
+                                        className="text-commemorative-text data-[focus]:bg-gray-100 data-[focus]:text-gray-900 block px-4 py-2 text-sm"
+                                    >
+                                        {ISSUE_TWO_MARKER}
+                                    </a>
+                                </MenuItem>
+                                <MenuItem>
+                                    <a
+                                        href="/archive/issue-one"
+                                        className="text-commemorative-text data-[focus]:bg-gray-100 data-[focus]:text-gray-900 block px-4 py-2 text-sm"
+                                    >
+                                        {ISSUE_ONE_MARKER}
+                                    </a>
+                                </MenuItem>
+                                <MenuItem>
+                                    <a
+                                        href="/archive/special-issue-three"
+                                        className="text-commemorative-text data-[focus]:bg-gray-100 data-[focus]:text-gray-900 block px-4 py-2 text-sm"
+                                    >
+                                        {SPECIAL_ISSUE_THREE_MARKER}
+                                    </a>
+                                </MenuItem>
+                                <MenuItem>
+                                    <a
+                                        href="/archive/special-issue-two"
+                                        className="text-commemorative-text data-[focus]:bg-gray-100 data-[focus]:text-gray-900 block px-4 py-2 text-sm"
+                                    >
+                                        {SPECIAL_ISSUE_TWO_MARKER}
+                                    </a>
+                                </MenuItem>
+                                <MenuItem>
+                                    <a
+                                        href="/archive/special-issue-one"
+                                        className="text-commemorative-text data-[focus]:bg-gray-100 data-[focus]:text-gray-900 block px-4 py-2 text-sm"
+                                    >
+                                        {SPECIAL_ISSUE_ONE_MARKER}
+                                    </a>
+                                </MenuItem>
+                            </div>
+                        </MenuItems>
                     </Menu>
                     {route !== 'search' && (
                         <form onSubmit={handleSubmit(onSubmit)} className="relative flex flex-row justify-between bg-white shadow rounded border-0 sm:p-3 text-gray-400">
                             <input placeholder="Search" {...register('searchInputString')}
                                 className="w-20 bg-white shadow-none outline-0 focus:outline-none rounded border-0 indent-2 text-gray-600" />
-                            <button className="sm:pin-r sm:pin-t sm:mb-2 sm:mt-2 mr-2 text-purple-lighter">
+                            <button className="mr-2">
                                 <svg version="1.1" className="h-4 text-dark"
                                     xmlns="http://www.w3.org/2000/svg"
                                     x="0px" y="0px"
@@ -191,6 +178,7 @@ export default function Navbar({ slug, route }) {
         C52.074,52.304,52.086,51.671,51.704,51.273z M21.983,40c-10.477,0-19-8.523-19-19s8.523-19,19-19s19,8.523,19,19
         S32.459,40,21.983,40z"/>
                                 </svg>
+
                             </button>
                         </form>
                     )}
