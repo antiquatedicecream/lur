@@ -1,39 +1,21 @@
 import Head from 'next/head'
 import Container from '../components/container'
-import Reprints from '../components/reprints'
 import HeroPost from '../components/hero-post'
 import Navbar from '../components/navbar'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
 import {postsByCategories} from "../lib/filter-utils";
-import {
-  ISSUE_TWO_MARKER,
-    ISSUE_ONE_MARKER,
-    SPECIAL_ISSUE_THREE_MARKER,
-    SPECIAL_ISSUE_TWO_MARKER,
-    SPECIAL_ISSUE_ONE_MARKER,
-    ISSUE_SIX_MARKER,
-    ISSUE_SIX_HEADING,
-    ISSUE_FIVE_HEADING,
-    ISSUE_FOUR_HEADING,
-    ISSUE_THREE_HEADING,
-    ISSUE_FIVE_MARKER,
-    ISSUE_FOUR_MARKER,
-    ISSUE_THREE_MARKER,
-} from '../lib/constants';
+import { FRONTPAGE_ISSUES } from '../lib/constants';
 import MoreStories from '../components/more-stories';
 
 export default function Index({ allPosts: { edges }, preview }) {
-  const currentIssuePosts = postsByCategories(edges, [ISSUE_SIX_MARKER]);
+  const [currentIssue, ...olderIssues] = FRONTPAGE_ISSUES
+  const currentIssuePosts = postsByCategories(edges, [currentIssue.marker]);
   const heroPost = currentIssuePosts[0]?.node;
-  const issueFivePosts = postsByCategories(edges, [ISSUE_FIVE_MARKER]);
-  const issueFourPosts = postsByCategories(edges, [ISSUE_FOUR_MARKER]);
-  const issueThreePosts = postsByCategories(edges, [ISSUE_THREE_MARKER]);
-  const issueTwoPosts = postsByCategories(edges, [ISSUE_TWO_MARKER]);
-  const issueOnePosts = postsByCategories(edges, [ISSUE_ONE_MARKER]);
-  const specialIssueThreePosts = postsByCategories(edges, [SPECIAL_ISSUE_THREE_MARKER]);
-  const specialIssueTwoPosts = postsByCategories(edges, [SPECIAL_ISSUE_TWO_MARKER]);
-  const specialIssueOnePosts = postsByCategories(edges, [SPECIAL_ISSUE_ONE_MARKER]);
+  const olderIssuePosts = olderIssues.map((issue) => ({
+    issue,
+    posts: postsByCategories(edges, [issue.marker]),
+  }))
   const route = 'posts'
 
   return (
@@ -43,12 +25,10 @@ export default function Index({ allPosts: { edges }, preview }) {
           <title>London Ukrainian Review</title>
           <meta
             property="og:image"
-            // content={post.featuredImage?.node?.sourceUrl}
             content={heroPost.featuredImage?.node?.sourceUrl}
           />
           <meta
             property="twitter:image"
-            // content={post.featuredImage?.node?.sourceUrl}
             content={heroPost.featuredImage?.node?.sourceUrl}
           />
           <meta name="twitter:card" content="summary_large_image"/>
@@ -72,7 +52,7 @@ export default function Index({ allPosts: { edges }, preview }) {
                 slug={heroPost.slug}
                 excerpt={heroPost.excerpt}
                 categories={heroPost.categories}
-                heading={ISSUE_SIX_HEADING}
+                heading={currentIssue.heading}
               />
             )}
           </div>
@@ -80,28 +60,12 @@ export default function Index({ allPosts: { edges }, preview }) {
             {currentIssuePosts.length > 0 &&
               <MoreStories posts={currentIssuePosts.slice(1)}/>}
           </div>
-          <div className="mb-6">
-            {issueFivePosts.length > 0 &&
-              <MoreStories posts={issueFivePosts}
-                heading={ISSUE_FIVE_HEADING} />}
-          </div>
-            <div className="mb-6">
-                {issueFourPosts.length > 0 &&
-                    <MoreStories posts={issueFourPosts}
-                                 heading={ISSUE_FOUR_HEADING}/>}
+          {olderIssuePosts.map(({ issue, posts }) => (
+            <div className="mb-6" key={issue.marker}>
+              {posts.length > 0 &&
+                <MoreStories posts={posts} heading={issue.heading} />}
             </div>
-          <div className="mb-6">
-            {issueThreePosts.length > 0 &&
-              <MoreStories posts={issueThreePosts}
-                           heading={ISSUE_THREE_HEADING}/>}
-          </div>
-          {/*<div className="mb-6">*/}
-          {/*  {olderFilteredPosts.length > 0 && <MoreStories posts={olderFilteredPosts} />}*/}
-          {/*</div>*/}
-          {/*<div className="">*/}
-          {/*  {reprintPosts.length > 0 && <Reprints posts={reprintPosts} />}*/}
-          {/*</div>*/}
-
+          ))}
         </Container>
       </Layout>
     </>
