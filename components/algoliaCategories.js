@@ -6,15 +6,13 @@ export default function AlgoliaCategories({ algoliaCategories, route }) {
 
     <span className="ml-1">
 
-      {algoliaCategories > 0 ? (
+      {algoliaCategories?.length > 0 ? (
           algoliaCategories.map((category, index) => (
           <span key={index} className={`ml-1 ${categoriesShouldbeHidden ? 'hidden' : ''}`}>
             • {category.node.name}
           </span>
         ))
-      ) : (
-        <span className="ml-1">• {algoliaCategories[0]}</span>
-      )}
+      ) : null}
     </span>
   )
 }

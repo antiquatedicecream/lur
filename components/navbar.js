@@ -15,9 +15,7 @@ import {
 
 export default function Navbar({ slug, route }) {
 
-    const {
-        register, handleSubmit, watch, formState: { errors },
-    } = useForm();
+    const { register, handleSubmit } = useForm();
 
     function searchUrl(searchInputString) {
         return `/search?wp_searchable_posts%5Bquery%5D=${searchInputString}`;
@@ -168,7 +166,7 @@ export default function Navbar({ slug, route }) {
                         <form onSubmit={handleSubmit(onSubmit)} className="relative flex flex-row justify-between bg-white shadow rounded border-0 sm:p-3 text-gray-400">
                             <input placeholder="Search" {...register('searchInputString')}
                                 className="w-20 bg-white shadow-none outline-0 focus:outline-none rounded border-0 indent-2 text-gray-600" />
-                            <button className="mr-2">
+                            <button className="mr-2" aria-label="Submit search">
                                 <svg version="1.1" className="h-4 text-dark"
                                     xmlns="http://www.w3.org/2000/svg"
                                     x="0px" y="0px"

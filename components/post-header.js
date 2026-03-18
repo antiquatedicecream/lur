@@ -13,7 +13,6 @@ import {
   PAGES_MARKER,
   TRANSLATORS_MARKER,
 } from '../lib/constants';
-import {ca} from 'date-fns/locale';
 
 export default function PostHeader({
   title,

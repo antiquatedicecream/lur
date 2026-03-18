@@ -55,5 +55,6 @@ export async function getStaticProps({preview = false}) {
   const allPosts = await getAllPostsByCategoryName(preview, AUTHORS_MARKER)
   return {
     props: { allPosts, preview },
+    revalidate: 3600,
   }
 }

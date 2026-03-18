@@ -41,7 +41,7 @@ export default function PostPreview(
         </div>
         <div className="mb-3 mx-3">
           <h3
-            className={`text-${titleFontSize ? titleFontSize : '4xl'} font-adriane-text-bold mb-0 leading-snug ${textColour}`}>
+            className={`${titleFontSize === '2xl' ? 'text-2xl' : 'text-4xl'} font-adriane-text-bold mb-0 leading-snug ${textColour}`}>
             <Link
               href={`/${routeString}/${slug}`}
               className="hover:underline"

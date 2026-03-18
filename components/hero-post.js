@@ -37,7 +37,7 @@ export default function HeroPost(
         className={`lg:grid lg:grid-cols-3 lg:gap-x-2 lg:col-gap-8 ${backgroundColour}`}>
         <div className="col-span-2 flex">
           {coverImage && (
-            <CoverImage title={title} coverImage={coverImage} slug={slug} route={route}/>
+            <CoverImage title={title} coverImage={coverImage} slug={slug} route={route} priority/>
           )}
         </div>
         <div className="col-span-1 p-3 sm:ml-4">

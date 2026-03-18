@@ -59,5 +59,6 @@ export async function getStaticProps({preview = false}) {
   const allPosts = await getAllPostsByCategoryName(preview, ISSUE_THREE_CATEGORY_NAME);
   return {
     props: {allPosts, preview },
+    revalidate: 3600,
   }
 }
