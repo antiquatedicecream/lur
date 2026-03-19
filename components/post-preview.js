@@ -1,11 +1,11 @@
 import Avatar from '../components/avatar';
 import Date from '../components/date';
-import CoverImage from './cover-image';
 import Link from 'next/link';
 import Categories from '../components/categories';
 import {categoriesContainMatch} from '../lib/filter-utils';
 import {COMMEMORATION_MARKER, UKRAINIAN_MARKER} from '../lib/constants';
 import AlgoliaCategories from "./algoliaCategories";
+import PostCoverImage from './post-cover-image';
 
 export default function PostPreview(
   {
@@ -37,7 +37,7 @@ export default function PostPreview(
     {!isUkrainianPost ?
       (<div className={backgroundColour}>
         <div className="mb-2 xl:mg-5">
-          {coverImage && (<CoverImage title={title} coverImage={coverImage} slug={slug} route={route}/>)}
+          {coverImage && (<PostCoverImage title={title} coverImage={coverImage} slug={slug} route={route}/>)}
         </div>
         <div className="mb-3 mx-3">
           <h3

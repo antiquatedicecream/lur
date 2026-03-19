@@ -1,6 +1,6 @@
 import Avatar from '../components/avatar';
 import Date from '../components/date';
-import CoverImage from '../components/cover-image';
+import HeroCoverImage from '../components/hero-cover-image';
 import Link from 'next/link';
 import Categories from '../components/categories';
 import {categoriesContainMatch} from '../lib/filter-utils';
@@ -37,7 +37,7 @@ export default function HeroPost(
         className={`lg:grid lg:grid-cols-3 lg:gap-x-2 lg:col-gap-8 ${backgroundColour}`}>
         <div className="col-span-2 flex">
           {coverImage && (
-            <CoverImage title={title} coverImage={coverImage} slug={slug} route={route} priority/>
+            <HeroCoverImage title={title} coverImage={coverImage} slug={slug} route={route} priority/>
           )}
         </div>
         <div className="col-span-1 p-3 sm:ml-4">

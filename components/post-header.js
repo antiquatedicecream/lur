@@ -1,6 +1,6 @@
 import Avatar from '../components/avatar'
 import Date from '../components/date'
-import CoverImage from '../components/cover-image'
+import PostCoverImage from '../components/post-cover-image'
 import PostTitle from '../components/post-title'
 import Categories from '../components/categories'
 import {
@@ -31,7 +31,7 @@ export default function PostHeader({
   return (
     <>
       <div className={`${!coverImage && 'p-2'} mt-4 mb-4 md:mb-4 mx-auto w-full sm:relative`}>
-        {coverImage && <CoverImage title={title} coverImage={coverImage} />}
+        {coverImage && <PostCoverImage title={title} coverImage={coverImage} />}
         <div className={`${coverImage && 'sm:absolute'} bottom-0 left-0 md:mx-4 md:my-4 mt-8 space-y-3 sm:bg-white p-4 text-uil-key`}>
           <PostTitle>{title}</PostTitle>
           { shouldBeHidden ? ('') : (
