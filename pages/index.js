@@ -27,6 +27,8 @@ export default function Index({ allPosts: { edges }, preview }) {
             property="og:image"
             content={heroPost.featuredImage?.node?.sourceUrl}
           />
+          <meta property="og:image:width" content={heroPost.featuredImage?.node?.mediaDetails?.width} />
+          <meta property="og:image:height" content={heroPost.featuredImage?.node?.mediaDetails?.height} />
           <meta
             property="twitter:image"
             content={heroPost.featuredImage?.node?.sourceUrl}
